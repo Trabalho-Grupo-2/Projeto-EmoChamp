@@ -1,4 +1,4 @@
-# emochamp
+# emochampapp
 
 ## Project setup
 ```
