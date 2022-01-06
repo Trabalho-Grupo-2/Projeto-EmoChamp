@@ -12,8 +12,8 @@
         <a href="#about">ESTATISTICAS</a>
       </div>
       <div class="btns">
-        <button id="btn1"><a href="#login">ENTRAR</a></button>
-        <button id="btn2"><a href="#register">REGISTAR</a></button>
+        <button id="btn1">ENTRAR</button>
+        <button id="btn2">REGISTAR</button>
       </div>
     </div>
   </div>
@@ -69,8 +69,6 @@ export default {};
   border-radius: 5px;
   top: 23px;
   padding: 10px 30px;
-}
-.navbar .btns #btn1 a {
   color: #24305e;
   text-align: center;
   font-family: Comfortaa_Regular, Playfair_Regular, Arial;
@@ -85,8 +83,6 @@ export default {};
   border-radius: 5px;
   top: 23px;
   padding: 10px 30px;
-}
-.navbar .btns #btn2 a {
   color: #ffffff;
   text-align: center;
   font-family: Comfortaa_Regular, Playfair_Regular, Arial;
