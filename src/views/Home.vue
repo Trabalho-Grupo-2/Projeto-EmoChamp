@@ -242,7 +242,6 @@ export default {
   position: relative;
   width: 300px;
   background-color: red;
-
 }
 .home .keywordsgroup .group4 #supervisedlearningsvg {
   position: relative;
