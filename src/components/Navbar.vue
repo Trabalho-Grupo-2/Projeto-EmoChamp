@@ -61,6 +61,7 @@ export default {};
 .navbar .btns #btn2:hover {
   transform: scale(1.1);
 }
+
 .navbar .btns #btn1 {
   position: absolute;
   right: 275px;
