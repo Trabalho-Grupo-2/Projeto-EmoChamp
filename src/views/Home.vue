@@ -14,4 +14,3 @@ export default {
 };
 </script>
 <style scoped></style>
-// eslint-disable-next-line prettier/prettier
