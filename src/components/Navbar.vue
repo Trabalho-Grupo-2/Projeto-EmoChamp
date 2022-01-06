@@ -5,7 +5,6 @@
         <img class="logobg" src="../assets/logoshape.svg" alt="logo back" />
         <img class="logo" src="../assets/logo1.png" alt="emochamp logo" />
       </div>
-      <img id="pagemarker" src="../assets/activepagemarker.svg" alt="marker" />
       <div class="navlinks">
         <a class="curretpage" href="#home">HOME</a>
         <a href="#news">JOGAR</a>
@@ -13,8 +12,8 @@
         <a href="#about">ESTATISTICAS</a>
       </div>
       <div class="btns">
-        <button id="btn1"><a href="#login">ENTRAR</a></button>
-        <button id="btn2"><a href="#register">REGISTAR</a></button>
+        <button id="btn1">ENTRAR</button>
+        <button id="btn2">REGISTAR</button>
       </div>
     </div>
   </div>
@@ -48,11 +47,6 @@ export default {};
   top: 25px;
   overflow: hidden;
 }
-.navbar #pagemarker {
-  position: absolute;
-  left: 412px;
-  top: 0px;
-}
 .navbar .navlinks a {
   float: left;
   color: #24305e;
@@ -67,6 +61,7 @@ export default {};
 .navbar .btns #btn2:hover {
   transform: scale(1.1);
 }
+
 .navbar .btns #btn1 {
   position: absolute;
   right: 275px;
@@ -75,8 +70,6 @@ export default {};
   border-radius: 5px;
   top: 23px;
   padding: 10px 30px;
-}
-.navbar .btns #btn1 a {
   color: #24305e;
   text-align: center;
   font-family: Comfortaa_Regular, Playfair_Regular, Arial;
@@ -91,8 +84,6 @@ export default {};
   border-radius: 5px;
   top: 23px;
   padding: 10px 30px;
-}
-.navbar .btns #btn2 a {
   color: #ffffff;
   text-align: center;
   font-family: Comfortaa_Regular, Playfair_Regular, Arial;

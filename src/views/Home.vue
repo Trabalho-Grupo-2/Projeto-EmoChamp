@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <Navbar></Navbar>
+    <img id="pagemarker" src="../assets/activepagemarker.svg" alt="marker" />
     <img id="bluebg" src="../assets/homebackground.svg" alt="marker" />
     <div class="callforaction">
       <h1>Melhora a tua capacidade de reconhecer emoções</h1>
@@ -11,7 +12,30 @@
         efetua<br />
         o registo para mais funcionalidades.
       </p>
-      <button id="cfaplay"><a href="#play">Jogar</a></button>
+      <button id="cfaplay">Jogar</button>
+    </div>
+    <img id="redelipse" src="../assets/redelipse.svg" alt="red elipse" />
+    <div class="keywordsgroup">
+      <img
+        class="yellowelipse"
+        src="../assets/keywordssphere.svg"
+        alt="yellow elipse"
+      />
+      <img
+        class="yellowelipse"
+        src="../assets/keywordssphere.svg"
+        alt="yellow elipse"
+      />
+      <img
+        class="yellowelipse"
+        src="../assets/keywordssphere.svg"
+        alt="yellow elipse"
+      />
+      <img
+        class="yellowelipse"
+        src="../assets/keywordssphere.svg"
+        alt="yellow elipse"
+      />
     </div>
   </div>
 </template>
@@ -32,7 +56,7 @@ export default {
   height: 705px;
   right: 0px;
   top: -80px;
-  z-index: -1;
+  z-index: -2;
 }
 .home .callforaction h1 {
   position: absolute;
@@ -61,8 +85,6 @@ export default {
   border: 3px solid #374785;
   border-radius: 5px;
   padding: 5px 40px;
-}
-.home .callforaction a {
   color: #24305e;
   text-align: center;
   font-family: Comfortaa_Bold, Playfair_Bold, Arial;
@@ -70,6 +92,30 @@ export default {
   text-decoration: none;
 }
 .home .callforaction #cfaplay:hover {
-  transform: scale(1.1);
+  background-color: #374785;
+  color: #ffffff;
+}
+.home #pagemarker {
+  position: absolute;
+  left: 412px;
+  top: 0px;
+  z-index: -1;
+}
+.home #redelipse {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: -100px;
+  top: 570px;
+}
+.home .keywordsgroup {
+  position: absolute;
+  top: 650px;
+  left: 300px;
+  overflow: hidden;
+}
+.home .keywordsgroup .yellowelipse {
+  position: relative;
+  padding: 14px 45px;
 }
 </style>
