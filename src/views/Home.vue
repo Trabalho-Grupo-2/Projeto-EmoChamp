@@ -15,6 +15,28 @@
       <button id="cfaplay">Jogar</button>
     </div>
     <img id="redelipse" src="../assets/redelipse.svg" alt="red elipse" />
+    <div class="keywordsgroup">
+      <img
+        class="yellowelipse"
+        src="../assets/keywordssphere.svg"
+        alt="yellow elipse"
+      />
+      <img
+        class="yellowelipse"
+        src="../assets/keywordssphere.svg"
+        alt="yellow elipse"
+      />
+      <img
+        class="yellowelipse"
+        src="../assets/keywordssphere.svg"
+        alt="yellow elipse"
+      />
+      <img
+        class="yellowelipse"
+        src="../assets/keywordssphere.svg"
+        alt="yellow elipse"
+      />
+    </div>
   </div>
 </template>
 
@@ -84,6 +106,16 @@ export default {
   width: 300px;
   height: 300px;
   left: -100px;
-  top: 480px;
+  top: 570px;
+}
+.home .keywordsgroup {
+  position: absolute;
+  top: 650px;
+  left: 300px;
+  overflow: hidden;
+}
+.home .keywordsgroup .yellowelipse {
+  position: relative;
+  padding: 14px 45px;
 }
 </style>
