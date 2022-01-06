@@ -36,16 +36,18 @@
         src="../assets/keywordssphere.svg"
         alt="yellow elipse"
       />
+    <FooterX></FooterX>
     </div>
   </div>
 </template>
 
 <script>
 import Navbar from "../components/Navbar.vue";
+import FooterX from "../components/FooterX.vue";
 
 export default {
   components: {
-    Navbar,
+    Navbar,FooterX,
   },
 };
 </script>
