@@ -33,7 +33,7 @@ export default {
   height: 705px;
   right: 0px;
   top: -80px;
-  z-index: -2 ;
+  z-index: -2;
 }
 .home .callforaction h1 {
   position: absolute;
