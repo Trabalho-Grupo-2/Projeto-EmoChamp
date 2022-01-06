@@ -16,26 +16,67 @@
     </div>
     <img id="redelipse" src="../assets/redelipse.svg" alt="red elipse" />
     <div class="keywordsgroup">
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
+      <div class="group1">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="elearningsvg"
+          src="../assets/Landing Page Balloons/eLearning.svg"
+          alt="eLearning icon"
+        />
+        <p>eLearning</p>
+      </div>
+      <div class="group2">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="childsafesvg"
+          src="../assets/Landing Page Balloons/Child Safe.svg"
+          alt="child safe icon"
+        />
+        <p>
+          Seguro para <br />
+          Crianças
+        </p>
+      </div>
+      <div class="group3">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="gamificationsvg"
+          src="../assets/Landing Page Balloons/gamification.svg"
+          alt="controller icon"
+        />
+        <p>
+          Elementos de <br />
+          Gamificação
+        </p>
+      </div>
+      <div class="group4">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="supervisedlearningsvg"
+          src="../assets/Landing Page Balloons/supervisedLearning.svg"
+          alt="supervised icon"
+        />
+        <p>
+          Aprendizagem <br />
+          Supervisionada
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -50,6 +91,23 @@ export default {
 };
 </script>
 <style scoped>
+@font-face {
+  font-family: Comfortaa_Bold;
+  src: "../assets/fonts/Comfortaa-Bold.ttf";
+}
+@font-face {
+  font-family: Comfortaa_Regular;
+  src: "../assets/fonts/Comfortaa-Regular.ttf";
+}
+@font-face {
+  font-family: Playfair_Regular;
+  src: "../assets/fonts/PlayfairDisplay-Regular.ttf";
+}
+@font-face {
+  font-family: Playfair_SemiBold;
+  src: "../assets/fonts/PlayfairDisplay-SemiBold.ttf";
+}
+
 .home #bluebg {
   position: absolute;
   width: 1540px;
@@ -112,10 +170,89 @@ export default {
   position: absolute;
   top: 650px;
   left: 300px;
-  overflow: hidden;
+  display: flex;
 }
-.home .keywordsgroup .yellowelipse {
+.home .keywordsgroup .group1 {
   position: relative;
-  padding: 14px 45px;
+  width: 300px;
+}
+.home .keywordsgroup .group1 #elearningsvg {
+  position: relative;
+  width: 77px;
+  height: 70px;
+  margin-left: -118px;
+  filter: invert(22%) sepia(73%) saturate(677%) hue-rotate(195deg)
+    brightness(95%) contrast(88%);
+}
+.home .keywordsgroup .group1 p {
+  position: relative;
+  color: #374785;
+  font-family: Comfortaa_Regular, Playfair_Regular, Arial;
+  font-size: 20px;
+  right: -32px;
+  top: 10px;
+}
+.home .keywordsgroup .group2 {
+  position: relative;
+  width: 300px;
+}
+.home .keywordsgroup .group2 #childsafesvg {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-left: -125px;
+  filter: invert(22%) sepia(73%) saturate(677%) hue-rotate(195deg)
+    brightness(95%) contrast(88%);
+}
+.home .keywordsgroup .group2 p {
+  position: relative;
+  color: #374785;
+  font-family: Comfortaa_Regular, Playfair_Regular, Arial;
+  font-size: 20px;
+  right: -25px;
+  top: 10px;
+  text-align: justify;
+}
+.home .keywordsgroup .group3 {
+  position: relative;
+  width: 300px;
+}
+.home .keywordsgroup .group3 #gamificationsvg {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-left: -125px;
+  filter: invert(22%) sepia(73%) saturate(677%) hue-rotate(195deg)
+    brightness(95%) contrast(88%);
+}
+.home .keywordsgroup .group3 p {
+  position: relative;
+  color: #374785;
+  font-family: Comfortaa_Regular, Playfair_Regular, Arial;
+  font-size: 20px;
+  right: -15px;
+  top: 10px;
+  text-align: justify;
+}
+.home .keywordsgroup .group4 {
+  position: relative;
+  width: 300px;
+}
+.home .keywordsgroup .group4 #supervisedlearningsvg {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-left: -125px;
+  filter: invert(22%) sepia(73%) saturate(677%) hue-rotate(195deg)
+    brightness(95%) contrast(88%);
+}
+.home .keywordsgroup .group4 p {
+  position: relative;
+  color: #374785;
+  font-family: Comfortaa_Regular, Playfair_Regular, Arial;
+  font-size: 20px;
+  right: -15px;
+  top: 10px;
+  text-align: justify;
 }
 </style>
