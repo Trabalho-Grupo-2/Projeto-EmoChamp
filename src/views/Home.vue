@@ -40,7 +40,7 @@ export default {
   position: absolute;
   font-size: 30px;
   top: 196px;
-  left: 371px;
+  left: 400px;
   color: #24305e;
   font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
   line-height: 50px;
@@ -48,7 +48,7 @@ export default {
 .home .callforaction p {
   position: absolute;
   top: 274px;
-  left: 635px;
+  left: 560px;
   text-align: justify;
   font-family: Comfortaa_Regular, Playfair_Regular, Arial;
   color: #24305e;
@@ -58,7 +58,7 @@ export default {
 .home .callforaction #cfaplay {
   position: absolute;
   top: 422px;
-  left: 995px;
+  left: 945px;
   background-color: #ffffff;
   border: 3px solid #374785;
   border-radius: 5px;
