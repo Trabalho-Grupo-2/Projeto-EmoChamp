@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <div class="footer">
         
             <div class="logoGroup">
@@ -34,7 +33,6 @@
             </div>
 
         </div>
-
     </div>
 </template>
 
