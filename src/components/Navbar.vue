@@ -11,8 +11,10 @@
         <a href="#contact">PERFIL</a>
         <a href="#about">ESTATISTICAS</a>
       </div>
-      <button id="btn1"><a href="#login">ENTRAR</a></button>
-      <button id="btn2"><a href="#register">REGISTAR</a></button>
+      <div class="btns">
+        <button id="btn1"><a href="#login">ENTRAR</a></button>
+        <button id="btn2"><a href="#register">REGISTAR</a></button>
+      </div>
     </div>
   </div>
 </template>
@@ -37,75 +39,77 @@ export default {};
   font-family: Playfair_SemiBold;
   src: "../assets/fonts/PlayfairDisplay-SemiBold.ttf";
 }
-
-.navbar {
-  margin: 0;
-  width: 100%;
-}
-.navbar .logozone .logobg {
-  position: absolute;
-  width: 354.01px;
-  height: 132.26px;
-  left: -31px;
-  top: -12px;
-}
-.navbar .logozone .logo {
-  position: absolute;
-  width: 160px;
-  height: 35.01px;
-  left: 109px;
-  top: 33px;
-}
-.navbar .navlinks {
-  position: absolute;
-  left: 395px;
-  top: 25px;
-  overflow: hidden;
-}
-.navbar .navlinks a {
-  float: left;
-  color: #24305e;
-  text-align: center;
-  padding: 14px 45px;
-  text-decoration: none;
-  font-size: 15px;
-  font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
-}
-.navbar .navlinks a:hover,
-.navbar #btn1:hover,
-.navbar #btn2:hover {
-  transform: scale(1.1);
-}
-.navbar #btn1 {
-  position: absolute;
-  right: 275px;
-  background-color: #ffffff;
-  border: 3px solid #374785;
-  border-radius: 5px;
-  top: 23px;
-  padding: 10px 30px;
-}
-.navbar #btn1 a {
-  color: #24305e;
-  text-align: center;
-  font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
-  font-size: 15px;
-  text-decoration: none;
-}
-.navbar #btn2 {
-  position: absolute;
-  right: 100px;
-  background-color: #374785;
-  border: 3px solid #374785;
-  border-radius: 5px;
-  top: 23px;
-  padding: 10px 30px;
-}
-.navbar #btn2 a {
-  color: #ffffff;
-  text-align: center;
-  font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
-  font-size: 15px;
-  text-decoration: none;
+@media (min-width: 1281px) {
+  .navbar {
+    margin: 0;
+    width: 100%;
+    display: flex;
+  }
+  .navbar .logozone .logobg {
+    position: absolute;
+    width: 354.01px;
+    height: 132.26px;
+    left: -31px;
+    top: -12px;
+  }
+  .navbar .logozone .logo {
+    position: absolute;
+    width: 160px;
+    height: 35.01px;
+    left: 109px;
+    top: 33px;
+  }
+  .navbar .navlinks {
+    position: absolute;
+    left: 395px;
+    top: 25px;
+    overflow: hidden;
+  }
+  .navbar .navlinks a {
+    float: left;
+    color: #24305e;
+    text-align: center;
+    padding: 14px 45px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
+  }
+  .navbar .navlinks a:hover,
+  .navbar .btns #btn1:hover,
+  .navbar .btns #btn2:hover {
+    transform: scale(1.1);
+  }
+  .navbar .btns #btn1 {
+    position: absolute;
+    right: 275px;
+    background-color: #ffffff;
+    border: 3px solid #374785;
+    border-radius: 5px;
+    top: 23px;
+    padding: 10px 30px;
+  }
+  .navbar .btns #btn1 a {
+    color: #24305e;
+    text-align: center;
+    font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .navbar .btns #btn2 {
+    position: absolute;
+    right: 100px;
+    background-color: #374785;
+    border: 3px solid #374785;
+    border-radius: 5px;
+    top: 23px;
+    padding: 10px 30px;
+  }
+  .navbar .btns #btn2 a {
+    color: #ffffff;
+    text-align: center;
+    font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
+    font-size: 15px;
+    text-decoration: none;
+  }
 }
 </style>
