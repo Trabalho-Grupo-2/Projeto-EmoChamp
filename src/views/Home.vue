@@ -16,26 +16,54 @@
     </div>
     <img id="redelipse" src="../assets/redelipse.svg" alt="red elipse" />
     <div class="keywordsgroup">
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
+      <div class="group1">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="elearningsvg"
+          src="../assets/Landing Page Balloons/eLearning.svg"
+          alt="e learning icon"
+        />
+      </div>
+      <div class="group2">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="childsafesvg"
+          src="../assets/Landing Page Balloons/Child Safe.svg"
+          alt="child safe icon"
+        />
+      </div>
+      <div class="group3">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="gamificationsvg"
+          src="../assets/Landing Page Balloons/gamification.svg"
+          alt="controller icon"
+        />
+      </div>
+      <div class="group4">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="supervisedlearningsvg"
+          src="../assets/Landing Page Balloons/supervisedLearning.svg"
+          alt="supervised icon"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -114,8 +142,14 @@ export default {
   left: 300px;
   overflow: hidden;
 }
-.home .keywordsgroup .yellowelipse {
+.home .keywordsgroup .group1 {
   position: relative;
-  padding: 14px 45px;
+}
+.home .keywordsgroup .group1 #elearningsvg {
+  position: relative;
+  width: 77px;
+  height: 70px;
+  margin-left: -118px;
+  fill: #24305e;
 }
 </style>
