@@ -16,29 +16,69 @@
     </div>
     <img id="redelipse" src="../assets/redelipse.svg" alt="red elipse" />
     <div class="keywordsgroup">
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-    <FooterX></FooterX>
-
+      <div class="group1">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="elearningsvg"
+          src="../assets/Landing Page Balloons/eLearning.svg"
+          alt="eLearning icon"
+        />
+        <p>eLearning</p>
+      </div>
+      <div class="group2">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="childsafesvg"
+          src="../assets/Landing Page Balloons/Child Safe.svg"
+          alt="child safe icon"
+        />
+        <p>
+          Seguro para <br />
+          Crianças
+        </p>
+      </div>
+      <div class="group3">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="gamificationsvg"
+          src="../assets/Landing Page Balloons/gamification.svg"
+          alt="controller icon"
+        />
+        <p>
+          Elementos de <br />
+          Gamificação
+        </p>
+      </div>
+      <div class="group4">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="supervisedlearningsvg"
+          src="../assets/Landing Page Balloons/supervisedLearning.svg"
+          alt="supervised icon"
+        />
+        <p>
+          Aprendizagem <br />
+          Supervisionada
+        </p>
+      </div>
     </div>
+    <FooterX></FooterX>
   </div>
 </template>
 
@@ -48,7 +88,8 @@ import FooterX from "../components/FooterX.vue";
 
 export default {
   components: {
-    Navbar,FooterX,
+    Navbar,
+    FooterX,
   },
 };
 </script>
@@ -133,6 +174,7 @@ export default {
   top: 650px;
   left: 300px;
   display: flex;
+  background-color: green;
 }
 .home .keywordsgroup .group1 {
   position: relative;
@@ -199,6 +241,8 @@ export default {
 .home .keywordsgroup .group4 {
   position: relative;
   width: 300px;
+  background-color: red;
+
 }
 .home .keywordsgroup .group4 #supervisedlearningsvg {
   position: relative;
@@ -215,6 +259,5 @@ export default {
   font-size: 20px;
   right: -15px;
   top: 10px;
-  text-align: justify;
 }
 </style>
