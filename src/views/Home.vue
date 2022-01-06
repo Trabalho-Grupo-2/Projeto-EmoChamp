@@ -16,77 +16,39 @@
     </div>
     <img id="redelipse" src="../assets/redelipse.svg" alt="red elipse" />
     <div class="keywordsgroup">
-      <div class="group1">
-        <img
-          class="yellowelipse"
-          src="../assets/keywordssphere.svg"
-          alt="yellow elipse"
-        />
-        <img
-          id="elearningsvg"
-          src="../assets/Landing Page Balloons/eLearning.svg"
-          alt="eLearning icon"
-        />
-        <p>eLearning</p>
-      </div>
-      <div class="group2">
-        <img
-          class="yellowelipse"
-          src="../assets/keywordssphere.svg"
-          alt="yellow elipse"
-        />
-        <img
-          id="childsafesvg"
-          src="../assets/Landing Page Balloons/Child Safe.svg"
-          alt="child safe icon"
-        />
-        <p>
-          Seguro para <br />
-          Crianças
-        </p>
-      </div>
-      <div class="group3">
-        <img
-          class="yellowelipse"
-          src="../assets/keywordssphere.svg"
-          alt="yellow elipse"
-        />
-        <img
-          id="gamificationsvg"
-          src="../assets/Landing Page Balloons/gamification.svg"
-          alt="controller icon"
-        />
-        <p>
-          Elementos de <br />
-          Gamificação
-        </p>
-      </div>
-      <div class="group4">
-        <img
-          class="yellowelipse"
-          src="../assets/keywordssphere.svg"
-          alt="yellow elipse"
-        />
-        <img
-          id="supervisedlearningsvg"
-          src="../assets/Landing Page Balloons/supervisedLearning.svg"
-          alt="supervised icon"
-        />
-        <p>
-          Aprendizagem <br />
-          Supervisionada
-        </p>
-      </div>
+      <img
+        class="yellowelipse"
+        src="../assets/keywordssphere.svg"
+        alt="yellow elipse"
+      />
+      <img
+        class="yellowelipse"
+        src="../assets/keywordssphere.svg"
+        alt="yellow elipse"
+      />
+      <img
+        class="yellowelipse"
+        src="../assets/keywordssphere.svg"
+        alt="yellow elipse"
+      />
+      <img
+        class="yellowelipse"
+        src="../assets/keywordssphere.svg"
+        alt="yellow elipse"
+      />
+    <FooterX></FooterX>
+
     </div>
   </div>
 </template>
 
 <script>
 import Navbar from "../components/Navbar.vue";
+import FooterX from "../components/FooterX.vue";
 
 export default {
   components: {
-    Navbar,
+    Navbar,FooterX,
   },
 };
 </script>
