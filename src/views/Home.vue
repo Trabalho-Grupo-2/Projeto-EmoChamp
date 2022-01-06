@@ -75,7 +75,7 @@ export default {
 }
 .home #pagemarker {
   position: absolute;
-  left: 412px;
+  left: 402px;
   top: 0px;
   z-index: -1;
 }

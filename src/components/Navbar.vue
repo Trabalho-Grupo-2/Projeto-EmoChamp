@@ -43,7 +43,7 @@ export default {};
 }
 .navbar .navlinks {
   position: absolute;
-  left: 395px;
+  left: 385px;
   top: 25px;
   overflow: hidden;
 }
@@ -64,11 +64,11 @@ export default {};
 
 .navbar .btns #btn1 {
   position: absolute;
-  right: 275px;
+  right: 245px;
   background-color: #ffffff;
   border: 3px solid #374785;
   border-radius: 5px;
-  top: 23px;
+  top: 24px;
   padding: 10px 30px;
   color: #24305e;
   text-align: center;
@@ -78,11 +78,11 @@ export default {};
 }
 .navbar .btns #btn2 {
   position: absolute;
-  right: 100px;
+  right: 75px;
   background-color: #374785;
   border: 3px solid #374785;
   border-radius: 5px;
-  top: 23px;
+  top: 24px;
   padding: 10px 30px;
   color: #ffffff;
   text-align: center;
