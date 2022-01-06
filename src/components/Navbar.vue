@@ -5,7 +5,6 @@
         <img class="logobg" src="../assets/logoshape.svg" alt="logo back" />
         <img class="logo" src="../assets/logo1.png" alt="emochamp logo" />
       </div>
-      <img id="pagemarker" src="../assets/activepagemarker.svg" alt="marker" />
       <div class="navlinks">
         <a class="curretpage" href="#home">HOME</a>
         <a href="#news">JOGAR</a>
@@ -47,11 +46,6 @@ export default {};
   left: 395px;
   top: 25px;
   overflow: hidden;
-}
-.navbar #pagemarker {
-  position: absolute;
-  left: 412px;
-  top: 0px;
 }
 .navbar .navlinks a {
   float: left;

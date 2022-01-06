@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <Navbar></Navbar>
+    <img id="pagemarker" src="../assets/activepagemarker.svg" alt="marker" />
     <img id="bluebg" src="../assets/homebackground.svg" alt="marker" />
     <div class="callforaction">
       <h1>Melhora a tua capacidade de reconhecer emoções</h1>
@@ -32,7 +33,7 @@ export default {
   height: 705px;
   right: 0px;
   top: -80px;
-  z-index: -1;
+  z-index: -2;
 }
 .home .callforaction h1 {
   position: absolute;
@@ -71,5 +72,11 @@ export default {
 }
 .home .callforaction #cfaplay:hover {
   transform: scale(1.1);
+}
+.home #pagemarker {
+  position: absolute;
+  left: 412px;
+  top: 0px;
+  z-index: -1;
 }
 </style>
