@@ -5,16 +5,28 @@
         <img class="logobg" src="../assets/logoshape.svg" alt="logo back" />
         <img class="logo" src="../assets/logo1.png" alt="emochamp logo" />
       </div>
-      <div class="navlinks">
+      <ul class="navlinks">
+        <li>
         <a class="curretpage" href="#home">HOME</a>
+        </li>
+        <li>
         <a href="#news">JOGAR</a>
+        </li>
+        <li>
         <a href="#contact">PERFIL</a>
+        </li>
+        <li>
         <a href="#about">ESTATISTICAS</a>
-      </div>
-      <div class="btns">
+        </li>
+        <div class="btns">
+        <li>
         <button id="btn1">ENTRAR</button>
+        </li>
+        <li>
         <button id="btn2">REGISTAR</button>
-      </div>
+        </li>
+        </div>
+        </ul>
     </div>
   </div>
 </template>
@@ -42,10 +54,14 @@ export default {};
   top: 33px;
 }
 .navbar .navlinks {
-  position: absolute;
-  left: 385px;
-  top: 25px;
+  display:flex;
+  justify-content: space-around;
+  margin-top: 25px;
+  margin-right: 125px;
   overflow: hidden;
+}
+.navlinks li{
+  list-style: none;
 }
 .navbar .navlinks a {
   float: left;
@@ -63,7 +79,6 @@ export default {};
 }
 
 .navbar .btns #btn1 {
-  position: absolute;
   right: 245px;
   background-color: #ffffff;
   border: 3px solid #374785;
@@ -77,7 +92,6 @@ export default {};
   text-decoration: none;
 }
 .navbar .btns #btn2 {
-  position: absolute;
   right: 75px;
   background-color: #374785;
   border: 3px solid #374785;
@@ -89,5 +103,13 @@ export default {};
   font-family: Comfortaa_Regular, Playfair_Regular, Arial;
   font-size: 15px;
   text-decoration: none;
+}
+.btns{
+  display:flex;
+  justify-content: space-around;
+}
+#btn2{
+  margin-left: 10px;
+  margin-right: 0;
 }
 </style>
