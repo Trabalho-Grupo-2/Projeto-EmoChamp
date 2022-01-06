@@ -39,7 +39,7 @@ export default {};
   font-family: Playfair_SemiBold;
   src: "../assets/fonts/PlayfairDisplay-SemiBold.ttf";
 }
-@media (min-width: 1281px) {
+@media screen and (min-width: 1281px) {
   .navbar {
     margin: 0;
     width: 100%;
@@ -112,7 +112,7 @@ export default {};
     text-decoration: none;
   }
 }
-@media (min-width: 1025px) {
+@media screen and  (min-width: 1025px) {
   .navbar {
     margin: 0;
     width: 100%;
