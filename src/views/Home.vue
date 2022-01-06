@@ -11,6 +11,7 @@
         efetua<br />
         o registo para mais funcionalidades.
       </p>
+      <button id="cfaplay"><a href="#play">Jogar</a></button>
     </div>
   </div>
 </template>
@@ -51,5 +52,24 @@ export default {
   color: #24305e;
   line-height: 35px;
   font-size: 15px;
+}
+.home .callforaction #cfaplay {
+  position: absolute;
+  top: 422px;
+  left: 995px;
+  background-color: #ffffff;
+  border: 3px solid #374785;
+  border-radius: 5px;
+  padding: 5px 40px;
+}
+.home .callforaction a {
+  color: #24305e;
+  text-align: center;
+  font-family: Comfortaa_Bold, Playfair_Bold, Arial;
+  font-size: 25px;
+  text-decoration: none;
+}
+.home .callforaction #cfaplay:hover {
+  transform: scale(1.1);
 }
 </style>
