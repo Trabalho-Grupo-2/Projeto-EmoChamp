@@ -112,4 +112,77 @@ export default {};
     text-decoration: none;
   }
 }
+@media (min-width: 1025px) {
+  .navbar {
+    margin: 0;
+    width: 100%;
+    display: flex;
+  }
+  .navbar .logozone .logobg {
+    position: absolute;
+    width: 354.01px;
+    height: 132.26px;
+    left: -70px;
+    top: -12px;
+  }
+  .navbar .logozone .logo {
+    position: absolute;
+    width: 160px;
+    height: 35.01px;
+    left: 80px;
+    top: 33px;
+  }
+  .navbar .navlinks {
+    position: absolute;
+    left: 300px;
+    top: 33px;
+    overflow: hidden;
+  }
+  .navbar .navlinks a {
+    float: left;
+    color: #24305e;
+    text-align: center;
+    padding: 10px 40px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
+  }
+  .navbar .navlinks a:hover,
+  .navbar .btns #btn1:hover,
+  .navbar .btns #btn2:hover {
+    transform: scale(1.1);
+  }
+  .navbar .btns #btn1 {
+    position: absolute;
+    right: 210px;
+    background-color: #ffffff;
+    border: 3px solid #374785;
+    border-radius: 5px;
+    top: 26px;
+    padding: 10px 30px;
+  }
+  .navbar .btns #btn1 a {
+    color: #24305e;
+    text-align: center;
+    font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .navbar .btns #btn2 {
+    position: absolute;
+    right: 50px;
+    background-color: #374785;
+    border: 3px solid #374785;
+    border-radius: 5px;
+    top: 26px;
+    padding: 10px 30px;
+  }
+  .navbar .btns #btn2 a {
+    color: #ffffff;
+    text-align: center;
+    font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
+    font-size: 15px;
+    text-decoration: none;
+  }
+}
 </style>
