@@ -78,6 +78,20 @@
         </p>
       </div>
     </div>
+    <div class="about">
+      <h2>Quem nós somos...</h2>
+      <p>
+        Emochamp é um website com jogos orientados para <br />
+        crianças com perturbações no espetro do autismo (PEA) <br />
+        para promover o reconhecimento de emoções através de <br />
+        imagens e reprodução de emoções. Uma demonstração <br />
+        geral de funcionalidades é apresenta no vídeo ao lado <br />
+        direito.
+      </p>
+      <button id="aboutplay">Jogar</button>
+      <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+      </iframe>
+    </div>
     <FooterX></FooterX>
   </div>
 </template>
@@ -152,7 +166,8 @@ export default {
   font-size: 25px;
   text-decoration: none;
 }
-.home .callforaction #cfaplay:hover {
+.home .callforaction #cfaplay:hover,
+.home .about #aboutplay:hover {
   background-color: #374785;
   color: #ffffff;
 }
@@ -174,7 +189,6 @@ export default {
   top: 650px;
   left: 300px;
   display: flex;
-  background-color: green;
 }
 .home .keywordsgroup .group1 {
   position: relative;
@@ -241,7 +255,6 @@ export default {
 .home .keywordsgroup .group4 {
   position: relative;
   width: 300px;
-  background-color: red;
 }
 .home .keywordsgroup .group4 #supervisedlearningsvg {
   position: relative;
@@ -258,5 +271,48 @@ export default {
   font-size: 20px;
   right: -15px;
   top: 10px;
+}
+.home .about {
+  margin-top: 1000px;
+  overflow: hidden;
+}
+.home .about h2 {
+  position: relative;
+  font-size: 30px;
+  left: 200px;
+  color: #24305e;
+  font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
+  line-height: 50px;
+}
+.home .about p {
+  position: relative;
+  left: 200px;
+  top: 50px;
+  text-align: justify;
+  font-family: Comfortaa_Regular, Playfair_Regular, Arial;
+  color: #374785;
+  line-height: 35px;
+  font-size: 15px;
+}
+.home .about #aboutplay {
+  top: -150px;
+  left: 200px;
+  position: relative;
+  background-color: #ffffff;
+  border: 3px solid #374785;
+  border-radius: 5px;
+  padding: 5px 40px;
+  color: #24305e;
+  text-align: center;
+  font-family: Comfortaa_Bold, Playfair_Bold, Arial;
+  font-size: 25px;
+  text-decoration: none;
+}
+.home .about iframe {
+  position: relative;
+  top: -225px;
+  left: 600px;
+  width: 500px;
+  height: 276px;
 }
 </style>
