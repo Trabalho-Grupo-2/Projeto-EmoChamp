@@ -54,7 +54,6 @@ export default {};
   src: "../assets/fonts/PlayfairDisplay-SemiBold.ttf";
 }
 .footer {
-  margin-top: 1000px;
   width: 100%;
   height: 550px;
   background-color: #24305e;
