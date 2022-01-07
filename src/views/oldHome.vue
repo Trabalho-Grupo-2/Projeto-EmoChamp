@@ -1,8 +1,99 @@
 <template>
-  <div>
-    <Navbar />
-    <div class="div"></div>
-    <FooterX />
+  <div class="home">
+    <Navbar></Navbar>
+    <img id="pagemarker" src="../assets/activepagemarker.svg" alt="marker" />
+    <img id="bluebg" src="../assets/homebackground.svg" alt="marker" />
+    <div class="callforaction">
+      <h1>Melhora a tua capacidade de reconhecer emoções</h1>
+      <p>
+        Aprende a distinguir entre diferentes emoções com a ajuda do nosso
+        website.<br />
+        Apresentamos diferentes jogos para reconhecer e representar emoções,
+        efetua<br />
+        o registo para mais funcionalidades.
+      </p>
+      <button @click="$router.push('play')" id="cfaplay">Jogar</button>
+    </div>
+    <img id="redelipse" src="../assets/redelipse.svg" alt="red elipse" />
+    <div class="keywordsgroup">
+      <div class="group1">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="elearningsvg"
+          src="../assets/Landing Page Balloons/eLearning.svg"
+          alt="eLearning icon"
+        />
+        <p>eLearning</p>
+      </div>
+      <div class="group2">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="childsafesvg"
+          src="../assets/Landing Page Balloons/Child Safe.svg"
+          alt="child safe icon"
+        />
+        <p>
+          Seguro para <br />
+          Crianças
+        </p>
+      </div>
+      <div class="group3">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="gamificationsvg"
+          src="../assets/Landing Page Balloons/gamification.svg"
+          alt="controller icon"
+        />
+        <p>
+          Elementos de <br />
+          Gamificação
+        </p>
+      </div>
+      <div class="group4">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="supervisedlearningsvg"
+          src="../assets/Landing Page Balloons/supervisedLearning.svg"
+          alt="supervised icon"
+        />
+        <p>
+          Aprendizagem <br />
+          Supervisionada
+        </p>
+      </div>
+    </div>
+    <div class="about">
+      <h2>Quem nós somos...</h2>
+      <p>
+        Emochamp é um website com jogos orientados para <br />
+        crianças com perturbações no espetro do autismo (PEA) <br />
+        para promover o reconhecimento de emoções através de <br />
+        imagens e reprodução de emoções. Uma demonstração <br />
+        geral de funcionalidades é apresenta no vídeo ao lado <br />
+        direito.
+      </p>
+      <button @click="$router.push('play')" id="aboutplay">Jogar</button>
+      <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+      </iframe>
+    </div>
+    <img id="redelipse2" src="../assets/redelipse2.svg" alt="red elipse" />
+    <FooterX></FooterX>
   </div>
 </template>
 
@@ -17,8 +108,24 @@ export default {
   },
 };
 </script>
+<style scoped>
+@font-face {
+  font-family: Comfortaa_Bold;
+  src: "../assets/fonts/Comfortaa-Bold.ttf";
+}
+@font-face {
+  font-family: Comfortaa_Regular;
+  src: "../assets/fonts/Comfortaa-Regular.ttf";
+}
+@font-face {
+  font-family: Playfair_Regular;
+  src: "../assets/fonts/PlayfairDisplay-Regular.ttf";
+}
+@font-face {
+  font-family: Playfair_SemiBold;
+  src: "../assets/fonts/PlayfairDisplay-SemiBold.ttf";
+}
 
-<<<<<<< HEAD
 .home #bluebg {
   position: absolute;
   width: 1540px;
@@ -31,7 +138,7 @@ export default {
   position: absolute;
   font-size: 30px;
   top: 196px;
-  left: 400px;
+  left: 371px;
   color: #24305e;
   font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
   line-height: 50px;
@@ -39,7 +146,7 @@ export default {
 .home .callforaction p {
   position: absolute;
   top: 274px;
-  left: 560px;
+  left: 635px;
   text-align: justify;
   font-family: Comfortaa_Regular, Playfair_Regular, Arial;
   color: #24305e;
@@ -49,7 +156,7 @@ export default {
 .home .callforaction #cfaplay {
   position: absolute;
   top: 422px;
-  left: 945px;
+  left: 995px;
   background-color: #ffffff;
   border: 3px solid #374785;
   border-radius: 5px;
@@ -67,7 +174,7 @@ export default {
 }
 .home #pagemarker {
   position: absolute;
-  left: 402px;
+  left: 412px;
   top: 0px;
   z-index: -1;
 }
@@ -212,12 +319,7 @@ export default {
 .home #redelipse2 {
   position: relative;
   top: -60px;
-  left: 1230px;
+  left: 1350px;
   margin-bottom: 40px;
-=======
-<style>
-.div {
-  height: 500px;
->>>>>>> f87ff1e86cc430c0c2d68ea11bf76f1b0ab65782
 }
 </style>
