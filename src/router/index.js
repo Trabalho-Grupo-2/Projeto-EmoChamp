@@ -4,6 +4,8 @@ import Home from "../views/Home.vue";
 import Play from "../views/Play.vue";
 import Stats from "../views/Stats.vue";
 import Profile from "../views/Profile.vue";
+import Game1 from "../views/Game1.vue";
+import Game2 from "../views/Game2.vue";
 
 Vue.use(VueRouter);
 
@@ -28,6 +30,17 @@ const routes = [
     name: "Stats",
     component: Stats,
   },
+  {
+    path: "/play/game1",
+    name: "Game1",
+    component: Game1,
+  },
+  {
+    path: "/play/game2",
+    name: "Game2",
+    component: Game2,
+  },
+
 ];
 const router = new VueRouter({
   routes,
