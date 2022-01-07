@@ -1,173 +1,86 @@
 <template>
-  <div style="background-color: rgba(36, 48, 94, 1)">
-    <!-- Footer -->
-    <footer class="text-center text-white">
-      <!-- Grid container -->
-      <div class="container p-4">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-          
-        </section>
-        <!-- Section: Social media -->
-
-        <!-- Section: Form -->
-        <section class="">
-          <form action="">
-            <!--Grid row-->
-            <div class="row d-flex justify-content-center">
-              <!--Grid column-->
-              <div class="col-auto">
-                <p class="pt-2">
-                  <strong>Sign up for our newsletter</strong>
-                </p>
-              </div>
-              <!--Grid column-->
-
-              <!--Grid column-->
-              <div class="col-md-5 col-12">
-                <!-- Email input -->
-                <div class="form-outline form-white mb-4">
-                  <input
-                    type="email"
-                    id="form5Example21"
-                    class="form-control"
-                  />
-                  <label class="form-label" for="form5Example21"
-                    >Email address</label
-                  >
-                </div>
-              </div>
-              <!--Grid column-->
-
-              <!--Grid column-->
-              <div class="col-auto">
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-outline-light mb-4">
-                  Subscribe
-                </button>
-              </div>
-              <!--Grid column-->
-            </div>
-            <!--Grid row-->
-          </form>
-        </section>
-        <!-- Section: Form -->
-
-        <!-- Section: Text -->
-        <section class="mb-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-            distinctio earum repellat quaerat voluptatibus placeat nam, commodi
-            optio pariatur est quia magnam eum harum corrupti dicta, aliquam
-            sequi voluptate quas.
-          </p>
-        </section>
-        <!-- Section: Text -->
-
-        <!-- Section: Links -->
-        <section class="">
-          <!--Grid row-->
-          <div class="row">
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
-
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
-
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
-
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
-
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
-          </div>
-          <!--Grid row-->
-        </section>
-        <!-- Section: Links -->
+  <div>
+    <div class="w-100 p-3 text-center" style="background-color: #24305e">
+      <div class="b-row" style="height: 30px"></div>
+      <div class="b-row">
+        <img
+          src="../assets/logo1.png"
+          class="img-fluid"
+          alt="Logo"
+          style="width: 200px; height: 40px"
+        />
       </div>
-      <!-- Grid container -->
-
-      <!-- Copyright -->
-      <div
-        class="text-center p-3"
-        style="background-color: rgba(36, 48, 94, 1)"
-      >
-        Copyright © 2021 EmoChamp
+      <div class="b-row" style="height: 50px"></div>
+      <div class="b-row">
+        <div class="col"></div>
+        <p class="fs6 text-white">
+          <img
+            src="../assets/Social Icons/location.svg"
+            alt="location"
+            style="
+              width: 20px;
+              height: 20px;
+              filter: invert(98%) sepia(59%) saturate(3404%) hue-rotate(302deg)
+                brightness(128%) contrast(95%);
+            "
+          />
+          Rua D. Sancho I n.º 981 4480-876 Vila do Conde
+        </p>
       </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
+      <div class="b-row">
+        <p class="fs6 text-white">
+          <img
+            src="../assets/Social Icons/contact.svg"
+            alt="location"
+            style="
+              width: 20px;
+              height: 20px;
+              filter: invert(98%) sepia(59%) saturate(3404%) hue-rotate(302deg)
+                brightness(128%) contrast(95%);
+            "
+          />
+          +351 252 291 700
+        </p>
+      </div>
+      <div class="b-row">
+        <p class="fs6 text-white">
+          <img
+            src="../assets/Social Icons/mail.svg"
+            alt="location"
+            style="
+              width: 20px;
+              height: 20px;
+              filter: invert(98%) sepia(59%) saturate(3404%) hue-rotate(302deg)
+                brightness(128%) contrast(95%);
+            "
+          />
+          emochamp@gmail.com
+        </p>
+      </div>
+      <div class="b-row" style="height: 50px"></div>
+      <div class="b-row">
+        <a href="https://www.instagram.com/">
+          <img class="socialImg" src="../assets/social/instagram.svg" />
+        </a>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <a href="https://www.facebook.com/">
+          <img class="socialImg" src="../assets/social/facebook.svg" />
+        </a>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <a href="https://github.com/Trabalho-Grupo-2/Projeto-EmoChamp">
+          <img class="socialImg" src="../assets/social/github.svg" />
+        </a>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <a href="https://www.youtube.com/">
+          <img class="socialImg" src="../assets/social/youtube.svg" />
+        </a>
+      </div>
+      <div class="b-row" style="height: 50px"></div>
+      <div class="b-row">
+        <p class="fs6 text-white">Copyright © 2021 EmoChamp</p>
+      </div>
+      <div class="b-row" style="height: 20px"></div>
+    </div>
   </div>
 </template>
 
