@@ -6,10 +6,12 @@
         <img class="logo" src="../assets/logo1.png" alt="emochamp logo" />
       </div>
       <div class="navlinks">
-        <a class="curretpage" href="#home">HOME</a>
-        <a href="#news">JOGAR</a>
-        <a href="#contact">PERFIL</a>
-        <a href="#about">ESTATISTICAS</a>
+        <router-link class="link" to="/">HOME</router-link>
+        <router-link class="link" to="/play">JOGAR</router-link>
+        <router-link class="link" to="/profile/:user_id">PERFIL</router-link>
+        <router-link class="link" to="/stats/:user_id"
+          >ESTATÍSTICAS</router-link
+        >
       </div>
       <div class="btns">
         <button id="btn1">ENTRAR</button>
@@ -47,7 +49,7 @@ export default {};
   top: 25px;
   overflow: hidden;
 }
-.navbar .navlinks a {
+.navbar .navlinks .link {
   float: left;
   color: #24305e;
   text-align: center;
@@ -56,7 +58,7 @@ export default {};
   font-size: 15px;
   font-family: Comfortaa_Regular, Playfair_Regular, Arial;
 }
-.navbar .navlinks a:hover,
+.navbar .navlinks .link:hover,
 .navbar .btns #btn1:hover,
 .navbar .btns #btn2:hover {
   transform: scale(1.1);

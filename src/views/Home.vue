@@ -12,33 +12,87 @@
         efetua<br />
         o registo para mais funcionalidades.
       </p>
-      <button id="cfaplay">Jogar</button>
+      <button @click="$router.push('play')" id="cfaplay">Jogar</button>
     </div>
     <img id="redelipse" src="../assets/redelipse.svg" alt="red elipse" />
     <div class="keywordsgroup">
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-      <img
-        class="yellowelipse"
-        src="../assets/keywordssphere.svg"
-        alt="yellow elipse"
-      />
-    <FooterX></FooterX>
-
+      <div class="group1">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="elearningsvg"
+          src="../assets/Landing Page Balloons/eLearning.svg"
+          alt="eLearning icon"
+        />
+        <p>eLearning</p>
+      </div>
+      <div class="group2">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="childsafesvg"
+          src="../assets/Landing Page Balloons/Child Safe.svg"
+          alt="child safe icon"
+        />
+        <p>
+          Seguro para <br />
+          Crianças
+        </p>
+      </div>
+      <div class="group3">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="gamificationsvg"
+          src="../assets/Landing Page Balloons/gamification.svg"
+          alt="controller icon"
+        />
+        <p>
+          Elementos de <br />
+          Gamificação
+        </p>
+      </div>
+      <div class="group4">
+        <img
+          class="yellowelipse"
+          src="../assets/keywordssphere.svg"
+          alt="yellow elipse"
+        />
+        <img
+          id="supervisedlearningsvg"
+          src="../assets/Landing Page Balloons/supervisedLearning.svg"
+          alt="supervised icon"
+        />
+        <p>
+          Aprendizagem <br />
+          Supervisionada
+        </p>
+      </div>
     </div>
+    <div class="about">
+      <h2>Quem nós somos...</h2>
+      <p>
+        Emochamp é um website com jogos orientados para <br />
+        crianças com perturbações no espetro do autismo (PEA) <br />
+        para promover o reconhecimento de emoções através de <br />
+        imagens e reprodução de emoções. Uma demonstração <br />
+        geral de funcionalidades é apresenta no vídeo ao lado <br />
+        direito.
+      </p>
+      <button @click="$router.push('play')" id="aboutplay">Jogar</button>
+      <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+      </iframe>
+    </div>
+    <FooterX></FooterX>
   </div>
 </template>
 
@@ -48,7 +102,8 @@ import FooterX from "../components/FooterX.vue";
 
 export default {
   components: {
-    Navbar,FooterX,
+    Navbar,
+    FooterX,
   },
 };
 </script>
@@ -111,7 +166,8 @@ export default {
   font-size: 25px;
   text-decoration: none;
 }
-.home .callforaction #cfaplay:hover {
+.home .callforaction #cfaplay:hover,
+.home .about #aboutplay:hover {
   background-color: #374785;
   color: #ffffff;
 }
@@ -215,6 +271,48 @@ export default {
   font-size: 20px;
   right: -15px;
   top: 10px;
+}
+.home .about {
+  margin-top: 1000px;
+  overflow: hidden;
+}
+.home .about h2 {
+  position: relative;
+  font-size: 30px;
+  left: 200px;
+  color: #24305e;
+  font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
+  line-height: 50px;
+}
+.home .about p {
+  position: relative;
+  left: 200px;
+  top: 50px;
   text-align: justify;
+  font-family: Comfortaa_Regular, Playfair_Regular, Arial;
+  color: #374785;
+  line-height: 35px;
+  font-size: 15px;
+}
+.home .about #aboutplay {
+  top: -150px;
+  left: 200px;
+  position: relative;
+  background-color: #ffffff;
+  border: 3px solid #374785;
+  border-radius: 5px;
+  padding: 5px 40px;
+  color: #24305e;
+  text-align: center;
+  font-family: Comfortaa_Bold, Playfair_Bold, Arial;
+  font-size: 25px;
+  text-decoration: none;
+}
+.home .about iframe {
+  position: relative;
+  top: -225px;
+  left: 600px;
+  width: 500px;
+  height: 276px;
 }
 </style>
