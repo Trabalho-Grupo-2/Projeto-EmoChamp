@@ -16,7 +16,7 @@
       <div class="btns">
         <button id="btn1">ENTRAR</button>
         <button id="btn2">REGISTAR</button>
-        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -49,7 +49,7 @@ export default {};
   top: 25px;
   overflow: hidden;
 }
-.navbar .navlinks a {
+.navbar .navlinks .link {
   float: left;
   color: #24305e;
   text-align: center;
@@ -65,11 +65,12 @@ export default {};
 }
 
 .navbar .btns #btn1 {
-  right: 245px;
+  position: absolute;
+  right: 275px;
   background-color: #ffffff;
   border: 3px solid #374785;
   border-radius: 5px;
-  top: 24px;
+  top: 23px;
   padding: 10px 30px;
   color: #24305e;
   text-align: center;
@@ -78,11 +79,12 @@ export default {};
   text-decoration: none;
 }
 .navbar .btns #btn2 {
-  right: 75px;
+  position: absolute;
+  right: 100px;
   background-color: #374785;
   border: 3px solid #374785;
   border-radius: 5px;
-  top: 24px;
+  top: 23px;
   padding: 10px 30px;
   color: #ffffff;
   text-align: center;
@@ -91,3 +93,4 @@ export default {};
   text-decoration: none;
 }
 </style>
+
