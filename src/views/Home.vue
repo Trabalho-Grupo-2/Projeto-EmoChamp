@@ -16,10 +16,4 @@ export default {
     FooterX,
   },
 };
-<<<<<<< HEAD
 </script>
-<style>
-</style>
-=======
-</script>
->>>>>>> da09784859dc60a782518a0651ab3af9609c6b10
