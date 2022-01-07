@@ -5,28 +5,18 @@
         <img class="logobg" src="../assets/logoshape.svg" alt="logo back" />
         <img class="logo" src="../assets/logo1.png" alt="emochamp logo" />
       </div>
-      <ul class="navlinks">
-        <li>
-        <a class="curretpage" href="#home">HOME</a>
-        </li>
-        <li>
-        <a href="#news">JOGAR</a>
-        </li>
-        <li>
-        <a href="#contact">PERFIL</a>
-        </li>
-        <li>
-        <a href="#about">ESTATISTICAS</a>
-        </li>
-        <div class="btns">
-        <li>
+      <div class="navlinks">
+        <router-link class="link" to="/">HOME</router-link>
+        <router-link class="link" to="/play">JOGAR</router-link>
+        <router-link class="link" to="/profile/:user_id">PERFIL</router-link>
+        <router-link class="link" to="/stats/:user_id"
+          >ESTATÍSTICAS</router-link
+        >
+      </div>
+      <div class="btns">
         <button id="btn1">ENTRAR</button>
-        </li>
-        <li>
         <button id="btn2">REGISTAR</button>
-        </li>
         </div>
-        </ul>
     </div>
   </div>
 </template>
@@ -54,14 +44,10 @@ export default {};
   top: 33px;
 }
 .navbar .navlinks {
-  display:flex;
-  justify-content: space-around;
-  margin-top: 25px;
-  margin-right: 125px;
+  position: absolute;
+  left: 395px;
+  top: 25px;
   overflow: hidden;
-}
-.navlinks li{
-  list-style: none;
 }
 .navbar .navlinks a {
   float: left;
@@ -72,7 +58,7 @@ export default {};
   font-size: 15px;
   font-family: Comfortaa_Regular, Playfair_Regular, Arial;
 }
-.navbar .navlinks a:hover,
+.navbar .navlinks .link:hover,
 .navbar .btns #btn1:hover,
 .navbar .btns #btn2:hover {
   transform: scale(1.1);
@@ -103,13 +89,5 @@ export default {};
   font-family: Comfortaa_Regular, Playfair_Regular, Arial;
   font-size: 15px;
   text-decoration: none;
-}
-.btns{
-  display:flex;
-  justify-content: space-around;
-}
-#btn2{
-  margin-left: 10px;
-  margin-right: 0;
 }
 </style>
