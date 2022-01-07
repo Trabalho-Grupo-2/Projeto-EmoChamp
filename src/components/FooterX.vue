@@ -16,7 +16,7 @@
         </div>
         <div class="email">
           <img class="infoImg" src="../assets/Social Icons/mail.svg" />
-          <p>emochamp@gmail.com</p>
+          <p>emochampion@gmail.com</p>
         </div>
       </div>
 
