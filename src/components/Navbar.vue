@@ -1,25 +1,5 @@
 <template>
  <div>
-  <!-- <b-navbar toggleable="lg" type="light" variant="light">
-    <b-navbar-brand href="#">
-        <img class="logo" src="../assets/logo1.png" style="width: 160px; height: 35.01px;" alt="emochamp logo" /></b-navbar-brand>
-
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-    <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav>
-        <b-nav-item href="#">HOME</b-nav-item>
-        <b-nav-item href="#">JOGAR</b-nav-item>
-        <b-nav-item href="#">PERFIL</b-nav-item>
-        <b-nav-item href="#">ESTATÍSTICAS</b-nav-item>
-      </b-navbar-nav>
-
-      <b-navbar-nav class="ml-auto">
-          <b-button size="sm" class="my-2 my-sm-0">ENTRAR</b-button>
-          <b-button size="sm" class="my-2 my-sm-0">REGISTAR</b-button>
-</b-navbar-nav>
-    </b-collapse>
-  </b-navbar> -->
   <!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-link navbar-light ">
   <!-- Container wrapper -->
