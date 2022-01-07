@@ -92,6 +92,7 @@
       <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
       </iframe>
     </div>
+    <img id="redelipse2" src="../assets/redelipse2.svg" alt="red elipse" />
     <FooterX></FooterX>
   </div>
 </template>
@@ -314,5 +315,11 @@ export default {
   left: 600px;
   width: 500px;
   height: 276px;
+}
+.home #redelipse2 {
+  position: relative;
+  top: -60px;
+  left: 1350px;
+  margin-bottom: 40px;
 }
 </style>
