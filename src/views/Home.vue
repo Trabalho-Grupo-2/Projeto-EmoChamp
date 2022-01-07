@@ -138,7 +138,7 @@ export default {
   position: absolute;
   font-size: 30px;
   top: 196px;
-  left: 400px;
+  left: 371px;
   color: #24305e;
   font-family: Comfortaa_Bold, Playfair_SemiBold, Arial;
   line-height: 50px;
@@ -146,7 +146,7 @@ export default {
 .home .callforaction p {
   position: absolute;
   top: 274px;
-  left: 560px;
+  left: 635px;
   text-align: justify;
   font-family: Comfortaa_Regular, Playfair_Regular, Arial;
   color: #24305e;
@@ -156,7 +156,7 @@ export default {
 .home .callforaction #cfaplay {
   position: absolute;
   top: 422px;
-  left: 945px;
+  left: 995px;
   background-color: #ffffff;
   border: 3px solid #374785;
   border-radius: 5px;
@@ -174,7 +174,7 @@ export default {
 }
 .home #pagemarker {
   position: absolute;
-  left: 402px;
+  left: 412px;
   top: 0px;
   z-index: -1;
 }
