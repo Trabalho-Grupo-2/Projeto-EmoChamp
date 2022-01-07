@@ -21,7 +21,6 @@
             "
             alt="emochamp logo"
         /></a>
-
         <!-- Collapsible wrapper -->
         <div
           class="navbar-collapse"
@@ -31,36 +30,24 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <!-- Link -->
             <li class="nav-item">
-              <a
-                class="nav-link"
-                style="margin-left: 30px; color: #24305e"
-                href="#"
-                >HOME</a
-              >
+              <router-link class="link" to="/"
+                style="margin-left: 80px; text-decoration: none ; color: #24305e"
+                >HOME</router-link>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                style="margin-left: 30px; color: #24305e"
-                href="#"
-                >JOGAR</a
-              >
+              <router-link class="link" to="/play"
+                style="margin-left: 100px;text-decoration: none; color: #24305e">JOGAR
+                </router-link>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                style="margin-left: 30px; color: #24305e"
-                href="#"
-                >PERFIL</a
-              >
+            <router-link class="link" to="/profile/:user_id"
+                style="margin-left: 100px; text-decoration: none; color: #24305e"
+                >PERFIL</router-link>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                style="margin-left: 30px; color: #24305e"
-                href="#"
-                >ESTATÍSTICAS</a
-              >
+              <router-link class="link" to="/stats/:user_id"
+                style="margin-left: 100px; text-decoration: none; color: #24305e"
+                >ESTATÍSTICAS</router-link>
             </li>
           </ul>
         </div>
@@ -106,7 +93,7 @@ export default {};
   background-color: #374785 !important;
   color: white !important;
 }
-.nav-link:hover {
+li:hover {
   transform: scale(1.1) !important;
 }
 </style>
