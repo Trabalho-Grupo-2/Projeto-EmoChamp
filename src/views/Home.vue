@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <Navbar/>
     <div class="div"></div>
     <FooterX />
   </div>
