@@ -319,7 +319,7 @@ export default {
 .home #redelipse2 {
   position: relative;
   top: -60px;
-  left: 1350px;
+  left: 1230px;
   margin-bottom: 40px;
 }
 </style>
