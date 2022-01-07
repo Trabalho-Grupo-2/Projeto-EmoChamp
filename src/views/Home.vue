@@ -18,8 +18,4 @@ export default {
 };
 </script>
 
-<style>
-.div {
-  height: 500px;
-}
-</style>
+<style></style>
