@@ -12,7 +12,7 @@
         efetua<br />
         o registo para mais funcionalidades.
       </p>
-      <button id="cfaplay">Jogar</button>
+      <button @click="$router.push('play')" id="cfaplay">Jogar</button>
     </div>
     <img id="redelipse" src="../assets/redelipse.svg" alt="red elipse" />
     <div class="keywordsgroup">
@@ -88,7 +88,7 @@
         geral de funcionalidades é apresenta no vídeo ao lado <br />
         direito.
       </p>
-      <button id="aboutplay">Jogar</button>
+      <button @click="$router.push('play')" id="aboutplay">Jogar</button>
       <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
       </iframe>
     </div>
