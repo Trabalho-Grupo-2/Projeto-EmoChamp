@@ -79,6 +79,7 @@
 
       <button
         type="button"
+        @click="$router.push('Login')"
         class="btn btn-outline-primary"
         id="btnEntrar"
         style="color: #374785; border-color: #374785; margin-top: -23px"
@@ -90,6 +91,7 @@
         type="button"
         class="btn btn-primary"
         id="btnRegistar"
+        @click="$router.push('Register')"
         style="
           background-color: #374785;
           border-color: #374785;
