@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar/>
+    <Navbar />
     <div class="div"></div>
     <FooterX />
   </div>
@@ -17,3 +17,5 @@ export default {
   },
 };
 </script>
+
+<style></style>
