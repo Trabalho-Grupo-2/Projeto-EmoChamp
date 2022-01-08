@@ -82,7 +82,8 @@
         @click="$router.push('Login')"
         class="btn btn-outline-primary"
         id="btnEntrar"
-        style="color: #374785; border-color: #374785; margin-top: -23px"
+        style="color: #374785;
+        background-color: #ffffff; border-color: #374785; margin-top: -23px"
       >
         ENTRAR
       </button>
