@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
   <div>
     <Navbar />
@@ -23,3 +24,5 @@ export default {
   height: 500px;
 }
 </style>
+=======
+>>>>>>> 217c68e1bff9f1a879800f9c7fb6c51b307909a4

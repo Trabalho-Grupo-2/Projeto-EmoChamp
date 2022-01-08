@@ -98,8 +98,8 @@
 </template>
 
 <script>
-import Navbar from "../components/oldNavbar.vue";
-import FooterX from "../components/oldFooter.vue";
+import Navbar from "../components/Navbar.vue";
+import FooterX from "../components/FooterX.vue";
 
 export default {
   components: {
