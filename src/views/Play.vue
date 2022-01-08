@@ -6,7 +6,7 @@
       alt="bg baloon"
       style="margin-top: 60px"
     />
-    <div class="w-100 p-3 text-center" style="margin-bottom: -150px;">
+    <div class="w-100 p-3 text-center" style="margin-bottom: -150px">
       <div class="b-row">
         <h1
           class="display-4"
@@ -18,13 +18,21 @@
       <div class="b-row" style="height: 100px"></div>
       <div
         class="container"
-        style="width: 75%; display: flex; justify-content: space-around"
+        style="width: 75%; display: flex; justify-content: space-around; margin-bottom: 500px;"
       >
-        <div class="b-col">
+        <div class="b-col" id="container2">
           <img
             src="../assets/selectgameborder.svg"
             alt="Gameselectborder"
-            style="z-index: -1; position: absolute; left: 255px; filter: invert(0%) sepia(2%) saturate(17%) hue-rotate(231deg) brightness(103%) contrast(101%);"
+            id="gameborder1"
+            style="
+              z-index: -1;
+              position: absolute;
+              left: 255px;
+              filter: invert(46%) sepia(12%) saturate(15%) hue-rotate(14deg)
+                brightness(101%) contrast(81%);
+              display: none;
+            "
           />
           <br />
           <p style="color: #374785; font-size: 20px">Jogo 1</p>
@@ -40,6 +48,7 @@
           </p>
           <b-button
             type="button"
+            id="button1"
             @click="$router.push('Game1')"
             variant="outline-primary"
             size="lg"
@@ -48,11 +57,19 @@
             Jogar
           </b-button>
         </div>
-        <div class="b-col">
+        <div class="b-col" id="container3">
           <img
             src="../assets/selectgameborder.svg"
             alt="Gameselectborder"
-            style="z-index: -1; position: absolute; left: 800px; filter: invert(0%) sepia(2%) saturate(17%) hue-rotate(231deg) brightness(103%) contrast(101%)"
+            id="gameborder2"
+            style="
+              z-index: -1;
+              position: absolute;
+              left: 800px;
+              filter: invert(46%) sepia(12%) saturate(15%) hue-rotate(14deg)
+                brightness(101%) contrast(81%);
+              display: none;
+            "
           />
           <br />
           <p style="color: #374785; font-size: 20px">Jogo 2</p>
@@ -71,6 +88,7 @@
             @click="$router.push('Game2')"
             variant="outline-primary"
             size="lg"
+            id="button2"
             class="buttonPlay"
           >
             Jogar
@@ -85,11 +103,42 @@
 <script>
 import Navbar from "../components/Navbar.vue";
 import FooterX from "../components/FooterX.vue";
+import $ from "jquery";
 
 export default {
   components: {
     Navbar,
     FooterX,
+  },
+  mounted() {
+    $(function () {
+      $("#container2").hover(function () {
+        $("#gameborder1").css("display", "inline");
+      });     
+    });
+    $(function () {
+      $("#container3").hover(function () {
+        $("#gameborder2").css("display", "inline");
+      });
+    });
+    $(function () {
+      $("#container2").click(function () {
+        $("#button1").css("display", "inline");
+        $("#gameborder1").css("filter", "none");
+        $("#gameborder2").css("display", "none");
+        $("#button2").css("display", "none");
+        $(".container").css("margin-bottom", "-75px");
+      });
+    });
+    $(function () {
+      $("#container3").click(function () {
+        $("#button2").css("display", "inline");
+        $("#gameborder2").css("filter", "none");
+        $("#gameborder1").css("display", "none");
+        $("#button1").css("display", "none");
+        $(".container").css("margin-bottom", "-75px");
+      });
+    });
   },
 };
 </script>
@@ -111,5 +160,8 @@ export default {
   background-color: #374785 !important;
   color: white !important;
   border: 3px solid #374785 !important;
+}
+#button1, #button2 {
+  display: none;
 }
 </style>
