@@ -30,24 +30,48 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <!-- Link -->
             <li class="nav-item">
-              <router-link class="link" to="/"
-                style="margin-left: 80px; text-decoration: none ; color: #24305e"
-                >HOME</router-link>
+              <router-link
+                class="link"
+                to="/"
+                style="margin-left: 80px; text-decoration: none; color: #24305e"
+                >HOME</router-link
+              >
             </li>
             <li class="nav-item">
-              <router-link class="link" to="/play"
-                style="margin-left: 100px;text-decoration: none; color: #24305e">JOGAR
-                </router-link>
+              <router-link
+                class="link"
+                to="/play"
+                style="
+                  margin-left: 100px;
+                  text-decoration: none;
+                  color: #24305e;
+                "
+                >JOGAR
+              </router-link>
             </li>
             <li class="nav-item">
-            <router-link class="link" to="/profile/:user_id"
-                style="margin-left: 100px; text-decoration: none; color: #24305e"
-                >PERFIL</router-link>
+              <router-link
+                class="link"
+                to="/profile/:user_id"
+                style="
+                  margin-left: 100px;
+                  text-decoration: none;
+                  color: #24305e;
+                "
+                >PERFIL</router-link
+              >
             </li>
             <li class="nav-item">
-              <router-link class="link" to="/stats/:user_id"
-                style="margin-left: 100px; text-decoration: none; color: #24305e"
-                >ESTATÍSTICAS</router-link>
+              <router-link
+                class="link"
+                to="/stats/:user_id"
+                style="
+                  margin-left: 100px;
+                  text-decoration: none;
+                  color: #24305e;
+                "
+                >ESTATÍSTICAS</router-link
+              >
             </li>
           </ul>
         </div>
