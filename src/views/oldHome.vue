@@ -206,7 +206,6 @@ export default {
 .home .keywordsgroup .group1 p {
   position: relative;
   color: #374785;
-  font-family: Comfortaa_Regular, Playfair_Regular, Arial;
   font-size: 20px;
   right: -32px;
   top: 10px;
@@ -226,7 +225,6 @@ export default {
 .home .keywordsgroup .group2 p {
   position: relative;
   color: #374785;
-  font-family: Comfortaa_Regular, Playfair_Regular, Arial;
   font-size: 20px;
   right: -25px;
   top: 10px;
@@ -247,7 +245,6 @@ export default {
 .home .keywordsgroup .group3 p {
   position: relative;
   color: #374785;
-  font-family: Comfortaa_Regular, Playfair_Regular, Arial;
   font-size: 20px;
   right: -15px;
   top: 10px;
@@ -268,7 +265,6 @@ export default {
 .home .keywordsgroup .group4 p {
   position: relative;
   color: #374785;
-  font-family: Comfortaa_Regular, Playfair_Regular, Arial;
   font-size: 20px;
   right: -15px;
   top: 10px;
