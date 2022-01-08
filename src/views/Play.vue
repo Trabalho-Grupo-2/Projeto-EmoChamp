@@ -1,10 +1,17 @@
 <template>
   <div>
     <Navbar />
+    <img
+      id="logobg"
+      src="../assets/redelipse.svg"
+      alt="logo back"
+      style="margin-top: 60px"
+    />
     <div class="w-100 p-3 text-center">
-      <div class="b-row" style="height: 10px"></div>
       <div class="b-row">
-        <h1 class="display-1">Display 1</h1>
+        <h1 class="display-4" style="color: #374785; font-size: 30px; margin-top: -300px">
+          Escolhe o o jogo que pretendes jogar!
+        </h1>
       </div>
     </div>
     <FooterX />
