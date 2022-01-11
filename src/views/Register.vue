@@ -60,7 +60,10 @@
       <div class="b-row" style="height: 200px"></div>
       <div class="b-row" style="height: 800px">
         <form>
-          
+          <label for="name">Nome:</label>
+          <label for="email">Email:</label>
+          <label for="password">Password:</label>
+          <label for="confirmarpassword">Confirmar Password:</label>
         
         </form>
       </div>
