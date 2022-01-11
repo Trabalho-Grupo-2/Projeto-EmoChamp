@@ -21,6 +21,7 @@ export default new Vuex.Store({
     SET_SELECTED_USER: (state, payload) => { state.selectedUser = payload},
     SET_USER: (state, payload) => {
       state.users.push(payload);
+      localStorage.setItem("users", JSON.stringify(state.users));
     }
   },
 });
