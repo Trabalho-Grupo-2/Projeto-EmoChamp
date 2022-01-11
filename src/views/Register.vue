@@ -84,10 +84,10 @@ export default {
     FooterX,
   },
   computed: {
-    ...mapGetters(["getselectedUser"]),
+    ...mapGetters(["getselectedUser,getformName,getformPassword,getformEmail"]),
   },
   methods: {
-    ...mapMutations(["SETSELECTEDUSER"]),
+    ...mapMutations(["SETSELECTEDUSER,SETUSERNAME,SETPASSWORD,SETEMAIL"]),
   },
 };
 </script>

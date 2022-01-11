@@ -10,18 +10,21 @@ export default new Vuex.Store({
     users: localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : [],
     form: {
       name: "",
-      aboutMe: "",
       password: "",
       email: "",
-      avatar: ""
     }
   },
   getters: {
     getselectedUser: state => state.selectedUser,
-    getloggedStatus: state => state.isLogged
+    getformName: state => state.form.name,
+    getformPassword: state => state.form.password,
+    getformEmail: state => state.form.email,
 
   },
   mutations: {
-    SETSELECTEDUSER: (state, payload) => { (state.selectedUser = payload); console.log(state.selectedUser)},
+    SETSELECTEDUSER: (state, payload) => { state.selectedUser = payload; console.log(state.selectedUser)},
+    SETUSERNAME: (state,payload) => state.form.name = payload,
+    SETPASSWORD: (state,payload) => state.form.password = payload,
+    SETEMAIL: (state,payload) => state.form.email = payload,
   },
 });
