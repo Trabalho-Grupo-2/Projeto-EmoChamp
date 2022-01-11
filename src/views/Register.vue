@@ -114,6 +114,10 @@ export default {
   color: #374785;
   text-align: center;
 }
+.card:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
 .cardImage {
   height: 283.66px;
   margin-bottom: 15px;
