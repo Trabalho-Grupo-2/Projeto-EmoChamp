@@ -32,7 +32,7 @@
                 <b-row>
                     <b-col cols="9"></b-col>
                     <b-col cols="3">
-                        <b-button type="button" @click="$router.push('Play')" variant="outline-primary" size="lg"
+                        <b-button type="button" @click="$router.push({name: 'Play'})" variant="outline-primary" size="lg"
                             class="buttonPlay">
                             Jogar
                         </b-button>
