@@ -60,10 +60,11 @@
       <div class="b-row" style="height: 200px"></div>
       <div class="b-row" style="height: 800px">
         <form>
-          <label for="name">Nome:</label>
-          <label for="email">Email:</label>
-          <label for="password">Password:</label>
-          <label for="confirmarpassword">Confirmar Password:</label>
+          <label for="name">Nome: <input type="text"></label><br>
+          <label for="email">Email:<input type="text"></label><br>
+          <label for="password">Password:<input type="password"></label><br>
+          <label for="confirmarpassword">Confirmar Password:<input type="password"></label>
+          <input type="submit" value="REGISTAR">
         
         </form>
       </div>
