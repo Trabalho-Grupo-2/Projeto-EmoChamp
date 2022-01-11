@@ -20,7 +20,7 @@
       </div>
 
       <section class="container">
-        <div class="card" @click="SETSELECTEDUSER('psychologist')">
+        <div class="card" @click="SET_SELECTED_USER('psychologist')">
           <div class="cardImage">
             <img class="card-3" src="../assets/Users/Humaaans Standing.svg" />
           </div>
@@ -31,7 +31,7 @@
             planeamento de consultas.
           </p>
         </div>
-        <div class="card" @click="SETSELECTEDUSER('alone')">
+        <div class="card" @click="SET_SELECTED_USER('alone')">
           <div class="cardImage">
             <img class="card-1" src="../assets/Users/human-verde.svg" />
           </div>
@@ -41,7 +41,7 @@
             estejas com dificuldades procura a ajuda de alguém que conheças.
           </p>
         </div>
-        <div class="card" @click="SETSELECTEDUSER('tutor')">
+        <div class="card" @click="SET_SELECTED_USER('tutor')">
           <div class="cardImage">
             <img class="card-2" src="../assets/Users/human-red.svg" />
           </div>
@@ -59,12 +59,20 @@
       <div class="b-row" style="height: 100px"></div>
       <div class="b-row" style="height: 200px"></div>
       <div class="b-row" style="height: 800px">
-        <form>
-          <label for="name">Nome: <input type="text"></label><br>
-          <label for="email">Email:<input type="text"></label><br>
-          <label for="password">Password:<input type="password"></label><br>
-          <label for="confirmarpassword">Confirmar Password:<input type="password"></label>
-          <input type="submit" value="REGISTAR">
+        <form @submit.prevent="pushForm()">
+          <label for="name"
+            >Nome: <input type="text" v-model="form.name" /></label
+          ><br />
+          <label for="email"
+            >Email:<input type="text" v-model="form.email" /></label
+          ><br />
+          <label for="password"
+            >Password:<input type="password" v-model="form.password1" /></label
+          ><br />
+          <label for="confirmarpassword"
+            >Confirmar Password:<input type="password" v-model="form.password2"
+          /></label>
+          <input type="submit" value="REGISTAR" />
         </form>
       </div>
     </div>
@@ -83,11 +91,33 @@ export default {
     Navbar,
     FooterX,
   },
+  data() {
+    return {
+      form: {
+        name: "",
+        email: "",
+        password1: "",
+        password2: "",
+      },
+    };
+  },
   computed: {
-    ...mapGetters(["getselectedUser,getformName,getformPassword,getformEmail"]),
+    ...mapGetters(["getselectedUser"]),
   },
   methods: {
-    ...mapMutations(["SETSELECTEDUSER,SETUSERNAME,SETPASSWORD,SETEMAIL"]),
+    ...mapMutations(["SET_SELECTED_USER", "SET_USER"]),
+    pushForm() {
+      if (this.form.password1 == this.form.password2) {
+        const user = {
+          name: this.form.name,
+          email: this.form.email,
+          password: this.form.password1,
+          type: this.getselectedUser
+        }
+        this.SET_USER(user);
+        console.log(this.$store.state.users)
+      }
+    },
   },
 };
 </script>
