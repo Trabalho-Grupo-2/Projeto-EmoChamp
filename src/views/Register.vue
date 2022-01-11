@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <div v-if="selectedUser === null">
+    <div v-if="getselectedUser === null">
       <img
         id="logobg"
         src="../assets/redelipse.svg"
@@ -65,7 +65,6 @@
           <label for="password">Password:<input type="password"></label><br>
           <label for="confirmarpassword">Confirmar Password:<input type="password"></label>
           <input type="submit" value="REGISTAR">
-        
         </form>
       </div>
     </div>
@@ -78,7 +77,6 @@ import Navbar from "../components/Navbar.vue";
 import FooterX from "../components/FooterX.vue";
 import { mapGetters } from "vuex";
 import { mapMutations } from "vuex";
-import { mapState } from "vuex";
 
 export default {
   components: {
@@ -87,7 +85,6 @@ export default {
   },
   computed: {
     ...mapGetters(["getselectedUser"]),
-    ...mapState(["selectedUser"]),
   },
   methods: {
     ...mapMutations(["SETSELECTEDUSER"]),

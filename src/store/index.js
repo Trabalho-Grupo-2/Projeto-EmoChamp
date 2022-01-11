@@ -17,7 +17,8 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    getselectedUser: state => state.selectedUser
+    getselectedUser: state => state.selectedUser,
+    getloggedStatus: state => state.isLogged
 
   },
   mutations: {
