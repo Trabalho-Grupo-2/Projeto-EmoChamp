@@ -3,7 +3,7 @@
         <Navbar />
 
         <img id="pagemarker" src="../assets/activepagemarker.svg" alt="marker" />
-        <img id="redBaloon" src="../assets/redelipse.svg" alt="Red Baloon" style="margin-top: 60px" />
+        <img id="redBaloonTop" src="../assets/redelipse.svg" alt="Red Baloon" style="margin-top: 60px" />
         <img id="bluebg" src="../assets/homebackground.svg" alt="marker" />
 
         <div class="div">
@@ -42,47 +42,75 @@
 
             <b-container class="homeContent">
                 <b-row class="keywordsgroup">
-                    <div class="group1">
+                    <div>
                         <img class="yellowelipse" src="../assets/keywordssphere.svg" alt="yellow elipse" />
-                        <img id="elearningsvg" src="../assets/Landing Page Balloons/eLearning.svg"
+                        <img id="elearningsvg" class="yellowSVG" src="../assets/Landing Page Balloons/eLearning.svg"
                             alt="eLearning icon" />
-                        <p>eLearning</p>
+                         <p class="textElipse">
+                            eLearning
+                        </p>
                     </div>
-                    <div class="group2">
+
+                    <div>
                         <img class="yellowelipse" src="../assets/keywordssphere.svg" alt="yellow elipse" />
-                        <img id="childsafesvg" src="../assets/Landing Page Balloons/Child Safe.svg"
+                        <img class="yellowSVG" src="../assets/Landing Page Balloons/Child Safe.svg"
                             alt="child safe icon" />
-                        <p>
+                        <p class="textElipse">
                             Seguro para <br />
                             Crianças
                         </p>
                     </div>
-                    <div class="group3">
+
+                    <div>
                         <img class="yellowelipse" src="../assets/keywordssphere.svg" alt="yellow elipse" />
-                        <img id="gamificationsvg" src="../assets/Landing Page Balloons/gamification.svg"
+                        <img class="yellowSVG" src="../assets/Landing Page Balloons/gamification.svg"
                             alt="controller icon" />
-                        <p>
+                        <p class="textElipse">
                             Elementos de <br />
                             Gamificação
                         </p>
                     </div>
-                    <div class="group4">
+
+                    <div>
                         <img class="yellowelipse" src="../assets/keywordssphere.svg" alt="yellow elipse" />
-                        <img id="supervisedlearningsvg" src="../assets/Landing Page Balloons/supervisedLearning.svg"
+                        <img class="yellowSVG" src="../assets/Landing Page Balloons/supervisedLearning.svg"
                             alt="supervised icon" />
-                        <p>
+                        <p class="textElipse">
                             Aprendizagem <br />
                             Supervisionada
                         </p>
                     </div>
                 </b-row>
 
-                <b-row>
+                <b-row class="videoRow" align-content="center">
+                    <b-col cols="1"></b-col>
+                    <b-col cols="5" align-self="center" class="videoText">
+                        <h2 class="title">
+                            Quem nós somos...
+                        </h2>
 
+                        <p class="text">
+                            Emochamp é um website com jogos orientados para crianças com  perturbações no espetro do autismo (PEA) para promover o reconhecimento de emoções através de imagens e reprodução de emoções. Uma demonstração geral de funcionalidades é apresenta no vídeo ao lado direito.
+                        </p>
+
+                        <b-button type="button" @click="$router.push({name: 'Play'})" variant="outline-primary" size="lg"
+                            class="buttonPlay">
+                            Jogar
+                        </b-button>
+                    </b-col>
+                
+                    <b-col cols="5" align-self="start" class="video">
+                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+                        </iframe>
+                    </b-col>
+                    <b-col cols="1"></b-col>
                 </b-row>
             </b-container>
 
         </div>
+
+        <img id="redBaloonBottom" src="../assets/redelipse.svg" alt="Red Baloon" />
+
         <FooterX />
     </div>
 </template>
@@ -100,9 +128,17 @@
 </script>
 
 <style>
-    #redBaloon {
+    #redBaloonTop {
         margin-top: 60px;
         top: 500px;
+        position: absolute;
+    }
+
+    #redBaloonBottom {
+        margin-top: 60px;
+        top: 1300px;
+        left: 90%;
+        transform: rotate(180deg);
         position: absolute;
     }
 
@@ -162,91 +198,93 @@
         top: 700px;
         left: 300px;
         display: flex;
+        
     }
 
-    .homeContent .keywordsgroup .group1 {
+    .homeContent .keywordsgroup .textElipse {
+        position: relative;
+        color: #374785;
+        top: 10px;
+        font-size: 20px;
+    }
+
+    .homeContent .keywordsgroup .yellowSVG {
+        position: relative;
+        filter: invert(22%) sepia(73%) saturate(677%) hue-rotate(195deg) brightness(95%) contrast(88%);
+        width: 100px;
+        height: 100px;
+        margin-left: -125px;
+    }
+
+    .homeContent .keywordsgroup div {
         position: relative;
         width: 300px;
     }
 
     .homeContent .keywordsgroup .group1 #elearningsvg {
-        position: relative;
         width: 77px;
         height: 70px;
         margin-left: -118px;
-        filter: invert(22%) sepia(73%) saturate(677%) hue-rotate(195deg) brightness(95%) contrast(88%);
     }
 
     .homeContent .keywordsgroup .group1 p {
-        position: relative;
-        color: #374785;
-        font-size: 20px;
         right: -32px;
-        top: 10px;
-    }
-
-    .homeContent .keywordsgroup .group2 {
-        position: relative;
-        width: 300px;
-    }
-
-    .homeContent .keywordsgroup .group2 #childsafesvg {
-        position: relative;
-        width: 100px;
-        height: 100px;
-        margin-left: -125px;
-        filter: invert(22%) sepia(73%) saturate(677%) hue-rotate(195deg) brightness(95%) contrast(88%);
     }
 
     .homeContent .keywordsgroup .group2 p {
-        position: relative;
-        color: #374785;
-        font-size: 20px;
         right: -25px;
-        top: 10px;
-        text-align: justify;
-    }
-
-    .homeContent .keywordsgroup .group3 {
-        position: relative;
-        width: 300px;
-    }
-
-    .homeContent .keywordsgroup .group3 #gamificationsvg {
-        position: relative;
-        width: 100px;
-        height: 100px;
-        margin-left: -125px;
-        filter: invert(22%) sepia(73%) saturate(677%) hue-rotate(195deg) brightness(95%) contrast(88%);
     }
 
     .homeContent .keywordsgroup .group3 p {
-        position: relative;
-        color: #374785;
-        font-size: 20px;
         right: -15px;
-        top: 10px;
-        text-align: justify;
-    }
-
-    .homeContent .keywordsgroup .group4 {
-        position: relative;
-        width: 300px;
-    }
-
-    .homeContent .keywordsgroup .group4 #supervisedlearningsvg {
-        position: relative;
-        width: 100px;
-        height: 100px;
-        margin-left: -125px;
-        filter: invert(22%) sepia(73%) saturate(677%) hue-rotate(195deg) brightness(95%) contrast(88%);
     }
 
     .homeContent .keywordsgroup .group4 p {
-        position: relative;
-        color: #374785;
-        font-size: 20px;
         right: -15px;
-        top: 10px;
     }
+
+    .homeContent .buttonPlay {
+        margin: 20px 0px 100px 20px;
+        font-size: 25px;
+        padding: 4px 50px 8px 50px;
+
+        background-color: #ffffff;
+        color: #374785;
+        border-color: #374785;
+        border: 3px solid;
+    }
+
+    .homeContent .buttonPlay:hover {
+        background-color: #374785 !important;
+        color: white !important;
+        border: 3px solid #374785;
+    }
+
+    .homeContent .videoRow {
+        margin: 100px 0px 300px 0px;
+    }
+
+    .homeContent .videoText {
+        margin: 0px 0px 0px 0px;
+        color: #24305E;
+    }
+
+    .homeContent .videoText .title {
+        margin: 0px 0px 60px 0px;
+        font-size: 38px;
+    }
+
+    .homeContent .videoText .text {
+        line-height: 35px;
+        font-size: 15px;
+        margin: 0px 30px 40px 0px;
+    }
+
+    .homeContent iframe {
+        width: 500px;
+        height: 276px;
+    } 
+
+
+
 </style>
