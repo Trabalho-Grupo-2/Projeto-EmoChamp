@@ -17,7 +17,7 @@
     <section class="container">
       <div class="card">
         <div class="card">
-        <div class="cardImage"><img class="card-3" src="../assets/Users/Humaaans_Standing.svg"></div>
+        <div class="cardImage"><img class="card-3" src="../assets/Users/Humaaans Standing.svg"></div>
         <h2>Sou um Psicólogo</h2>
         <p>A aplicação permite gerir um    conjunto de pacientes, fornecendo acesso ao seu desempenho. Obtenha informação e personalize o seu planeamento de consultas.</p>
       </div>
@@ -47,6 +47,7 @@ export default {
   },
 };
 </script>
+
 
 <style scoped>
 *{
@@ -88,4 +89,6 @@ export default {
   padding: 10px;
   font-size: 13px;
 }
+
 </style>
+
