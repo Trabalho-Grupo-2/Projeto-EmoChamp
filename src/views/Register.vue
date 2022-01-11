@@ -16,6 +16,11 @@
     </div>
     <section class="container">
       <div class="card">
+        <div class="cardImage"><img class="card-3" src="../assets/Users/Humaaans Standing.svg"></div>
+        <h2>Sou um Psicólogo</h2>
+        <p>A aplicação permite gerir um    conjunto de pacientes, fornecendo acesso ao seu desempenho. Obtenha informação e personalize o seu planeamento de consultas.</p>
+      </div>
+      <div class="card">
         <div class="cardImage"><img class="card-1" src="../assets/Users/human-verde.svg"></div>
         <h2>Estou Sozinho</h2>
         <p>Adequado caso estejas a utilizar   aplicação por conta própria. Caso estejas com dificuldades procura a ajuda de alguém que conheças.</p>
@@ -24,11 +29,6 @@
         <div class="cardImage"><img class="card-2" src="../assets/Users/human-red.svg"></div>
         <h2>Estou Acompanhado</h2>
         <p>Adequado para utilização  supervisionada. É possível a  criação de filtros e jogos costumizados, permitindo uma resposta mais eficaz face às necessidades que procura.</p>
-      </div>
-      <div class="card">
-        <div class="cardImage"><img class="card-3" src="../assets/Users/Humaaans Standing.svg"></div>
-        <h2>Sou um Psicólogo</h2>
-        <p>A aplicação permite gerir um    conjunto de pacientes, fornecendo acesso ao seu desempenho. Obtenha informação e personalize o seu planeamento de consultas.</p>
       </div>
     </section>
 
