@@ -52,7 +52,7 @@
             @click="$router.push('Game1')"
             variant="outline-primary"
             size="lg"
-            class="buttonPlay"
+            class="buttonPlayGame"
           >
             Jogar
           </b-button>
@@ -89,7 +89,7 @@
             variant="outline-primary"
             size="lg"
             id="button2"
-            class="buttonPlay"
+            class="buttonPlayGame"
           >
             Jogar
           </b-button>
@@ -143,8 +143,8 @@ export default {
 };
 </script>
 
-<style>
-.buttonPlay {
+<style >
+.buttonPlayGame {
   margin: 20px 0px 500px 20px !important;
   font-size: 25px !important;
   padding: 4px 50px 8px 50px !important ;
@@ -156,7 +156,7 @@ export default {
   border-radius: 20px !important;
 }
 
-.buttonPlay:hover {
+.buttonPlayGame:hover {
   background-color: #374785 !important;
   color: white !important;
   border: 3px solid #374785 !important;
