@@ -7,15 +7,11 @@ export default new Vuex.Store({
   state: {
     selectedUser: null,
     isLogged: false,
-    users: localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : [{name: "admin",password:"admin", type:"admin"}],
-    form: {
-      name: "",
-      email: "",
-      password: "",
-    }
+    users: localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : localStorage.setItem("users", JSON.stringify([{name: "admin",password:"admin", type:"admin"}])) ,
   },
   getters: {
     getselectedUser: state => state.selectedUser,
+    getLoggedState: state => state.isLogged,
     getUsers: state => state.users
 
   },
@@ -24,6 +20,7 @@ export default new Vuex.Store({
     SET_USER: (state, payload) => {
       state.users.push(payload);
       localStorage.setItem("users", JSON.stringify(state.users));
-    }
+    },
+    SET_USER_LOGIN: (state) => { state.isLogged = true ; alert("sucess!")}
   },
 });
