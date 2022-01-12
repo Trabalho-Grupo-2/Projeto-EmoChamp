@@ -3,14 +3,15 @@
     <Navbar />
       <img src="../assets/redelipsebg.svg" alt="redbg" id="redbg" />
       <div class="b-row" style="height: 100px"></div>
-      <div class="b-row" style="height: 200px"></div>
+      <div class="b-row" style="height: 200px"><h2 style="color:white;">Login</h2></div>
       <div class="b-row" style="height: 800px">
         <b-form @submit.prevent="pushLogin()">
           <label for="email">Email:</label>
           <b-form-input v-model="form.email" type="text"></b-form-input><br />
           <label for="password">Password:</label>
           <b-form-input v-model="form.password" type="password"></b-form-input>
-          <b-button type="submit" variant="primary">Login</b-button>
+          <b-button type="submit" variant="primary" style="background-color: #374785;
+          border-color: #374785;">Login</b-button>
         </b-form>
       </div>
     <FooterX />
