@@ -16,6 +16,8 @@ export default new Vuex.Store({
   },
   getters: {
     getselectedUser: state => state.selectedUser,
+    getUsers: state => state.users
+
   },
   mutations: {
     SET_SELECTED_USER: (state, payload) => { state.selectedUser = payload},
