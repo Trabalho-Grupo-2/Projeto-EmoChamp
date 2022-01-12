@@ -83,16 +83,16 @@
       <div class="b-row" style="height: 800px">
         <b-form @submit.prevent="pushForm()">
           <label for="name"
-            >Nome:<b-form-input type="text" v-model="form.name"></b-form-input></label>
+            >Nome:<b-form-input type="text" v-model="form.name" required></b-form-input></label>
             <br/>
           <label for="email"
-            >Email:<b-form-input type="text" v-model="form.email"></b-form-input></label>
+            >Email:<b-form-input type="text" v-model="form.email" required></b-form-input></label>
             <br />
           <label for="password"
-            >Password:<b-form-input type="password" v-model="form.password1"></b-form-input></label>
+            >Password:<b-form-input type="password" v-model="form.password1" required></b-form-input></label>
             <br />
           <label for="confirmarpassword"
-            >Confirmar Password:<b-form-input type="password" v-model="form.password2"></b-form-input></label>
+            >Confirmar Password:<b-form-input type="password" v-model="form.password2" required></b-form-input></label>
           <b-button type="submit" variant="primary" style="background-color: #374785;
           border-color: #374785;">Registar</b-button>
         </b-form>
@@ -149,6 +149,7 @@ export default {
         }
         else{
           this.SET_USER(user);
+          this.SET_SELECTED_USER(null);
           this.$router.push("/login")
         }
       }
