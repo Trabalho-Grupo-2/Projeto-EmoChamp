@@ -38,9 +38,8 @@
               >
             </li>
             <li class="nav-item">
-              <router-link
+              <router-link :to="{name:'Play'}"
                 class="link"
-                to="/play"
                 style="
                   margin-left: 100px;
                   text-decoration: none;
@@ -48,6 +47,17 @@
                 "
                 >JOGAR
               </router-link>
+            </li>
+            <li v-show="getLoggedState" class="nav-item">
+              <router-link :to="{ name: 'Profile', params: {user_id: getLoggedUser.id} }"
+                class="link"
+                style="
+                  margin-left: 100px;
+                  text-decoration: none;
+                  color: #24305e;
+                "
+                >PERFIL</router-link
+              >
             </li>
             <li v-show="getLoggedState" class="nav-item">
               <router-link
@@ -58,7 +68,7 @@
                   text-decoration: none;
                   color: #24305e;
                 "
-                >PERFIL</router-link
+                >ADMIN</router-link
               >
             </li>
             <li v-show="getLoggedState" class="nav-item">
