@@ -57,44 +57,42 @@
     <div v-else>
       <img src="../assets/registerbg.svg" alt="yellowbg" id="yellowbg" />
       <div class="b-row" style="height: 100px">
-        <section class="container">
-        <div class="card">
-          <div class="cardImage">
+      </div>
+      <div class="b-row" style="height: 200px">
+        <section class="container2">
+        <div class="card2">
+          <div class="cardImage2">
             <img class="card-3" src="../assets/Users/Humaaans_StandingPequeno.svg" />
           </div>
           <h4>Sou um Psicólogo</h4>
         </div>
-        <div class="card">
-          <div class="cardImage">
+        <div class="card2">
+          <div class="cardImage2">
             <img class="card-1" src="../assets/Users/human-verdePequeno.svg" />
           </div>
           <h4>Estou Sozinho</h4>
         </div>
-        <div class="card">
-          <div class="cardImage">
+        <div class="card2">
+          <div class="cardImage2">
             <img class="card-2" src="../assets/Users/human-redPequeno.svg" />
           </div>
           <h4>Estou Acompanhado</h4>
         </div>
       </section>
       </div>
-      <div class="b-row" style="height: 200px">
-      </div>
       <div class="b-row" style="height: 800px">
         <b-form @submit.prevent="pushForm()">
           <label for="name"
-            >Nome:</label>
-            <b-form-input type="text" v-model="form.name"></b-form-input>
+            >Nome:<b-form-input type="text" v-model="form.name"></b-form-input></label>
             <br/>
           <label for="email"
-            >Email:</label>
-            <b-form-input type="text" v-model="form.email"></b-form-input><br />
+            >Email:<b-form-input type="text" v-model="form.email"></b-form-input></label>
+            <br />
           <label for="password"
-            >Password:</label>
-            <b-form-input type="password" v-model="form.password1"></b-form-input><br />
+            >Password:<b-form-input type="password" v-model="form.password1"></b-form-input></label>
+            <br />
           <label for="confirmarpassword"
-            >Confirmar Password:</label><b-form-input type="password" v-model="form.password2"
-          />
+            >Confirmar Password:<b-form-input type="password" v-model="form.password2"></b-form-input></label>
           <b-button type="submit" variant="primary">Registar</b-button>
         </b-form>
       </div>
@@ -164,6 +162,12 @@ export default {
   margin-bottom: 300px;
   overflow: hidden;
 }
+.container2 {
+  display: flex;
+  width: 75% !important;
+  justify-content: space-around;
+  overflow: hidden;
+}
 .card {
   background-color: #f8e9a1 !important;
   border: none !important;
@@ -173,6 +177,16 @@ export default {
   text-align: center;
 }
 .card:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.card2 {
+  background-color: #f8e9a1 !important;
+  border: none !important;
+  color: #374785;
+  text-align: center;
+}
+.card2:hover {
   cursor: pointer;
   opacity: 0.8;
 }
@@ -193,6 +207,9 @@ export default {
 .card h2 {
   padding: 10px;
 }
+.card2 h4 {
+  padding: 20px;
+}
 .card p {
   padding: 10px;
   font-size: 13px;
@@ -202,10 +219,6 @@ export default {
   z-index: -2;
   margin-top: -150px;
   margin-bottom: -150px;
-}
-.container2 div {
-  width: 200px !important;
-  background-color: blue !important;
 }
 </style>
 
