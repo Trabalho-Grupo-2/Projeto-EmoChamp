@@ -1,13 +1,20 @@
 <template>
-  <div></div>
+  <div>
+    <Navbar />
+    <FooterX />
+  </div>
 </template>
 
 <script>
-export default {
+import Navbar from "../components/Navbar.vue";
+import FooterX from "../components/FooterX.vue";
 
-}
+export default {
+  components: {
+    Navbar,
+    FooterX,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
