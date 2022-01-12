@@ -48,8 +48,8 @@ export default {
           ))
           {
               this.control = true;
-              alert("sucess!")
               this.SET_USER_LOGIN(this.control);
+              this.$router.push("/")
           }
           else{
               alert("Credenciais Inválidas")
