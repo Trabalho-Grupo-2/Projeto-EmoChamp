@@ -41,10 +41,10 @@ export default {
   },
   methods: {
       ...mapMutations([
-            'SET_USER_LOGIN', //also supports payload `this.nameOfMutation(amount)` 
+            'SET_USER_LOGIN',
         ]),
       pushLogin() {
-          if(this.getUsers.find(user => {
+          if(this.getUsers.some(user => {
               user.email == this.form.email && user.password == this.form.password
           })){
               this.SET_USER_LOGIN

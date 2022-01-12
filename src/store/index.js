@@ -21,6 +21,6 @@ export default new Vuex.Store({
       state.users.push(payload);
       localStorage.setItem("users", JSON.stringify(state.users));
     },
-    SET_USER_LOGIN: (state) => { state.isLogged = true ; alert("sucess!")}
+    SET_USER_LOGIN: (state) => { state.isLogged = true}
   },
 });
