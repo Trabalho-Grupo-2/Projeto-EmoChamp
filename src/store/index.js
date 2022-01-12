@@ -34,4 +34,3 @@ export default new Vuex.Store({
     INCREMENT_ID: (state) => {state.utilities.id++}
   },
 });
-x
