@@ -35,6 +35,7 @@ export default {
         email: "",
         password: "",
       },
+      control: false
     };
   },
   methods: {
@@ -42,11 +43,13 @@ export default {
             'SET_USER_LOGIN',
         ]),
       pushLogin() {
-          if(this.getUsers.some(user => {
-              user.name == this.form.email && user.password == this.form.password
-          }))
+          if(this.getUsers.some(user => 
+              user.email == this.form.email && user.password == this.form.password
+          ))
           {
-              this.SET_USER_LOGIN
+              this.control = true;
+              alert("sucess!")
+              this.SET_USER_LOGIN(this.control);
           }
           else{
               alert("Credenciais Inválidas")
