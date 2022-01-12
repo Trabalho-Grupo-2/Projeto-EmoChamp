@@ -59,21 +59,22 @@
       <div class="b-row" style="height: 100px"></div>
       <div class="b-row" style="height: 200px"></div>
       <div class="b-row" style="height: 800px">
-        <form @submit.prevent="pushForm()">
+        <b-form @submit.prevent="pushForm()">
           <label for="name"
-            >Nome: <input type="text" v-model="form.name" /></label
-          ><br />
+            >Nome:</label>
+            <b-form-input type="text" v-model="form.name"></b-form-input>
+            <br/>
           <label for="email"
-            >Email:<input type="text" v-model="form.email" /></label
-          ><br />
+            >Email:</label>
+            <b-form-input type="text" v-model="form.email"></b-form-input><br />
           <label for="password"
-            >Password:<input type="password" v-model="form.password1" /></label
-          ><br />
+            >Password:</label>
+            <b-form-input type="password" v-model="form.password1"></b-form-input><br />
           <label for="confirmarpassword"
-            >Confirmar Password:<input type="password" v-model="form.password2"
-          /></label>
-          <input type="submit" value="REGISTAR" />
-        </form>
+            >Confirmar Password:</label><b-form-input type="password" v-model="form.password2"
+          />
+          <b-button type="submit" variant="primary">Registar</b-button>
+        </b-form>
       </div>
     </div>
     <FooterX />
