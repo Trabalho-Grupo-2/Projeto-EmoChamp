@@ -103,7 +103,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getselectedUser"]),
+    ...mapGetters(["getselectedUser","getUsers"]),
   },
   methods: {
     ...mapMutations(["SET_SELECTED_USER", "SET_USER"]),
@@ -115,8 +115,12 @@ export default {
           password: this.form.password1,
           type: this.getselectedUser
         }
-        this.SET_USER(user);
-        console.log(this.$store.state.users)
+        if(this.getUsers.some(user => user.name==this.form.name)){
+          alert("Utilizador já resistado!")
+        }
+        else{
+          this.SET_USER(user);
+        }
       }
     },
   },
