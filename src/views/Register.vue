@@ -93,7 +93,8 @@
             <br />
           <label for="confirmarpassword"
             >Confirmar Password:<b-form-input type="password" v-model="form.password2"></b-form-input></label>
-          <b-button type="submit" variant="primary">Registar</b-button>
+          <b-button type="submit" variant="primary" style="background-color: #374785;
+          border-color: #374785;">Registar</b-button>
         </b-form>
       </div>
     </div>
