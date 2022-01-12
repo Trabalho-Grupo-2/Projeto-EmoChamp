@@ -60,7 +60,7 @@
               >
             </li>
             <li v-show="getLoggedState" class="nav-item">
-              <router-link :to="{ name: 'Admin', params: {user_id: getLoggedUser.id} }"
+              <router-link :to="{ name: 'BackOffice', params: {user_id: getLoggedUser.id} }"
                 class="link"
                 style="
                   margin-left: 100px;
