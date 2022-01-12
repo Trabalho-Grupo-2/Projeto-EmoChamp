@@ -48,7 +48,7 @@
                 >JOGAR
               </router-link>
             </li>
-            <li v-show="getLoggedState" class="nav-item">
+            <li v-show="getLoggedState && getLoggedUser.type != 'admin'" class="nav-item">
               <router-link :to="{ name: 'Profile', params: {user_id: getLoggedUser.id} }"
                 class="link"
                 style="
@@ -59,7 +59,7 @@
                 >PERFIL</router-link
               >
             </li>
-            <li v-show="getLoggedState" class="nav-item">
+            <li v-show="getLoggedState && getLoggedUser.type == 'admin'" class="nav-item">
               <router-link :to="{ name: 'BackOffice', params: {user_id: getLoggedUser.id} }"
                 class="link"
                 style="
@@ -70,7 +70,7 @@
                 >ADMIN</router-link
               >
             </li>
-            <li v-show="getLoggedState" class="nav-item">
+            <li v-show="getLoggedState && getLoggedUser.type != 'admin' && getLoggedUser.type != 'psychologist'" class="nav-item">
               <router-link :to="{ name: 'Stats', params: {user_id: getLoggedUser.id} }"
                 class="link"
                 style="
@@ -79,6 +79,17 @@
                   color: #24305e;
                 "
                 >ESTATÍSTICAS</router-link
+              >
+            </li>
+            <li v-show="getLoggedState && getLoggedUser.type == 'psychologist'" class="nav-item">
+              <router-link :to="{ name: 'Consulta', params: {user_id: getLoggedUser.id} }"
+                class="link"
+                style="
+                  margin-left: 100px;
+                  text-decoration: none;
+                  color: #24305e;
+                "
+                >CONSULTA</router-link
               >
             </li>
           </ul>
@@ -144,7 +155,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 #btnRegistar:hover {
   background-color: white !important;
   color: #374785 !important;

@@ -16,7 +16,7 @@ export default new Vuex.Store({
     getLoggedState: state => state.isLogged,
     getUsers: state => state.users,
     getLoggedUser: state => state.loggedUser,
-    getId: state => state.utilities.id
+    getId: state => state.utilities.id,
 
   },
   mutations: {
@@ -29,8 +29,9 @@ export default new Vuex.Store({
       state.isLogged = payload;
       localStorage.setItem("isLogged", payload)
     },
-    SET_USER_LOGOUT: (state, payload) => { state.isLogged = payload; localStorage.setItem("isLogged", payload) },
+    SET_USER_LOGOUT: (state, payload) => { state.isLogged = payload;localStorage.setItem("isLogged", payload); state.selectedUser = null; localStorage.user = null },
     SET_LOGGED_USER: (state, payload) => { state.loggedUser = payload; localStorage.setItem("user", JSON.stringify(state.loggedUser)) },
-    INCREMENT_ID: (state) => {state.utilities.id++; localStorage.setItem("id",state.utilities.id)}
+    INCREMENT_ID: (state) => {state.utilities.id++; localStorage.setItem("id",state.utilities.id)},
+    REMOVE_USER: (state,payload) => { state.users.splice(payload,1) ; localStorage.users= JSON.stringify(state.users)}
   },
 });
