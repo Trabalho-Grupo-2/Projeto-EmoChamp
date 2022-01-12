@@ -8,6 +8,7 @@ import Game1 from "../views/Game1.vue";
 import Game2 from "../views/Game2.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+import BackOffice from "../views/BackOffice.vue";
 
 Vue.use(VueRouter);
 
@@ -52,6 +53,12 @@ const routes = [
     name: "Register",
     component: Register,
   },
+  {
+    path: "/backoffice/:user_id",
+    name: "BackOffice",
+    component: BackOffice,
+  }
+
 
 ];
 const router = new VueRouter({
