@@ -58,7 +58,7 @@
       <img src="../assets/registerbg.svg" alt="yellowbg" id="yellowbg" />
       <div class="b-row" style="height: 100px">
       </div>
-      <div class="b-row" style="height: 200px">
+      <div class="b-row" style="height: 300px">
         <section class="container2">
         <div class="card2">
           <div class="cardImage2">
@@ -96,6 +96,12 @@
           <b-button type="submit" variant="primary" style="background-color: #374785;
           border-color: #374785;">Registar</b-button>
         </b-form>
+        <img
+        id="logobg"
+        src="../assets/redelipse2.svg"
+        alt="logo back"
+        style=" margin-left:1229px; margin-top:245px; position: absolute"
+      />
       </div>
     </div>
     <FooterX />
