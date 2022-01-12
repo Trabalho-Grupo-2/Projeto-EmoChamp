@@ -34,12 +34,12 @@ const routes = [
     component: Stats,
   },
   {
-    path: "/play/game1",
+    path: "/play/game1/:user_id",
     name: "Game1",
     component: Game1,
   },
   {
-    path: "/play/game2",
+    path: "/play/game2/:user_id",
     name: "Game2",
     component: Game2,
   },

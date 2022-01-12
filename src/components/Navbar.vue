@@ -155,7 +155,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 #btnRegistar:hover {
   background-color: white !important;
   color: #374785 !important;

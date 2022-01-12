@@ -49,7 +49,7 @@
           <b-button
             type="button"
             id="button1"
-            @click="$router.push('Game1')"
+            @click="$router.push({name:'Game1', params: {user_id: getLoggedUser.id}})"
             variant="outline-primary"
             size="lg"
             class="buttonPlayGame"
@@ -85,7 +85,7 @@
           </p>
           <b-button
             type="button"
-            @click="$router.push('Game2')"
+            @click="$router.push({name: 'Game2' , params: {user_id: getLoggedUser.id}})"
             variant="outline-primary"
             size="lg"
             id="button2"
@@ -104,11 +104,17 @@
 import Navbar from "../components/Navbar.vue";
 import FooterX from "../components/FooterX.vue";
 import $ from "jquery";
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
     Navbar,
     FooterX,
+  },
+  computed: {
+    ...mapGetters([
+      'getLoggedUser','getLoggedState',
+    ])
   },
   mounted() {
     $(function () {
