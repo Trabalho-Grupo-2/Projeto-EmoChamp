@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     selectedUser: null,
     isLogged: false,
-    users: localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : [],
+    users: localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : [{name: "admin",password:"admin", type:"admin"}],
     form: {
       name: "",
       email: "",
