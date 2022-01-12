@@ -124,12 +124,13 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getselectedUser","getUsers"]),
+    ...mapGetters(["getselectedUser","getUsers","getId"]),
   },
   methods: {
-    ...mapMutations(["SET_SELECTED_USER", "SET_USER"]),
+    ...mapMutations(["SET_SELECTED_USER", "SET_USER","INCREMENT_ID"]),
     pushForm() {
       if (this.form.password1 == this.form.password2) {
+        this.INCREMENT_ID();
         const user = {
           name: this.form.name,
           email: this.form.email,

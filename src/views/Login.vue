@@ -36,21 +36,24 @@ export default {
         email: "",
         password: "",
       },
-      control: false
+      control: false,
+      user : ""
     };
   },
   methods: {
       ...mapMutations([
-            'SET_USER_LOGIN',
+            "SET_USER_LOGIN","SET_LOGGED_USER"
         ]),
       pushLogin() {
           if(this.getUsers.some(user => 
               user.email == this.form.email && user.password == this.form.password
           ))
           {
+              this.user = this.getUsers.find( user => user.email == this.form.email);
               this.control = true;
+              this.SET_LOGGED_USER(this.user);
               this.SET_USER_LOGIN(this.control);
-              this.$router.push("/")
+              this.$router.push("/play")
           }
           else{
               alert("Credenciais Inválidas")
