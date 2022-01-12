@@ -38,7 +38,7 @@
               >
             </li>
             <li class="nav-item">
-              <router-link :to="{name:'Play'}"
+              <router-link :to="{name:'Play', params: {user_id: getLoggedUser.id}}"
                 class="link"
                 style="
                   margin-left: 100px;
@@ -60,9 +60,8 @@
               >
             </li>
             <li v-show="getLoggedState" class="nav-item">
-              <router-link
+              <router-link :to="{ name: 'Admin', params: {user_id: getLoggedUser.id} }"
                 class="link"
-                to="/profile/:user_id"
                 style="
                   margin-left: 100px;
                   text-decoration: none;
@@ -72,9 +71,8 @@
               >
             </li>
             <li v-show="getLoggedState" class="nav-item">
-              <router-link
+              <router-link :to="{ name: 'Stats', params: {user_id: getLoggedUser.id} }"
                 class="link"
-                to="/stats/:user_id"
                 style="
                   margin-left: 100px;
                   text-decoration: none;
