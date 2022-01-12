@@ -142,6 +142,7 @@ export default {
         }
         else{
           this.SET_USER(user);
+          this.$router.push("/login")
         }
       }
     },
