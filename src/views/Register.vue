@@ -1,42 +1,82 @@
 <template>
   <div>
     <Navbar />
-    <div v-if="selectedUser === null">
-    <img
-      id="logobg"
-      src="../assets/redelipse.svg"
-      alt="logo back"
-      style="margin-top: 60px; position: absolute;"
-    />
-    <div  class="w-100 p-3 text-center">
-      <div class="b-row">
-        <h1 class="display-4" style="color: #374785; font-size: 30px; margin-top: 50px">
-          Escolhe o cenário mais adequado à tua situação atual.
-        </h1>
+    <div v-if="getselectedUser === null">
+      <img
+        id="logobg"
+        src="../assets/redelipse.svg"
+        alt="logo back"
+        style="margin-top: 60px; position: absolute"
+      />
+      <div class="w-100 p-3 text-center">
+        <div class="b-row">
+          <h1
+            class="display-4"
+            style="color: #374785; font-size: 30px; margin-top: 50px"
+          >
+            Escolhe o cenário mais adequado à tua situação atual.
+          </h1>
         </div>
+      </div>
+
+      <section class="container">
+        <div class="card" @click="SET_SELECTED_USER('psychologist')">
+          <div class="cardImage">
+            <img class="card-3" src="../assets/Users/Humaaans Standing.svg" />
+          </div>
+          <h2>Sou um Psicólogo</h2>
+          <p>
+            A aplicação permite gerir um conjunto de pacientes, fornecendo
+            acesso ao seu desempenho. Obtenha informação e personalize o seu
+            planeamento de consultas.
+          </p>
         </div>
-
-    <section  class="container">
-      <div class="card" @click="SETSELECTEDUSER('psychologist')">
-        <div class="cardImage"><img  class="card-3" src="../assets/Users/Humaaans Standing.svg"></div>
-        <h2>Sou um Psicólogo</h2>
-        <p>A aplicação permite gerir um    conjunto de pacientes, fornecendo acesso ao seu desempenho. Obtenha informação e personalize o seu planeamento de consultas.</p>
+        <div class="card" @click="SET_SELECTED_USER('alone')">
+          <div class="cardImage">
+            <img class="card-1" src="../assets/Users/human-verde.svg" />
+          </div>
+          <h2>Estou Sozinho</h2>
+          <p>
+            Adequado caso estejas a utilizar aplicação por conta própria. Caso
+            estejas com dificuldades procura a ajuda de alguém que conheças.
+          </p>
+        </div>
+        <div class="card" @click="SET_SELECTED_USER('tutor')">
+          <div class="cardImage">
+            <img class="card-2" src="../assets/Users/human-red.svg" />
+          </div>
+          <h2>Estou Acompanhado</h2>
+          <p>
+            Adequado para utilização supervisionada. É possível a criação de
+            filtros e jogos costumizados, permitindo uma resposta mais eficaz
+            face às necessidades que procura.
+          </p>
+        </div>
+      </section>
+    </div>
+    <div v-else>
+      <img src="../assets/registerbg.svg" alt="yellowbg" id="yellowbg" />
+      <div class="b-row" style="height: 100px"></div>
+      <div class="b-row" style="height: 200px"></div>
+      <div class="b-row" style="height: 800px">
+        <b-form @submit.prevent="pushForm()">
+          <label for="name"
+            >Nome:</label>
+            <b-form-input type="text" v-model="form.name"></b-form-input>
+            <br/>
+          <label for="email"
+            >Email:</label>
+            <b-form-input type="text" v-model="form.email"></b-form-input><br />
+          <label for="password"
+            >Password:</label>
+            <b-form-input type="password" v-model="form.password1"></b-form-input><br />
+          <label for="confirmarpassword"
+            >Confirmar Password:</label><b-form-input type="password" v-model="form.password2"
+          />
+          <b-button type="submit" variant="primary">Registar</b-button>
+        </b-form>
       </div>
-      <div class="card" @click="SETSELECTEDUSER('alone')" >
-        <div class="cardImage"><img class="card-1" src="../assets/Users/human-verde.svg"></div>
-        <h2>Estou Sozinho</h2>
-        <p>Adequado caso estejas a utilizar   aplicação por conta própria. Caso estejas com dificuldades procura a ajuda de alguém que conheças.</p>
-      </div>
-      <div class="card" @click="SETSELECTEDUSER('tutor')">
-        <div class="cardImage"><img class="card-2" src="../assets/Users/human-red.svg"></div>
-        <h2>Estou Acompanhado</h2>
-        <p>Adequado para utilização  supervisionada. É possível a  criação de filtros e jogos costumizados, permitindo uma resposta mais eficaz face às necessidades que procura.</p>
-      </div>
-    </section>
-</div>
-<div v-else>
-
-</div>
+    </div>
     <FooterX />
   </div>
 </template>
@@ -44,28 +84,45 @@
 <script>
 import Navbar from "../components/Navbar.vue";
 import FooterX from "../components/FooterX.vue";
-import { mapGetters } from 'vuex';
-import { mapMutations } from 'vuex';
-import { mapState } from 'vuex';
-
+import { mapGetters } from "vuex";
+import { mapMutations } from "vuex";
 
 export default {
   components: {
     Navbar,
     FooterX,
   },
+  data() {
+    return {
+      form: {
+        name: "",
+        email: "",
+        password1: "",
+        password2: "",
+      },
+    };
+  },
   computed: {
-    ...mapGetters([
-      'getselectedUser',
-    ]),
-    ...mapState([
-      'selectedUser',
-    ])
+    ...mapGetters(["getselectedUser","getUsers"]),
   },
   methods: {
-    ...mapMutations([
-      'SETSELECTEDUSER',
-    ])
+    ...mapMutations(["SET_SELECTED_USER", "SET_USER"]),
+    pushForm() {
+      if (this.form.password1 == this.form.password2) {
+        const user = {
+          name: this.form.name,
+          email: this.form.email,
+          password: this.form.password1,
+          type: this.getselectedUser
+        }
+        if(this.getUsers.some(user => user.name==this.form.name)){
+          alert("Utilizador já resistado!")
+        }
+        else{
+          this.SET_USER(user);
+        }
+      }
+    },
   },
 };
 </script>
@@ -93,6 +150,10 @@ export default {
   color: #374785;
   text-align: center;
 }
+.card:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
 .cardImage {
   height: 283.66px;
   margin-bottom: 15px;
@@ -113,6 +174,16 @@ export default {
 .card p {
   padding: 10px;
   font-size: 13px;
+}
+#yellowbg {
+  position: absolute;
+  z-index: -2;
+  margin-top: -150px;
+  margin-bottom: -150px;
+}
+.container2 div {
+  width: 200px !important;
+  background-color: blue !important;
 }
 </style>
 

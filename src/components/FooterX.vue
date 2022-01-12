@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w-100 p-3 text-center" style="background-color: #24305e">
+    <div class="w-100 p-3 text-center" style="background-color: #24305e" id="myfooter">
       <div class="b-row" style="height: 10px"></div>
       <div class="b-row">
         <img
