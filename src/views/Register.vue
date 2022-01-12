@@ -22,7 +22,7 @@
       <section class="container">
         <div class="card" @click="SET_SELECTED_USER('psychologist')">
           <div class="cardImage">
-            <img class="card-3" src="../assets/Users/Humaaans Standing.svg" />
+            <img class="card-3" src="../assets/Users/Humaaans_Standing.svg" />
           </div>
           <h2>Sou um Psicólogo</h2>
           <p>
