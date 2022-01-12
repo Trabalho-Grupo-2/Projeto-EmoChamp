@@ -1,9 +1,13 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import createPersistedState from 'vuex-persistedstate';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  plugins: [createPersistedState({
+        storage: window.localStorage,
+    })],
   state: {
     selectedUser: null,
     isLogged: localStorage.getItem("isLogged") ? localStorage.getItem("isLogged") : localStorage.setItem("isLogged", false),
@@ -23,7 +27,7 @@ export default new Vuex.Store({
     SET_SELECTED_USER: (state, payload) => { state.selectedUser = payload },
     SET_USER: (state, payload) => {
       state.users.push(payload);
-      localStorage.setItem("users", JSON.stringify(state.users));
+      localStorage.setItem("vuex.users", JSON.stringify(state.users));
     },
     SET_USER_LOGIN: (state, payload) => {
       state.isLogged = payload;
