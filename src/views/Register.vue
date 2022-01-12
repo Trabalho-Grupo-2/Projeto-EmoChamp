@@ -56,8 +56,30 @@
     </div>
     <div v-else>
       <img src="../assets/registerbg.svg" alt="yellowbg" id="yellowbg" />
-      <div class="b-row" style="height: 100px"></div>
-      <div class="b-row" style="height: 200px"></div>
+      <div class="b-row" style="height: 100px">
+        <section class="container">
+        <div class="card">
+          <div class="cardImage">
+            <img class="card-3" src="../assets/Users/Humaaans_StandingPequeno.svg" />
+          </div>
+          <h4>Sou um Psicólogo</h4>
+        </div>
+        <div class="card">
+          <div class="cardImage">
+            <img class="card-1" src="../assets/Users/human-verdePequeno.svg" />
+          </div>
+          <h4>Estou Sozinho</h4>
+        </div>
+        <div class="card">
+          <div class="cardImage">
+            <img class="card-2" src="../assets/Users/human-redPequeno.svg" />
+          </div>
+          <h4>Estou Acompanhado</h4>
+        </div>
+      </section>
+      </div>
+      <div class="b-row" style="height: 200px">
+      </div>
       <div class="b-row" style="height: 800px">
         <b-form @submit.prevent="pushForm()">
           <label for="name"
