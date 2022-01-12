@@ -1,7 +1,6 @@
 <template>
   <div>
     <Navbar />
-    <img id="pagemarkerplay" src="../assets/activepagemarker.svg" alt="marker" />
     <img
       src="../assets/redelipse.svg"
       alt="bg baloon"
@@ -165,10 +164,4 @@ export default {
 #button1, #button2 {
   display: none;
 }
-#pagemarkerplay{
-        position: absolute;
-        left: 38.25%;
-        top: 0px;
-        z-index: -1;
-    }
 </style>
