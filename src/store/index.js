@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     selectedUser: null,
     isLogged: false,
-    users: localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : localStorage.setItem("users", JSON.stringify([{name: "admin",password:"admin", type:"admin"}])) ,
+    users: localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : localStorage.setItem("users", JSON.stringify([{name:"admin",password:"admin", type:"admin"}])) ,
   },
   getters: {
     getselectedUser: state => state.selectedUser,
