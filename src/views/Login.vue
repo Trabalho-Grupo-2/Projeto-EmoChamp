@@ -35,6 +35,7 @@ export default {
         email: "",
         password: "",
       },
+      control: false
     };
   },
   methods: {
@@ -42,10 +43,13 @@ export default {
             'SET_USER_LOGIN',
         ]),
       pushLogin() {
-          if(this.getUsers.some(user => {
+          if(this.getUsers.some(user => 
               user.email == this.form.email && user.password == this.form.password
-          })){
-              this.SET_USER_LOGIN
+          ))
+          {
+              this.control = true;
+              this.SET_USER_LOGIN(this.control);
+              this.$router.push("/")
           }
           else{
               alert("Credenciais Inválidas")

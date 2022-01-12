@@ -6,8 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     selectedUser: null,
-    isLogged: false,
-    users: localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : localStorage.setItem("users", JSON.stringify([{name: "admin",password:"admin", type:"admin"}])) ,
+    isLogged: localStorage.getItem("isLogged") ? (localStorage.getItem("isLogged")) : localStorage.setItem("isLogged",false),
+    users: localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : localStorage.setItem("users", JSON.stringify([{name:"admin", email: "admin" ,password:"admin", type:"admin"}])) ,
   },
   getters: {
     getselectedUser: state => state.selectedUser,
@@ -21,6 +21,7 @@ export default new Vuex.Store({
       state.users.push(payload);
       localStorage.setItem("users", JSON.stringify(state.users));
     },
-    SET_USER_LOGIN: (state) => { state.isLogged = true}
+    SET_USER_LOGIN: (state, payload) => {state.isLogged = payload;
+    localStorage.setItem("isLogged",payload)}
   },
 });
