@@ -135,7 +135,8 @@ export default {
           name: this.form.name,
           email: this.form.email,
           password: this.form.password1,
-          type: this.getselectedUser
+          type: this.getselectedUser,
+          id: this.getId
         }
         if(this.getUsers.some(user => user.name==this.form.name)){
           alert("Utilizador já resistado!")

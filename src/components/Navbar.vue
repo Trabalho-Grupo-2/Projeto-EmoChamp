@@ -51,8 +51,8 @@
             </li>
             <li v-show="getLoggedState" class="nav-item">
               <router-link
+              :to="{name: 'Profile' , params: {user_id: getLoggedUser.id}}"
                 class="link"
-                to="/profile/:user_id"
                 style="
                   margin-left: 100px;
                   text-decoration: none;
@@ -79,7 +79,7 @@
 
       <button
         type="button"
-        @click="getLoggedState ? $router.push({name: 'Profile' , params: {user_id: getLoggedUser.name}}) : $router.push('Login')"
+        @click="getLoggedState ? $router.push({name: 'Profile' , params: {user_id: getLoggedUser.id}}) : $router.push('Login')"
         class="btn btn-outline-primary"
         id="btnEntrar"
         style="color: #374785;
