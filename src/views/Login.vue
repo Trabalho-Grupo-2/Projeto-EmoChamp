@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-      <img src="../assets/registerbg.svg" alt="yellowbg" id="yellowbg" />
+      <img src="../assets/redelipsebg.svg" alt="redbg" id="redbg" />
       <div class="b-row" style="height: 100px"></div>
       <div class="b-row" style="height: 200px"></div>
       <div class="b-row" style="height: 800px">
@@ -65,7 +65,7 @@ export default {
   margin: 0;
 }
 
-#yellowbg {
+#redbg {
   position: absolute;
   z-index: -2;
   margin-top: -150px;
