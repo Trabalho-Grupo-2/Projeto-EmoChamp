@@ -43,8 +43,9 @@ export default {
         ]),
       pushLogin() {
           if(this.getUsers.some(user => {
-              user.email == this.form.email && user.password == this.form.password
-          })){
+              user.name == this.form.email && user.password == this.form.password
+          }))
+          {
               this.SET_USER_LOGIN
           }
           else{
