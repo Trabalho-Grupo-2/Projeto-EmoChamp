@@ -81,7 +81,7 @@ export default {
       'getUsers',
     ]),
     filterUsers() {
-      return this.filteredUsers.filter((user) => user.name.startsWith(this.searchInput) || user.email.startsWith(this.searchInput) || this.searchInput == "")
+      return this.getUsers.filter((user) => user.name.startsWith(this.searchInput) || user.email.startsWith(this.searchInput) || this.searchInput == "")
     }
   },
   methods: {
@@ -93,10 +93,6 @@ export default {
         this.REMOVE_USER(id);
       }
     }
-  },
-  beforeMount () {
-    this.filteredUsers = this.getUsers;
-    this.filteredUsers.shift();
   },
 };
 </script>
