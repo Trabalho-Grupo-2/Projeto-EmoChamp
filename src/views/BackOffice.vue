@@ -89,7 +89,7 @@ export default {
       'SET_USER_LOGOUT','REMOVE_USER'
     ]),
     removeUser(id) {
-      if(confirm("Tens a certeza que pretendes remover este utilizador?")){
+      if(confirm("Tem a certeza que pretendes remover este utilizador?")){
         this.REMOVE_USER(id);
       }
     }
