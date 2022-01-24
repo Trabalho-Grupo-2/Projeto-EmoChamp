@@ -13,7 +13,7 @@
         <li>Diverte-te!</li>
       </ol>
     </div>
-    <div class="container">
+    <div class="container_game1">
 
     </div>
     <FooterX />
@@ -44,9 +44,12 @@ export default {
   margin-top: 50px;
   color: #24305E;
 }
-.container{
-  height: 500px;
-  width: 500px;
-  background-image: url(../assets/game_container);
+.container_game1{
+  margin-top:50px;
+  margin-bottom: 150px;
+  margin-left:170px;
+  height:630px;
+  width: 1090px;
+  background-image: url("../assets/game_container.svg");
 }
 </style>
