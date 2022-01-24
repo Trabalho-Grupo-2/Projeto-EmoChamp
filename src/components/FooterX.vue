@@ -51,7 +51,7 @@
               filter: invert(98%) sepia(59%) saturate(3404%) hue-rotate(302deg)
                 brightness(128%) contrast(95%);
             "
-          />&nbsp;&nbsp; emochamp@gmail.com
+          />&nbsp;&nbsp; emochamp.esmad@gmail.com
         </p>
       </div>
       <div class="b-row" style="height: 30px"></div>
