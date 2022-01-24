@@ -22,7 +22,7 @@
       <section class="container">
         <div class="card" @click="SET_SELECTED_USER('psychologist')">
           <div class="cardImage">
-            <img class="card-3" src="../assets/Users/Humaaans Standing.svg" />
+            <img class="card-3" src="../assets/Users/Humaaans_Standing.svg" />
           </div>
           <h2>Sou um Psicólogo</h2>
           <p>
@@ -56,25 +56,52 @@
     </div>
     <div v-else>
       <img src="../assets/registerbg.svg" alt="yellowbg" id="yellowbg" />
-      <div class="b-row" style="height: 100px"></div>
-      <div class="b-row" style="height: 200px"></div>
+      <div class="b-row" style="height: 100px">
+      </div>
+      <div class="b-row" style="height: 300px">
+        <section class="container2">
+        <div class="card2">
+          <div class="cardImage2">
+            <img class="card-3" src="../assets/Users/Humaaans_StandingPequeno.svg" />
+          </div>
+          <h4>Sou um Psicólogo</h4>
+        </div>
+        <div class="card2">
+          <div class="cardImage2">
+            <img class="card-1" src="../assets/Users/human-verdePequeno.svg" />
+          </div>
+          <h4>Estou Sozinho</h4>
+        </div>
+        <div class="card2">
+          <div class="cardImage2">
+            <img class="card-2" src="../assets/Users/human-redPequeno.svg" />
+          </div>
+          <h4>Estou Acompanhado</h4>
+        </div>
+      </section>
+      </div>
       <div class="b-row" style="height: 800px">
         <b-form @submit.prevent="pushForm()">
           <label for="name"
-            >Nome:</label>
-            <b-form-input type="text" v-model="form.name"></b-form-input>
+            >Nome:<b-form-input type="text" v-model="form.name" required></b-form-input></label>
             <br/>
           <label for="email"
-            >Email:</label>
-            <b-form-input type="text" v-model="form.email"></b-form-input><br />
+            >Email:<b-form-input type="text" v-model="form.email" required></b-form-input></label>
+            <br />
           <label for="password"
-            >Password:</label>
-            <b-form-input type="password" v-model="form.password1"></b-form-input><br />
+            >Password:<b-form-input type="password" v-model="form.password1" required></b-form-input></label>
+            <br />
           <label for="confirmarpassword"
-            >Confirmar Password:</label><b-form-input type="password" v-model="form.password2"
-          />
-          <b-button type="submit" variant="primary">Registar</b-button>
+            >Confirmar Password:<b-form-input type="password" v-model="form.password2" required></b-form-input></label>
+          <b-button type="submit" variant="primary" style="background-color: #374785;
+          border-color: #374785;">Registar</b-button>
         </b-form>
+        <img
+        id="logobg"
+        src="../assets/redelipse2.svg"
+        alt="logo back"
+        style=" margin-left:1229px; margin-top:245px; position: absolute"
+      />
       </div>
     </div>
     <FooterX />
@@ -103,24 +130,28 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getselectedUser","getUsers"]),
+    ...mapGetters(["getselectedUser","getUsers","getId"]),
   },
   methods: {
-    ...mapMutations(["SET_SELECTED_USER", "SET_USER"]),
+    ...mapMutations(["SET_SELECTED_USER", "SET_USER","INCREMENT_ID"]),
     pushForm() {
       if (this.form.password1 == this.form.password2) {
-        const user = {
+        this.INCREMENT_ID();
+         const user = {
           name: this.form.name,
           email: this.form.email,
           password: this.form.password1,
-          type: this.getselectedUser
+          type: this.getselectedUser,
+          id: this.getId
         }
         if(this.getUsers.some(user => user.name==this.form.name)){
           alert("Utilizador já resistado!")
         }
         else{
           this.SET_USER(user);
-        }
+          this.SET_SELECTED_USER(null);
+          this.$router.push("/login")
+        } 
       }
     },
   },
@@ -142,6 +173,12 @@ export default {
   margin-bottom: 300px;
   overflow: hidden;
 }
+.container2 {
+  display: flex;
+  width: 75% !important;
+  justify-content: space-around;
+  overflow: hidden;
+}
 .card {
   background-color: #f8e9a1 !important;
   border: none !important;
@@ -151,6 +188,16 @@ export default {
   text-align: center;
 }
 .card:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.card2 {
+  background-color: #f8e9a1 !important;
+  border: none !important;
+  color: #374785;
+  text-align: center;
+}
+.card2:hover {
   cursor: pointer;
   opacity: 0.8;
 }
@@ -171,6 +218,9 @@ export default {
 .card h2 {
   padding: 10px;
 }
+.card2 h4 {
+  padding: 20px;
+}
 .card p {
   padding: 10px;
   font-size: 13px;
@@ -180,10 +230,6 @@ export default {
   z-index: -2;
   margin-top: -150px;
   margin-bottom: -150px;
-}
-.container2 div {
-  width: 200px !important;
-  background-color: blue !important;
 }
 </style>
 

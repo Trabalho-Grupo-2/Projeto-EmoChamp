@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
     <div>
         <Navbar />
@@ -169,3 +170,25 @@
         border: 3px solid #374785;
     }
 </style>
+=======
+<template>
+  <div>
+    <Navbar />
+    <FooterX />
+  </div>
+</template>
+
+<script>
+import Navbar from "../components/Navbar.vue";
+import FooterX from "../components/FooterX.vue";
+
+export default {
+  components: {
+    Navbar,
+    FooterX,
+  },
+};
+</script>
+
+<style></style>
+>>>>>>> 2680938ca3fd3ceac2fa8520876f36e2a39c4579

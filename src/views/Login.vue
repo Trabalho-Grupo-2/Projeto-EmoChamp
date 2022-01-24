@@ -1,16 +1,17 @@
 <template>
   <div>
     <Navbar />
-      <img src="../assets/registerbg.svg" alt="yellowbg" id="yellowbg" />
+      <img src="../assets/redelipsebg.svg" alt="redbg" id="redbg" />
       <div class="b-row" style="height: 100px"></div>
-      <div class="b-row" style="height: 200px"></div>
+      <div class="b-row" style="height: 200px"><h2 style="color:white;">Login</h2></div>
       <div class="b-row" style="height: 800px">
         <b-form @submit.prevent="pushLogin()">
           <label for="email">Email:</label>
           <b-form-input v-model="form.email" type="text"></b-form-input><br />
           <label for="password">Password:</label>
           <b-form-input v-model="form.password" type="password"></b-form-input>
-          <b-button type="submit" variant="primary">Login</b-button>
+          <b-button type="submit" variant="primary" style="background-color: #374785;
+          border-color: #374785;">Login</b-button>
         </b-form>
       </div>
     <FooterX />
@@ -35,18 +36,24 @@ export default {
         email: "",
         password: "",
       },
+      control: false,
+      user : ""
     };
   },
   methods: {
       ...mapMutations([
-            'SET_USER_LOGIN',
+            "SET_USER_LOGIN","SET_LOGGED_USER"
         ]),
       pushLogin() {
-          if(this.getUsers.some(user => {
-              user.name == this.form.email && user.password == this.form.password
-          }))
+          if(this.getUsers.some(user => 
+              user.email == this.form.email && user.password == this.form.password
+          ))
           {
-              this.SET_USER_LOGIN
+              this.user = this.getUsers.find( user => user.email == this.form.email);
+              this.control = true;
+              this.SET_LOGGED_USER(this.user);
+              this.SET_USER_LOGIN(this.control);
+              this.$router.push("/play")
           }
           else{
               alert("Credenciais Inválidas")
@@ -66,7 +73,7 @@ export default {
   margin: 0;
 }
 
-#yellowbg {
+#redbg {
   position: absolute;
   z-index: -2;
   margin-top: -150px;
