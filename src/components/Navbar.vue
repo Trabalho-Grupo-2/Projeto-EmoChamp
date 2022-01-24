@@ -37,7 +37,7 @@
                 >HOME</router-link
               >
             </li>
-            <li class="nav-item">
+            <li v-if="getLoggedState" class="nav-item">
               <router-link :to="{name:'Play', params: {user_id: getLoggedUser.id}}"
                 class="link"
                 style="
@@ -48,7 +48,19 @@
                 >JOGAR
               </router-link>
             </li>
-            <li v-show="getLoggedState && getLoggedUser.type != 'admin'" class="nav-item">
+            <li v-else class="nav-item">
+              <router-link :to="{name:'Play'}"
+                class="link"
+                style="
+                  margin-left: 100px;
+                  text-decoration: none;
+                  color: #24305e;
+                "
+                >JOGAR
+              </router-link>
+            </li>
+            
+            <li v-if="getLoggedState && getLoggedUser.type != 'admin'" class="nav-item">
               <router-link :to="{ name: 'Profile', params: {user_id: getLoggedUser.id} }"
                 class="link"
                 style="
@@ -59,7 +71,7 @@
                 >PERFIL</router-link
               >
             </li>
-            <li v-show="getLoggedState && getLoggedUser.type == 'admin'" class="nav-item">
+            <li v-if="getLoggedState && getLoggedUser.type == 'admin'" class="nav-item">
               <router-link :to="{ name: 'BackOffice', params: {user_id: getLoggedUser.id} }"
                 class="link"
                 style="
@@ -70,7 +82,7 @@
                 >ADMIN</router-link
               >
             </li>
-            <li v-show="getLoggedState && getLoggedUser.type != 'admin' && getLoggedUser.type != 'psychologist'" class="nav-item">
+            <li v-if="getLoggedState && getLoggedUser.type != 'admin' && getLoggedUser.type != 'psychologist'" class="nav-item">
               <router-link :to="{ name: 'Stats', params: {user_id: getLoggedUser.id} }"
                 class="link"
                 style="
@@ -81,7 +93,7 @@
                 >ESTATÍSTICAS</router-link
               >
             </li>
-            <li v-show="getLoggedState && getLoggedUser.type == 'psychologist'" class="nav-item">
+            <li v-if="getLoggedState && getLoggedUser.type == 'psychologist'" class="nav-item">
               <router-link :to="{ name: 'Consulta', params: {user_id: getLoggedUser.id} }"
                 class="link"
                 style="

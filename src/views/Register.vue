@@ -137,7 +137,7 @@ export default {
     pushForm() {
       if (this.form.password1 == this.form.password2) {
         this.INCREMENT_ID();
-        const user = {
+         const user = {
           name: this.form.name,
           email: this.form.email,
           password: this.form.password1,
@@ -151,7 +151,7 @@ export default {
           this.SET_USER(user);
           this.SET_SELECTED_USER(null);
           this.$router.push("/login")
-        }
+        } 
       }
     },
   },

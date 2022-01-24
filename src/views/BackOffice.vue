@@ -81,7 +81,7 @@ export default {
       'getUsers',
     ]),
     filterUsers() {
-      return this.filteredUsers.filter((user) => user.name.startsWith(this.searchInput) || user.email.startsWith(this.searchInput) || this.searchInput == "")
+      return this.getUsers.filter((user) => user.name.startsWith(this.searchInput) || user.email.startsWith(this.searchInput) || this.searchInput == "")
     }
   },
   methods: {
@@ -89,14 +89,10 @@ export default {
       'SET_USER_LOGOUT','REMOVE_USER'
     ]),
     removeUser(id) {
-      if(confirm("Tens a certeza que pretendes remover este utilizador?")){
+      if(confirm("Tem a certeza que pretende remover este utilizador?")){
         this.REMOVE_USER(id);
       }
     }
-  },
-  beforeMount () {
-    this.filteredUsers = this.getUsers;
-    this.filteredUsers.shift();
   },
 };
 </script>
