@@ -31,11 +31,11 @@ export default {
 <style scoped>
 #pagemarker {
   position: relative;
-  left: 550px;
-  top: -15px;
+  left: 580px;
+  top:0px;
   z-index: -1;
 }
-.div {
+#g1instructions {
   height: 500px;
 }
 </style>
