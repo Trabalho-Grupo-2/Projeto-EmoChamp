@@ -2,9 +2,14 @@
     <div>
         <Navbar />
 
+<div class="homeImg">
+
         <img id="pagemarker" src="../assets/activepagemarker.svg" alt="marker" />
         <img id="redBaloonTop" src="../assets/redelipse.svg" alt="Red Baloon" style="margin-top: 60px" />
         <img id="bluebg" src="../assets/homebackground.svg" alt="marker" />
+
+</div>
+
 
         <div class="div">
 
@@ -32,8 +37,6 @@
                 <b-row>
                     <b-col cols="9"></b-col>
                     <b-col cols="3">
-                        <b-button type="button" @click="$router.push({name: 'Play'})" variant="outline-primary" size="lg"
-                            class="buttonPlay">
                             Jogar
                         </b-button>
                     </b-col>
@@ -128,13 +131,13 @@
 </script>
 
 <style>
-    #redBaloonTop {
+    .homeImg #redBaloonTop {
         margin-top: 60px;
         top: 500px;
         position: absolute;
     }
 
-    #redBaloonBottom {
+    .homeImg #redBaloonBottom {
         margin-top: 60px;
         top: 1300px;
         left: 90%;
@@ -142,7 +145,7 @@
         position: absolute;
     }
 
-    #bluebg {
+    .homeImg #bluebg {
         position: absolute;
         width: 1540px;
         height: 705px;
@@ -151,7 +154,7 @@
         z-index: -2;
     }
 
-    #pagemarker {
+    .homeImg #pagemarker {
         position: absolute;
         left: 432px;
         top: 0px;

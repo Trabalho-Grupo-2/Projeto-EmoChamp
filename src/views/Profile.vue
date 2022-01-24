@@ -95,8 +95,6 @@
                         </b-carousel>
                     </b-col>
                 </b-row>
-
-
             </b-container>
         </div>
 
@@ -117,6 +115,7 @@
 </script>
 
 <style>
+
     #redBaloonTop {
         margin-top: 60px;
         top: 200px;
