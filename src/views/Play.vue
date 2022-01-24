@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <img id="pagemarker" src="../assets/activepagemarker.svg" alt="marker" />
+    <img id="pagemarker1" src="../assets/activepagemarker.svg" alt="marker" />
     <img
       src="../assets/redelipse.svg"
       alt="bg baloon"
@@ -171,7 +171,7 @@ export default {
 #button1, #button2 {
   display: none;
 }
-#pagemarker {
+#pagemarker1 {
         position: absolute;
         left: 580px;
         top: 0px;
