@@ -15,28 +15,40 @@
     </div>
 
     <div class="container_game1">
+      <div v-if="isCorrect">
+        <div @click="handleRightQuestionpt2()" id="displayWrongRight">
+          </div>
+        <img id="correctbutton" src="../assets/correct.png" alt="correctbutton">
+      </div>
+      <div v-if="isWrong">
+        <div @click="handleWrongQuestionpt2()" id="displayWrongRight">
+          </div>
+        <img id="wrongbutton" src="../assets/wrong.png" alt="correctbutton">
+      </div>
+      <p id="question">{{question}}</p>
       <b-container class="containerGame01">
         <b-row align-h="center" align-v="center" class="containerRow01">
           <b-col cols="3">
-            <img class="gameFoto" id="gamefoto1" :src="images.img1.url" @click.prevent="verifyAnswer()" />
-            <p align="center">1</p>
+            <img class="gameFoto" id="gamefoto1" :src="images[0].url" @click.prevent="verifyAnswer($event)" />
+            <p class="imgnumber" align="center">1</p>
           </b-col>
           <b-col cols="3">
-            <img class="gameFoto" id="gamefoto2" :src="images.img2.url" @click="verifyAnswer()" />
-            <p align="center">2</p>
+            <img class="gameFoto" id="gamefoto2" :src="images[1].url" @click="verifyAnswer($event)" />
+            <p class="imgnumber" align="center">2</p>
           </b-col>
         </b-row>
 
         <b-row align-h="center" align-v="start" class="containerRow02">
           <b-col cols="3">
-            <img class="gameFoto" id="gamefoto3" :src="images.img3.url" @click="verifyAnswer()" />
-            <p align="center">3</p>
+            <img class="gameFoto" id="gamefoto3" :src="images[2].url" @click="verifyAnswer($event)" />
+            <p class="imgnumber" align="center">3</p>
           </b-col>
           <b-col cols="3">
-            <img class="gameFoto" id="gamefoto4" :src="images.img4.url" @click="verifyAnswer()" />
-            <p align="center">4</p>
+            <img class="gameFoto" id="gamefoto4" :src="images[3].url" @click="verifyAnswer($event)" />
+            <p class="imgnumber" align="center">4</p>
           </b-col>
         </b-row>
+        <p id="progressNumber">{{count}}/20</p>
       </b-container>
     </div>
     <FooterX />
@@ -46,7 +58,7 @@
 <script>
 import Navbar from "../components/Navbar.vue";
 import FooterX from "../components/FooterX.vue";
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 
 export default {
@@ -54,14 +66,17 @@ export default {
     return {
         roll: 0,
         roll2: 0,
+        count: 0,
         img_src: "../assets/questions/",
         question: "",
-        images: {
-            img1: {url : "", category : ""},
-            img2: {url :"", category : ""},
-            img3: {url :"", category : ""},
-            img4: {url :"", category : ""},
-        }
+        images: [
+            {url : "", category : ""},
+            {url : "", category : ""},
+            {url : "", category : ""},
+            {url : "", category : ""},
+    ],
+        isCorrect: false,
+        isWrong: false
     }
   },
   components: {
@@ -70,77 +85,104 @@ export default {
   },
   computed: {
         ...mapGetters([
-            'getCategories',
+            'getCategories','getLoggedUser',
         ])
     },
    methods: {
+     ...mapMutations([
+            'INCREMENT_TOTAL_ANSWERS','INCREMENT_RIGHT_ANSWERS',
+        ]),
        getQuestion() {
            this.img_src = "../assets/questions/";
            this.roll = Math.round(Math.random() * 7);
            this.roll2 = Math.round(Math.random() * 5);
            if(this.roll == 0){
-               this.roll++;
+               this.img_src+= `${this.getCategories[0]}/${this.roll2}.jpg`
            }
            if(this.roll == 1){
-               this.img_src+= `${this.getCategories[0]}/${this.roll2}.jpg`
-           };
-           if(this.roll == 2){
                this.img_src+= `${this.getCategories[1]}/${this.roll2}.jpg`
            };
-           if(this.roll == 3){
+           if(this.roll == 2){
                this.img_src+= `${this.getCategories[2]}/${this.roll2}.jpg`
            };
-           if(this.roll == 4){
+           if(this.roll == 3){
                this.img_src+= `${this.getCategories[3]}/${this.roll2}.jpg`
            };
-           if(this.roll == 5){
+           if(this.roll == 4){
                this.img_src+= `${this.getCategories[4]}/${this.roll2}.jpg`
            };
-           if(this.roll == 6){
+           if(this.roll == 5){
                this.img_src+= `${this.getCategories[5]}/${this.roll2}.jpg`
-           }
-           if(this.roll == 7){
+           };
+           if(this.roll == 6){
                this.img_src+= `${this.getCategories[6]}/${this.roll2}.jpg`
            }
        },
        getQuestionGroup(){
            this.getQuestion();
-           this.images.img1.url = this.img_src
-           this.images.img1.category = this.getCategories[this.roll -1]
+           this.images[0].url = this.img_src
+           this.images[0].category = this.getCategories[this.roll]
            this.getQuestion();
-           this.images.img2.url = this.img_src
-           this.images.img2.category = this.getCategories[this.roll -1]
+           this.images[1].url = this.img_src
+           this.images[1].category = this.getCategories[this.roll]
            this.getQuestion();
-           this.images.img3.url = this.img_src
-           this.images.img3.category = this.getCategories[this.roll -1]
+           this.images[2].url = this.img_src
+           this.images[2].category = this.getCategories[this.roll]
            this.getQuestion();
-           this.images.img4.url = this.img_src
-           this.images.img4.category = this.getCategories[this.roll -1]
+           this.images[3].url = this.img_src
+           this.images[3].category = this.getCategories[this.roll]
            this.roll = Math.round(Math.random() * 3)
            if(this.roll == 0){
-               this.question = this.images.img1.category
+               this.question = this.images[0].category
            };
            if(this.roll == 1){
-               this.question = this.images.img2.category
+               this.question = this.images[1].category
            };
            if(this.roll == 2){
-               this.question = this.images.img3.category
+               this.question = this.images[2].category
            };
            if(this.roll == 3){
-               this.question = this.images.img4.category
+               this.question = this.images[3].category
            };
-           console.log(this.images);
-           console.log(this.question);
        },
-       verifyAnswer: function (e){
-           if (e){
-               console.log("sucess")
-               alert(e.target.tagName);
-           }
+       verifyAnswer(event){
+         let clickedLink = event.target.src
+         this.count++;
+         if(clickedLink.includes(this.question)){
+           this.INCREMENT_RIGHT_ANSWERS(this.roll+1);
+           this.INCREMENT_TOTAL_ANSWERS(this.roll+1);
+           this.handleRightQuestion();
+         }
+         else{
+           this.INCREMENT_TOTAL_ANSWERS(this.roll+1);
+           this.handleWrongQuestion();
+         }
+
+       },
+       handleRightQuestion(){
+         this.isCorrect = true;
+       },
+       handleRightQuestionpt2(){
+         this.isCorrect = false;
+         this.getQuestionGroup();
+       },
+       handleWrongQuestion(){
+         this.isWrong = true;
+       },
+       handleWrongQuestionpt2(){
+         this.isWrong = false;
+         this.getQuestionGroup();
        }
    },
    beforeMount () {
        this.getQuestionGroup();
+   },
+   watch: {
+     count: function() {
+       if(this.count == 20){
+       this.$router.push({name: 'Profile' , params: {user_id: this.getLoggedUser.id}})
+       }
+     }
    },
 };
 </script>
@@ -174,7 +216,7 @@ export default {
 }
 
 .container_game1 .containerGame01 .gameFoto {
-  margin-bottom: 20px;
+  margin-top: 30px;
   height: 200px;
   width: 200px;
 }
@@ -188,5 +230,38 @@ export default {
 
 .container_game1 .containerGame01 .containerRow02 {
   padding: 30px 0px 25px 0px;
+}
+.container_game1 #question{
+  position: absolute;
+  margin-left: 33%;
+  margin-top: 1%;
+  font-size: 1.2em;
+}
+.container_game1 .imgnumber{
+  margin-left: -20%;
+}
+#correctbutton{
+  position:absolute;
+  margin-left: 29%;
+  margin-top: 15%;
+  border-radius: 100px;
+}
+#wrongbutton{
+  position:absolute;
+  margin-left: 28%;
+  margin-top: 15%;
+  border-radius: 100px;
+  width:190px;
+}
+#displayWrongRight{
+  position:absolute;
+  background-color: rgba(0,0,0,0.2);
+  width: 1090px;
+  height: 630px;
+}
+#progressNumber{
+  position:absolute;
+  margin-left: 55%;
+  margin-top: -3%;
 }
 </style>

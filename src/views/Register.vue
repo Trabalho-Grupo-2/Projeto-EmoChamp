@@ -144,7 +144,7 @@ export default {
           type: this.getselectedUser,
           description: "", 
           avatar: "",
-          categories: [], 
+          categories: [{ Angry: true, total:0, correct:0 }, { Disgusted: true, total:0, correct:0 }, { Fearful: true, total:0, correct:0 }, { Happy: true, total:0, correct:0 }, { Neutral: true, total:0, correct:0 }, { Sad: true, total:0, correct:0}, { Surprised: true, total:0, correct:0 }], 
           badges: [],
           id: this.getId
         }

@@ -6,18 +6,18 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   plugins: [createPersistedState({
-        storage: window.localStorage,
-    })],
+    storage: window.localStorage,
+  })],
   state: {
     selectedUser: null,
     isLogged: false,
     loggedUser: null,
-    users: [{ name: "Admin", email: "Admin", password: "Esmad_2122", type: "admin" , id:0 },
-    { name: "User", email: "User", password: "Esmad_2122", description: "", avatar: "", categories: [], badges: [], type: "alone" , id:1 },
-    { name: "User2", email: "User2", password: "Esmad_2122", description: "", avatar: "", categories: [], badges: [], type: "tutor" , id:2 },
-    { name: "User3", email: "User3", password: "Esmad_2122", description: "", avatar: "", categories: [], badges: [], type: "psychologist" , id:3 }],
+    users: [{ name: "Admin", email: "Admin", password: "Esmad_2122", type: "admin", id: 0 },
+    { name: "User", email: "User", password: "Esmad_2122", description: "", avatar: "", categories: [{ Angry: true, total:0, correct:0 }, { Disgusted: true, total:0, correct:0 }, { Fearful: true, total:0, correct:0 }, { Happy: true, total:0, correct:0 }, { Neutral: true, total:0, correct:0 }, { Sad: true, total:0, correct:0}, { Surprised: true, total:0, correct:0 }], badges: [], type: "alone", id: 1 },
+    { name: "User2", email: "User2", password: "Esmad_2122", description: "", avatar: "", categories: [{ Angry: true, total:0, correct:0 }, { Disgusted: true, total:0, correct:0 }, { Fearful: true, total:0, correct:0 }, { Happy: true, total:0, correct:0 }, { Neutral: true, total:0, correct:0 }, { Sad: true, total:0, correct:0}, { Surprised: true, total:0, correct:0 }], badges: [], type: "tutor", id: 2 },
+    { name: "User3", email: "User3", password: "Esmad_2122", description: "", avatar: "", badges: [], type: "psychologist", id: 3 }],
     id: 3,
-    categories: ["Angry","Disgusted","Fearful","Happy","Neutral","Sad","Surprised"]
+    categories: ["Angry", "Disgusted", "Fearful", "Happy", "Neutral", "Sad", "Surprised"]
   },
   getters: {
     getselectedUser: state => state.selectedUser,
@@ -38,7 +38,9 @@ export default new Vuex.Store({
     },
     SET_USER_LOGOUT: (state, payload) => { state.isLogged = payload; state.loggedUser = null },
     SET_LOGGED_USER: (state, payload) => { state.loggedUser = payload; },
-    INCREMENT_ID: (state) => {state.id++},
-    REMOVE_USER: (state,payload) => { state.users.splice(payload,1)}
+    INCREMENT_ID: (state) => { state.id++ },
+    REMOVE_USER: (state, payload) => { state.users.splice(payload, 1) },
+    INCREMENT_TOTAL_ANSWERS: (state,payload) => state.loggedUser.categories[payload].total++,
+    INCREMENT_RIGHT_ANSWERS: (state,payload) => state.loggedUser.categories[payload].correct++,
   },
 });
