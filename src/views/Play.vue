@@ -13,7 +13,7 @@
           class="display-4"
           style="color: #374785; font-size: 30px; margin-top: -300px"
         >
-          Escolhe o o jogo que pretendes jogar!
+          Escolhe o jogo que pretendes jogar!
         </h1>
       </div>
       <div class="b-row" style="height: 100px"></div>
