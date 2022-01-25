@@ -10,7 +10,7 @@
                     <b-row align-content="center">
                         <b-col>
                             <img class="perfilIcon" src="../assets/Badges/Group190.svg" alt="perfilIcon">
-                            <span class="perfilSpan">user777</span>
+                            <span class="perfilSpan">{{getLoggedUser.name}}</span>
                         </b-col>
 
                         <b-col cols="8" class="perfilAbout">
@@ -94,11 +94,17 @@
 <script>
     import Navbar from "../components/Navbar.vue";
     import FooterX from "../components/FooterX.vue";
+    import { mapGetters } from 'vuex';
 
     export default {
         components: {
             Navbar,
             FooterX,
+        },
+        computed: {
+            ...mapGetters([
+                'getLoggedUser',
+            ])
         },
     };
 </script>

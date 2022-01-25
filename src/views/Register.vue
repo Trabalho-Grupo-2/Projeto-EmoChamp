@@ -142,6 +142,10 @@ export default {
           email: this.form.email,
           password: this.form.password1,
           type: this.getselectedUser,
+          description: "", 
+          avatar: "",
+          categories: [], 
+          badges: [],
           id: this.getId
         }
         if(this.getUsers.some(user => user.name==this.form.name)){

@@ -13,9 +13,9 @@ export default new Vuex.Store({
     isLogged: false,
     loggedUser: null,
     users: [{ name: "Admin", email: "Admin", password: "Esmad_2122", type: "admin" , id:0 },
-    { name: "User", email: "User", password: "Esmad_2122", type: "alone" , id:1 },
-    { name: "User2", email: "User2", password: "Esmad_2122", type: "tutor" , id:2 },
-    { name: "User3", email: "User3", password: "Esmad_2122", type: "psychologist" , id:3 }],
+    { name: "User", email: "User", password: "Esmad_2122", description: "", avatar: "", categories: [], badges: [], type: "alone" , id:1 },
+    { name: "User2", email: "User2", password: "Esmad_2122", description: "", avatar: "", categories: [], badges: [], type: "tutor" , id:2 },
+    { name: "User3", email: "User3", password: "Esmad_2122", description: "", avatar: "", categories: [], badges: [], type: "psychologist" , id:3 }],
     id: 3,
     
   },
