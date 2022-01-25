@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <Navbar />
@@ -108,4 +109,5 @@ button:hover {
   background-color: #374785 !important;
   color: white !important;
 }
+
 </style>
