@@ -16,7 +16,8 @@ export default new Vuex.Store({
     { name: "User", email: "User", password: "Esmad_2122", type: "alone" , id:1 },
     { name: "User2", email: "User2", password: "Esmad_2122", type: "tutor" , id:2 },
     { name: "User3", email: "User3", password: "Esmad_2122", type: "psychologist" , id:3 }],
-    id: 3
+    id: 3,
+    
   },
   getters: {
     getselectedUser: state => state.selectedUser,
