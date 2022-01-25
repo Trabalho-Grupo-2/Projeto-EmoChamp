@@ -83,16 +83,16 @@
       <div class="b-row" style="height: 800px">
         <b-form @submit.prevent="pushForm()">
           <label for="name"
-            >Nome:<b-form-input type="text" v-model="form.name" required></b-form-input></label>
+            >Nome:</label><b-form-input class="input" type="text" v-model="form.name" required></b-form-input>
             <br/>
           <label for="email"
-            >Email:<b-form-input type="text" v-model="form.email" required></b-form-input></label>
+            >Email:</label><b-form-input class="input" type="text" v-model="form.email" required></b-form-input>
             <br />
           <label for="password"
-            >Password:<b-form-input type="password" v-model="form.password1" required></b-form-input></label>
+            >Password:</label><b-form-input class="input" type="password" v-model="form.password1" required></b-form-input>
             <br />
           <label for="confirmarpassword"
-            >Confirmar Password:<b-form-input type="password" v-model="form.password2" required></b-form-input></label>
+            >Confirmar Password:</label><b-form-input class="input" type="password" v-model="form.password2" required></b-form-input>
           <b-button type="submit" variant="primary" style="background-color: #374785;
           border-color: #374785;">Registar</b-button>
         </b-form>
@@ -241,6 +241,22 @@ button {
 button:hover {
   background-color: #374785 !important;
   color: white !important;
+}
+.input {
+  width: 30%;
+  height: 10%;
+  margin-left: 20%;
+  border: 3px solid #374785;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+label {
+  position:absolute;
+  color: #374785;
+  font-size: 16px;
+  margin-top: 0.5%;
+  margin-left: 7%;
 }
 </style>
 
