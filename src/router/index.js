@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Play from "../views/Play.vue";
+import Consulta from "../views/Consulta.vue";
 import Stats from "../views/Stats.vue";
 import Profile from "../views/Profile.vue";
 import Game1 from "../views/Game1.vue";
@@ -27,6 +28,11 @@ const routes = [
     path: "/profile/:user_id",
     name: "Profile",
     component: Profile,
+  },
+  {
+    path: "/consulta/:user_id",
+    name: "Consulta",
+    component: Consulta,
   },
   {
     path: "/stats/:user_id",
