@@ -232,7 +232,9 @@
     }
 
     .perfil .perfilContainer .perfilRowBadge .perfilSpan {
-        margin: 0px 0px 0px 35px;
+        position: absolute;
+        margin-left: -7.75%;
+        margin-top: 10%;
     }
 
     .perfil .perfilContainer .perfilRowBadge .perfilAbout {
