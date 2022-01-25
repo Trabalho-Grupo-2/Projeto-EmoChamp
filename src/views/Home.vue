@@ -105,8 +105,9 @@
                     </b-col>
                 
                     <b-col cols="5" align-self="start" class="video">
-                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
-                        </iframe>
+                        <video controls>
+  <source src="../assets/videodemo.mp4" type="video/mp4">
+  </video>
                     </b-col>
                     <b-col cols="1"></b-col>
                 </b-row>
@@ -285,7 +286,7 @@
         margin: 0px 30px 40px 0px;
     }
 
-    .homeContent iframe {
+    .homeContent video {
         width: 500px;
         height: 276px;
     } 

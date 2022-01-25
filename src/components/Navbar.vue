@@ -37,7 +37,7 @@
                 >HOME</router-link
               >
             </li>
-            <li v-if="getLoggedState" class="nav-item">
+            <li v-if="getLoggedState && getLoggedUser.type != 'admin' && getLoggedUser.type != 'psychologist'" class="nav-item">
               <router-link :to="{name:'Play', params: {user_id: getLoggedUser.id}}"
                 class="link"
                 style="
@@ -110,7 +110,7 @@
 
       <button
         type="button"
-        @click="getLoggedState ? $router.push({name: 'Profile' , params: {user_id: getLoggedUser.id}}) : $router.push('Login')"
+        @click="getLoggedState ? $router.push({name: 'Profile' , params: {user_id: getLoggedUser.id}}) : $router.push('/Login')"
         class="btn btn-outline-primary"
         id="btnEntrar"
         style="color: #374785;
@@ -123,7 +123,7 @@
         type="button"
         class="btn btn-primary"
         id="btnRegistar"
-        @click="getLoggedState ? logout() :$router.push('Register')"
+        @click="getLoggedState ? logout() :$router.push('/Register')"
         style="
           background-color: #374785;
           border-color: #374785;
