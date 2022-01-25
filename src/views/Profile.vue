@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template>
     <div>
         <Navbar />
@@ -23,12 +22,12 @@
                     <div class="perfilRow">
 
                         <b-row>
-                            <b-col>
+                            <b-col class="perfilDataName">
                                 <p>
                                     Nome Completo:
                                 </p>
                             </b-col>
-                            <b-col>
+                            <b-col class="perfilDataNameValue">
                                 <p>
                                     Pedro Miguel Rodrigues
                                 </p>
@@ -38,12 +37,12 @@
                         </b-row>
 
                         <b-row>
-                            <b-col>
+                            <b-col class="perfilDataEmail">
                                 <p>
                                     Email:
                                 </p>
                             </b-col>
-                            <b-col>
+                            <b-col class="perfilDataEmailValue">
                                 <p>
                                     pedrorodrigues@example.com
                                 </p>
@@ -57,45 +56,34 @@
                     </div>
                 </div>
 
-                <b-row class="perfilRowInfo">
-                    <b-col>
+                <div class="perfilCarousel">
+                    <b-row align-h="center" class="perfilCarouselRow">
+                        <b-col cols="2">
+                            <p class="perfilCarouselTitle">Badges</p>
+                        </b-col>
+                    </b-row>
+                    <b-row>
+                        <b-col cols="2">
 
-                    </b-col>
+                        </b-col>
 
-                    <b-col>
+                        <div class="perfilBadgeGroup">
+                            <b-col cols="2">
+                                <div class="perfilBadge01"></div>
+                            </b-col>
+                            <b-col cols="2">
+                                <div class="perfilBadge02"></div>
+                            </b-col>
+                            <b-col cols="2">
+                                <div class="perfilBadge03"></div>
+                            </b-col>
+                        </div>
 
-                    </b-col>
-                </b-row>
+                        <b-col cols="2">
 
-                <b-row>
-                    <b-col>
-                        <!-- <b-carousel id="carousel-no-animation" style="text-shadow: 0px 0px 2px #000" no-animation
-                            indicators img-width="1024" img-height="480">
-                            <b-carousel-slide class="svgBadge" caption="1 slide" img-src="../assets/Badges/Group180.png">
-                            </b-carousel-slide>
-                            <b-carousel-slide class="svgBadge" caption="2 slide" img-src="../assets/Badges/Group180.png">
-                            </b-carousel-slide>
-                            <b-carousel-slide class="svgBadge" caption="3 slide" img-src="../assets/Badges/Group190.svg">
-                            </b-carousel-slide>
-                            <b-carousel-slide class="svgBadge" caption="4 slide" img-src="../assets/Badges/Group198.svg">
-                            </b-carousel-slide>
-                            <b-carousel-slide class="svgBadge" caption="First slide" img-src="../assets/Badges/Group207.svg">
-                            </b-carousel-slide>
-                        </b-carousel> -->
-
-                        <b-carousel id="carousel-no-animation" style="text-shadow: 0px 0px 2px #000" no-animation
-                            indicators img-width="1024" img-height="480">
-                            <b-carousel-slide caption="First slide" img-src="https://picsum.photos/1024/480/?image=10">
-                            </b-carousel-slide>
-                            <b-carousel-slide caption="Second Slide" img-src="https://picsum.photos/1024/480/?image=12">
-                            </b-carousel-slide>
-                            <b-carousel-slide caption="Third Slide" img-src="https://picsum.photos/1024/480/?image=22">
-                            </b-carousel-slide>
-                            <b-carousel-slide caption="Fourth Slide" img-src="https://picsum.photos/1024/480/?image=23">
-                            </b-carousel-slide>
-                        </b-carousel>
-                    </b-col>
-                </b-row>
+                        </b-col>
+                    </b-row>
+                </div>
             </b-container>
         </div>
 
@@ -116,7 +104,6 @@
 </script>
 
 <style>
-
     #redBaloonTop {
         margin-top: 60px;
         top: 200px;
@@ -169,26 +156,41 @@
         color: white !important;
         border: 3px solid #374785;
     }
+
+    .perfil .perfilCarousel {
+        margin: 100px 100px 200px 100px;
+
+    }
+
+    .perfil .perfilCarousel .perfilCarouselRow {
+        background-color: #F9F9F9;
+    }
+
+    .perfil .perfilCarousel .perfilCarouselRow .perfilCarouselTitle {
+        color: #24305E;
+        font-size: 27px;
+    }
+
+    .perfil .perfilCarousel .perfilCarouselRow .perfilBadge01 {
+        background-image: url("../assets/Badges/Group179.svg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .perfil .perfilCarousel .perfilCarouselRow .perfilBadge02 {
+        width: 100px;
+        height: 100px;
+        background-image: url("../assets/Badges/Group182.svg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .perfil .perfilCarousel .perfilCarouselRow .perfilBadge03 {
+        width: 100px;
+        height: 100px;
+        background-image: url("../assets/Badges/Group198.svg");
+        background-size: cover;
+        background-position: center;
+    }
+
 </style>
-=======
-<template>
-  <div>
-    <Navbar />
-    <FooterX />
-  </div>
-</template>
-
-<script>
-import Navbar from "../components/Navbar.vue";
-import FooterX from "../components/FooterX.vue";
-
-export default {
-  components: {
-    Navbar,
-    FooterX,
-  },
-};
-</script>
-
-<style></style>
->>>>>>> 2680938ca3fd3ceac2fa8520876f36e2a39c4579
