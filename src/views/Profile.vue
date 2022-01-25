@@ -18,7 +18,7 @@
 
                         <b-col cols="8" class="perfilAbout">
                             <p class="perfilTag">Sobre mim:</p>
-                            <textarea name="" id="" cols="50" rows="5"></textarea>
+                            <textarea name="" id="" cols="50" rows="5" disabled></textarea>
                         </b-col>
                     </b-row>
 
@@ -51,7 +51,7 @@
                                 </p>
                             </b-col>
                             <b-col>
-                                <b-button type="button" variant="outline-primary" size="lg" class="buttonPlay">
+                                <b-button v-b-modal.modal-center @click="modalShow = !modalShow" type="button" variant="outline-primary" size="lg" class="buttonPlay">
                                     Editar
                                 </b-button>
                             </b-col>
@@ -86,26 +86,74 @@
             </b-container>
 
            <div class="modalEditarPerfil">
-               <!--
-
-                   ESCREVER MODAL AQUI!!!
-
-               ───▐▀▄───────▄▀▌───▄▄▄▄▄▄▄─────────────
-               ───▌▒▒▀▄▄▄▄▄▀▒▒▐▄▀▀▒██▒██▒▀▀▄──────────
-               ──▐▒▒▒▒▀▒▀▒▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▄────────
-               ──▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▒▒▒▒▒▒▒▒▒▒▒▒▀▄──────
-               ▀█▒▒▒█▌▒▒█▒▒▐█▒▒▒▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌─────
-               ▀▌▒▒▒▒▒▒▀▒▀▒▒▒▒▒▒▀▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐───▄▄
-               ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌▄█▒█
-               ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒█▀─
-               ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▀───
-               ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌────
-               ─▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐─────
-               ─▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌─────
-               ──▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐──────
-               ──▐▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▌──────
-               ────▀▄▄▀▀▀▀▀▄▄▀▀▀▀▀▀▀▄▄▀▀▀▀▀▄▄▀──────── 
-               -->
+               <b-modal id="modal-center" centered title="Editar Perfil" v-model="modalShow">
+                   <form ref="form">
+                    <b-form-group
+                    label="Nome:"
+                    label-for="name-input"
+                    invalid-feedback="Name is required"
+                    :state="nameState"
+                    >
+                    <b-form-input
+                        id="name-input"
+                        type= "text"
+                        v-model="name"
+                        :state="nameState"
+                        required></b-form-input>
+                    </b-form-group>
+                    <b-form-group
+                    label="Email:"
+                    label-for="email-input"
+                    invalid-feedback="Email is required"
+                    :state="emailState"
+                    >
+                    <b-form-input
+                        id="email-input"
+                        type="email"
+                        v-model="email"
+                        :state="emailState"
+                        required></b-form-input>
+                    </b-form-group>
+                    <b-form-group
+                    label="Password:"
+                    label-for="password-input"
+                    invalid-feedback="Password is required"
+                    :state="passwordState"
+                    >
+                    <b-form-input
+                        id="password-input"
+                        type="password"
+                        v-model="password"
+                        :state="passwordState"
+                        required></b-form-input>
+                    </b-form-group>
+                    <b-form-group
+                    label="Confirmar Password:"
+                    label-for="password-input"
+                    invalid-feedback="Password is required"
+                    :state="passwordState"
+                    >
+                    <b-form-input
+                        id="password-input"
+                        type="password"
+                        v-model="password"
+                        :state="passwordState"
+                        required></b-form-input>
+                    </b-form-group>
+                    <b-form-group
+                    label="Sobre mim:"
+                    label-for="sobremim-input"
+                    invalid-feedback="Sobremim is required"
+                    :state="sobremimState"
+                    >
+                    <b-form-textarea
+                        id="sobremim-input"
+                        v-model="sobremim"
+                        :state="sobremimState"
+                        ></b-form-textarea>
+                    </b-form-group>
+                </form>
+               </b-modal>
            </div>
 
         </div>
@@ -125,6 +173,12 @@
 
 
     export default {
+        data(){
+            return { 
+                modalShow: false
+            }
+
+        },
         components: {
             Navbar,
             FooterX,
