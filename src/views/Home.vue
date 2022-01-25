@@ -106,8 +106,8 @@
                 
                     <b-col cols="5" align-self="start" class="video">
                         <video controls>
-  <source src="../assets/videodemo.mp4" type="video/mp4">
-  </video>
+                        <source src="../assets/videodemo.mp4" type="video/mp4">
+                        </video>
                     </b-col>
                     <b-col cols="1"></b-col>
                 </b-row>
@@ -115,7 +115,10 @@
 
         </div>
 
-        <img id="redBaloonBottom" src="../assets/redelipse.svg" alt="Red Baloon" />
+        <div class="homeImg">
+            <img id="redBaloonBottom" src="../assets/redelipse.svg" alt="Red Baloon" />
+        </div>
+
 
         <FooterX />
     </div>
@@ -150,10 +153,9 @@
 
     .homeImg #bluebg {
         position: absolute;
-        width: 1540px;
-        height: 705px;
-        right: 0px;
-        top: -80px;
+        width: 100%;
+        height: auto;   
+        top: -40px;
         z-index: -2;
     }
 

@@ -2,7 +2,10 @@
     <div>
         <Navbar />
 
-        <img id="redBaloonTop" src="../assets/redelipse.svg" alt="Red Baloon" style="margin-top: 60px" />
+        <div class="perfilImg">
+            <img id="pagemarker" src="../assets/activepagemarker.svg" alt="marker" />
+            <img id="redBaloonTop" src="../assets/redelipse.svg" alt="Red Baloon" style="margin-top: 60px" />
+        </div>
 
         <div class="perfil">
             <b-container class="perfilContainer">
@@ -57,34 +60,58 @@
                 </div>
 
                 <div class="perfilCarousel">
-                    <b-row align-h="center" class="perfilCarouselRow">
+                    <b-row align-h="center" align-v="center" class="perfilCarouselRow">
                         <b-col cols="2">
-                            <p class="perfilCarouselTitle">Badges</p>
+                            <p class="perfilCarouselTitle" tex>Badges</p>
                         </b-col>
                     </b-row>
-                    <b-row>
-                        <b-col cols="2">
-
+                    <b-row class="perfilBadgeGroup" align-v="center" align-h="center">
+                        <b-col sm align-self="center">
+                            <img src="../assets/seta-left.svg" class="nextFoto">
                         </b-col>
-
-                        <div class="perfilBadgeGroup">
-                            <b-col cols="2">
-                                <div class="perfilBadge01"></div>
-                            </b-col>
-                            <b-col cols="2">
-                                <div class="perfilBadge02"></div>
-                            </b-col>
-                            <b-col cols="2">
-                                <div class="perfilBadge03"></div>
-                            </b-col>
-                        </div>
-
-                        <b-col cols="2">
-
+                        <b-col sm>
+                            <img class="gameFoto" src="../assets/Badges/Group179.svg">
+                        </b-col>
+                        <b-col sm>
+                            <img class="gameFoto" src="../assets/Badges/Group190.svg">
+                        </b-col>
+                        <b-col sm>
+                            <img class="gameFoto" src="../assets/Badges/Group198.svg">
+                        </b-col>
+                        <b-col sm align-self="center">
+                            <img src="../assets/seta-right.svg" class="nextFoto">
                         </b-col>
                     </b-row>
                 </div>
             </b-container>
+
+           <div class="modalEditarPerfil">
+               <!--
+
+                   ESCREVER MODAL AQUI!!!
+
+               ───▐▀▄───────▄▀▌───▄▄▄▄▄▄▄─────────────
+               ───▌▒▒▀▄▄▄▄▄▀▒▒▐▄▀▀▒██▒██▒▀▀▄──────────
+               ──▐▒▒▒▒▀▒▀▒▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▄────────
+               ──▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▒▒▒▒▒▒▒▒▒▒▒▒▀▄──────
+               ▀█▒▒▒█▌▒▒█▒▒▐█▒▒▒▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌─────
+               ▀▌▒▒▒▒▒▒▀▒▀▒▒▒▒▒▒▀▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐───▄▄
+               ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌▄█▒█
+               ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▒█▀─
+               ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▀───
+               ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌────
+               ─▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐─────
+               ─▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌─────
+               ──▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐──────
+               ──▐▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▌──────
+               ────▀▄▄▀▀▀▀▀▄▄▀▀▀▀▀▀▀▄▄▀▀▀▀▀▄▄▀──────── 
+               -->
+           </div>
+
+        </div>
+
+        <div class="perfilImg">
+            <img id="bluebg" src="../assets/ondasmakerBaixo.svg" alt="marker" />
         </div>
 
         <FooterX />
@@ -95,6 +122,7 @@
     import Navbar from "../components/Navbar.vue";
     import FooterX from "../components/FooterX.vue";
 
+
     export default {
         components: {
             Navbar,
@@ -104,10 +132,25 @@
 </script>
 
 <style>
-    #redBaloonTop {
+    .perfilImg #pagemarker {
+        position: absolute;
+        left: 725px;
+        top: 0px;
+        z-index: -1;
+    }
+
+    .perfilImg #redBaloonTop {
         margin-top: 60px;
         top: 200px;
         position: absolute;
+    }
+
+    .perfilImg #bluebg {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 1000px;
+        z-index: -2;
     }
 
     .perfil {
@@ -115,11 +158,11 @@
     }
 
     .perfil .perfilContainer {
-        margin: 50px 50px 200px 50px;
+        margin: 50px 50px 450px 50px;
     }
 
     .perfil .perfilContainer .perfilRowBadge {
-        margin: 100px 100px 200px 300px;
+        margin: 100px 100px 100px 300px;
     }
 
     .perfil .perfilContainer .perfilRowBadge .perfilIcon {
@@ -158,39 +201,40 @@
     }
 
     .perfil .perfilCarousel {
-        margin: 100px 100px 200px 100px;
+        margin: 100px 100px 50px 100px;
 
     }
 
-    .perfil .perfilCarousel .perfilCarouselRow {
+    .perfil .perfilCarousel {
         background-color: #F9F9F9;
     }
 
     .perfil .perfilCarousel .perfilCarouselRow .perfilCarouselTitle {
         color: #24305E;
-        font-size: 27px;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 30px;
     }
 
-    .perfil .perfilCarousel .perfilCarouselRow .perfilBadge01 {
-        background-image: url("../assets/Badges/Group179.svg");
-        background-size: cover;
-        background-position: center;
+    .perfil .perfilCarousel .perfilBadgeGroup {
+        padding: 50px 0px 50px 0px;
     }
 
-    .perfil .perfilCarousel .perfilCarouselRow .perfilBadge02 {
-        width: 100px;
-        height: 100px;
-        background-image: url("../assets/Badges/Group182.svg");
-        background-size: cover;
-        background-position: center;
+    .perfil .perfilCarousel .perfilBadgeGroup .gameFoto {
+        height: 150px;
+        width: 150px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .perfil .perfilCarousel .perfilCarouselRow .perfilBadge03 {
-        width: 100px;
-        height: 100px;
-        background-image: url("../assets/Badges/Group198.svg");
-        background-size: cover;
-        background-position: center;
+    .perfil .perfilCarousel .perfilBadgeGroup .nextFoto {
+        height: 75px;
+        width: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
+
 
 </style>
