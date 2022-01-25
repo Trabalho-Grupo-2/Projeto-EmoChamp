@@ -17,7 +17,7 @@ export default new Vuex.Store({
     { name: "User2", email: "User2", password: "Esmad_2122", description: "", avatar: "", categories: [], badges: [], type: "tutor" , id:2 },
     { name: "User3", email: "User3", password: "Esmad_2122", description: "", avatar: "", categories: [], badges: [], type: "psychologist" , id:3 }],
     id: 3,
-    
+    categories: ["Angry","Disgusted","Fearful","Happy","Neutral","Sad","Surprised"]
   },
   getters: {
     getselectedUser: state => state.selectedUser,
@@ -25,6 +25,7 @@ export default new Vuex.Store({
     getUsers: state => state.users,
     getLoggedUser: state => state.loggedUser,
     getId: state => state.id,
+    getCategories: state => state.categories,
 
   },
   mutations: {
