@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template>
   <div>
     <Navbar />
@@ -54,25 +53,3 @@ export default {
   background-image: url("../assets/game_container.svg");
 }
 </style>
-=======
-<template>
-  <div>
-    <Navbar />
-    <FooterX />
-  </div>
-</template>
-
-<script>
-import Navbar from "../components/Navbar.vue";
-import FooterX from "../components/FooterX.vue";
-
-export default {
-  components: {
-    Navbar,
-    FooterX,
-  },
-};
-</script>
-
-<style></style>
->>>>>>> c341f4ec37ebe3fd6019c3a524af50e9f34749df
