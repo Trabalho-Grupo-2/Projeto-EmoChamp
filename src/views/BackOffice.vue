@@ -1,6 +1,7 @@
 <template>
   <div>
     <Navbar />
+    <img id="pagemarker3" src="../assets/activepagemarker.svg" alt="marker" />
     <img
       id="logobg"
       src="../assets/redelipse.svg"
@@ -116,5 +117,11 @@ h3, th, td {
 }
 button { 
   background-color: #374785;
+}
+#pagemarker3 {
+  position: absolute;
+  left: 730px;
+  top:0px;
+  z-index: -1;
 }
 </style>
