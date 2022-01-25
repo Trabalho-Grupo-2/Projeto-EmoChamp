@@ -231,5 +231,16 @@ export default {
   margin-top: -150px;
   margin-bottom: -150px;
 }
+button {
+  padding: 10px 50px;
+  border-radius: 7px;
+  margin-left: 65%;
+  margin-top: 5%;
+  font-size: 20px;
+}
+button:hover {
+  background-color: #374785 !important;
+  color: white !important;
+}
 </style>
 

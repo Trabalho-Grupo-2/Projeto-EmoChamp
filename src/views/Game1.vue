@@ -1,16 +1,21 @@
+
 <template>
   <div>
     <Navbar />
-    <img id="pagemarker" src="../assets/activepagemarker.svg" alt="marker" />
+    <img id="pagemarker2" src="../assets/activepagemarker.svg" alt="marker" />
     <div class="g1instructions">
       <h2>Jogo 1 - Reconhecimento de Expressões</h2>
-      <p>Intruções</p>
+      <br>
+      <p>Intruções:</p>
       <ol>
         <li>Na área de jogo podes encontrar 4 imagens.</li>
         <li>Seleciona a imagem que achas que corresponde à emoção descrita.</li>
         <li>Continua a adivinhar até que o jogo acabe.</li>
         <li>Diverte-te!</li>
       </ol>
+    </div>
+    <div class="container_game1">
+
     </div>
     <FooterX />
   </div>
@@ -28,14 +33,24 @@ export default {
 };
 </script>
 
-<style scoped>
-#pagemarker {
-  position: relative;
-  left: 550px;
-  top: -15px;
+<style>
+#pagemarker2 {
+  position: absolute;
+  left: 580px;
+  top:0px;
   z-index: -1;
 }
-.div {
-  height: 500px;
+.g1instructions {
+  margin-left: 100px;
+  margin-top: 50px;
+  color: #24305E;
+}
+.container_game1{
+  margin-top:50px;
+  margin-bottom: 150px;
+  margin-left:170px;
+  height:630px;
+  width: 1090px;
+  background-image: url("../assets/game_container.svg");
 }
 </style>
