@@ -8,7 +8,7 @@
       <div class="b-row" style="height: 800px">
         <b-form @submit.prevent="pushLogin()">
           <label for="email">Email:</label>
-          <b-form-input min="15" max="40" v-model="form.email" type="email"></b-form-input><br />
+          <b-form-input min="15" max="40" v-model="form.email" type="text"></b-form-input><br />
           <label for="password">Password:</label>
           <b-form-input min="8" max= "20" v-model="form.password" type="password"></b-form-input>
           <b-button type="submit" variant="primary" style="background-color: #374785;
