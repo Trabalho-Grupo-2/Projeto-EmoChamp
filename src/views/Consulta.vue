@@ -56,17 +56,11 @@
                 </div>
             </b-container>
         </div>
+        <StatsX />
 
         <div class="consultaImg">
             <img id="bluebg" src="../assets/ondasmakerBaixo.svg" alt="marker" />
         </div>
-
-        <!--    
-
-        CHAMAR COMPONENENTE ESTATISTICAS
-        !!!
-
-        -->
 
         <FooterX />
     </div>
@@ -75,12 +69,15 @@
 <script>
     import Navbar from "../components/Navbar.vue";
     import FooterX from "../components/FooterX.vue";
+    import StatsX from "../components/StatsX.vue";
+
 
 
     export default {
         components: {
             Navbar,
             FooterX,
+            StatsX,
         },
     };
 </script>
@@ -103,7 +100,7 @@
         position: absolute;
         width: 100%;
         height: auto;
-        top: 800px;
+        top: 1400px;
         z-index: -2;
     }
 
@@ -112,7 +109,7 @@
     }
 
     .consulta .consultaContainer {
-        margin: 50px 50px 600px 50px;
+        margin: 50px 50px 100px 50px;
     }
 
     .consulta .consultaContainer .consultaAddPaciente {
@@ -182,6 +179,5 @@
         color: white !important;
         border: 3px solid #374785;
     }
-
 
 </style>

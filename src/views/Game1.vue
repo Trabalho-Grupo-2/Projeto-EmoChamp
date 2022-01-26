@@ -98,14 +98,14 @@
             FooterX,
         },
         computed: {
-            ...mapGetters([
-                'getCategories', 'getLoggedUser',
-            ])
-        },
-        methods: {
-            ...mapMutations([
-                'INCREMENT_TOTAL_ANSWERS', 'INCREMENT_RIGHT_ANSWERS',
-            ]),
+        ...mapGetters([
+            'getCategories','getLoggedUser','getBadges',
+        ])
+    },
+   methods: {
+     ...mapMutations([
+            'INCREMENT_TOTAL_ANSWERS','INCREMENT_RIGHT_ANSWERS','PUSH_BADGE'
+        ]),
             getQuestion() {
                 this.img_src = "../assets/questions/";
                 this.roll = Math.round(Math.random() * 3);

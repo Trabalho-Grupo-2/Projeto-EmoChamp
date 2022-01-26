@@ -6,28 +6,7 @@
             <img id="pagemarker" src="../assets/activepagemarker.svg" alt="marker" />
             <img id="redBaloonTop" src="../assets/redelipse.svg" alt="Red Baloon" style="margin-top: 60px" />
         </div>
-        <div class="statsTab">
-            <b-tabs content-class="mt-3" align="center" fill>
-                <b-tab title="Geral" active>
-                    <p>I'm the first tab</p>
-
-                    <button @click="tabela()"> Teste !</button>
-                    <div id="chart"></div>
-
-
-                </b-tab>
-                <b-tab title="Jogo 1">
-                    <p>I'm the second tab</p>
-                </b-tab>
-                <b-tab title="Jogo 2">
-                    <p>I'm the first tab</p>
-                </b-tab>
-                <b-tab title="Categorias">
-                    <p>I'm the second tab</p>
-                </b-tab>
-            </b-tabs>
-        </div>
-
+        <StatsX/>
 
         <FooterX />
     </div>
@@ -36,6 +15,7 @@
 <script>
     import Navbar from "../components/Navbar.vue";
     import FooterX from "../components/FooterX.vue";
+    import StatsX from "../components/StatsX.vue"
     import ApexCharts from 'apexcharts'
 
 
@@ -47,13 +27,14 @@
         components: {
             Navbar,
             FooterX,
+            StatsX
         },
 
         data() {
             return {
                 options: {
-                    series: [44, 55, 67, 83, 90, 30, 40, 60, 80],
-                    colors: ['#F6B8C3', '#B8B8B8', '#E0B0FF', '#C8A2C8', '#CEC7C8', '#FF78A9', '#DDA0DD', '#D6A8B6','#CBC0DC'],
+                    series: [44],
+                    colors: ['#F8E9A1'],
                     chart: {
                         height: 500,
                         type: 'radialBar',
@@ -77,8 +58,7 @@
                             }
                         }
                     },
-                    labels: ['Yoga', 'Receitas', 'Jardinagem', 'Artes Plásticas', 'Quiz', 'Fitness', 'Jogos',
-                        'Meditação', 'DIY'
+                    labels: ['Yoga'
                     ],
                 },
             }
@@ -86,7 +66,7 @@
 
         methods: {
             tabela() {
-                var chart = new ApexCharts(document.querySelector("#chart"), this.options);
+                var chart = new ApexCharts(document.querySelector("#chart")[0], this.options);
                 chart.render();
             }
         },
@@ -106,9 +86,4 @@
         position: absolute;
     }
 
-    .statsTab {
-        width: 50%;
-        margin-top: 10%;
-        margin-left: 20%;
-    }
 </style>

@@ -42,7 +42,7 @@
       </div>
       <div class="b-row">
         <p class="text-white" style="font-size: 13px; margin-left: -140px">
-          <img
+          &nbsp;<img
             src="../assets/Social Icons/mail.svg"
             alt="location"
             style="
