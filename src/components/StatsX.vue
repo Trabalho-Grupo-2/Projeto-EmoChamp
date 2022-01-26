@@ -1,7 +1,7 @@
 <template>
   <div class="statsTab">
             <b-tabs content-class="mt-3" align="center" fill>
-                <b-tab title="Geral" active>
+                <b-tab title="Geral" active >
                     <b-container>
                         <b-row>
                             <b-col><div id="chart"></div>
@@ -20,7 +20,7 @@
                 <b-tab title="Jogo 1">
                    <b-container>
                         <b-row>
-                            <b-col><div id="chart"></div>
+                            <b-col><div id="chart3"></div>
                             </b-col>
                             <b-col></b-col>
                         </b-row>
@@ -34,7 +34,7 @@
                 <b-tab title="Jogo 2">
                    <b-container>
                         <b-row>
-                            <b-col><div id="chart2"></div>
+                            <b-col><div id="chart4"></div>
                             </b-col>
                             <b-col></b-col>
                         </b-row>
@@ -57,6 +57,7 @@ import ApexCharts from 'apexcharts'
 export default {
     data() {
             return {
+                condition:"",
                 options: {
                     series: [50],
                     colors: ['#F8E9A1'],
@@ -124,6 +125,7 @@ export default {
             chart.render();
             chart2.render();
         },
+       
 
 }
 </script>
@@ -131,7 +133,7 @@ export default {
 <style>
 .statsTab{
     width:70%;
-    margin: 0 auto 30% auto;
+    margin: 10% auto 30% auto;
 }
 .caixas{
     margin-top: 100px !important;
