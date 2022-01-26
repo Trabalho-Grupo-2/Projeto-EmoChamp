@@ -125,11 +125,12 @@
       </table>
     </div>
     <b-button
+        v-b-modal.modal-center
+        @click="modalShow = !modalShow"
         type="button"
         variant="outline-primary"
         size="lg"
         class="buttonaddbadge"
-        @click="modalShow = !modalShow"
         
       >
         Adicionar Badges
@@ -189,7 +190,7 @@ export default {
   },
   data() {
     return {
-      modal1show: false,
+      modalShow: false,
       searchInput: "",
       filteredUsers: [],
       form: {
@@ -233,9 +234,6 @@ export default {
         this.$bvModal.hide("modal-prevent-closing");
       });
     },
-    handlemodal1(){
-    this.modalShow = false
-    }
   },
 };
 </script>
