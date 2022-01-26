@@ -145,7 +145,7 @@ export default {
           description: "", 
           avatar: "",
           categories: [{ Angry: true, total:0, correct:0 }, { Disgusted: true, total:0, correct:0 }, { Fearful: true, total:0, correct:0 }, { Happy: true, total:0, correct:0 }, { Neutral: true, total:0, correct:0 }, { Sad: true, total:0, correct:0}, { Surprised: true, total:0, correct:0 }], 
-          badges: [],
+          badges: [{name: "Angry", src: "../assets/_badges/angry.png", lvl: 0},{name: "Disgusted", src: "../assets/_badges/disgusted.png", lvl:0},{name: "Fearful", src: "../assets/_badges/fearful.png", lvl:0},{name: "Happy", src:"../assets/_badges/happy.png", lvl:0},{name:"Neutral",src:"../assets/_badges/monster (1).png", lvl:0},{name: "Sad", src:"../assets/_badges/sad.png", lvl:0},{name: "Surprised", src:"../assets/_badges/surprised.png",lvl:0}],
           id: this.getId
         }
         if(this.getUsers.some(user => user.name==this.form.name)){
