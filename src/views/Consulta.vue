@@ -57,16 +57,30 @@
             </b-container>
         </div>
 
+        <div class="consultaTab">
+            <b-tabs content-class="mt-3" align="center" fill>
+                <b-tab title="Geral" active>
+                    <p>I'm the first tab</p>
+
+                    <button @click="tabela()"> Teste !</button>
+                    <div id="chart"></div>
+
+
+                </b-tab>
+                <b-tab title="Jogo 1">
+                    <p>I'm the second tab</p>
+                </b-tab>
+                <b-tab title="Jogo 2">
+                    <p>I'm the first tab</p>
+                </b-tab>
+                <b-tab title="Categorias">
+                    <p>I'm the second tab</p>
+                </b-tab>
+            </b-tabs>
+        </div>
         <div class="consultaImg">
             <img id="bluebg" src="../assets/ondasmakerBaixo.svg" alt="marker" />
         </div>
-
-        <!--    
-
-        CHAMAR COMPONENENTE ESTATISTICAS
-        !!!
-
-        -->
 
         <FooterX />
     </div>
@@ -75,12 +89,54 @@
 <script>
     import Navbar from "../components/Navbar.vue";
     import FooterX from "../components/FooterX.vue";
+    import ApexCharts from 'apexcharts'
+
 
 
     export default {
         components: {
             Navbar,
             FooterX,
+        },
+         data() {
+            return {
+                options: {
+                    series: [44],
+                    colors: ['#F8E9A1'],
+                    chart: {
+                        height: 500,
+                        type: 'radialBar',
+                    },
+                    plotOptions: {
+                        radialBar: {
+                            dataLabels: {
+                                name: {
+                                    fontSize: '22px',
+                                },
+                                value: {
+                                    fontSize: '16px',
+                                },
+                                total: {
+                                    show: true,
+                                    label: 'Total',
+                                    formatter: function () {
+                                        return 249
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    labels: ['Yoga'
+                    ],
+                },
+            }
+        },
+
+        methods: {
+            tabela() {
+                var chart = new ApexCharts(document.querySelector("#chart"), this.options);
+                chart.render();
+            }
         },
     };
 </script>
@@ -181,6 +237,11 @@
         background-color: #374785 !important;
         color: white !important;
         border: 3px solid #374785;
+    }
+    .consultaTab {
+        width: 50%;
+        margin-left: 20%;
+        margin-bottom: 10%;
     }
 
 
