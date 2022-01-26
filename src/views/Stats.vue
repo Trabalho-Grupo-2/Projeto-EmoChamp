@@ -7,6 +7,9 @@
             <img id="redBaloonTop" src="../assets/redelipse.svg" alt="Red Baloon" style="margin-top: 60px" />
         </div>
         <StatsX/>
+        <div class="statsImgfooter">
+            <img id="bluebg" src="../assets/ondasmakerBaixo.svg" alt="marker" />
+        </div>
 
         <FooterX />
     </div>
@@ -84,6 +87,13 @@
     .statsImg #redBaloonTop {
         margin-top: 60px;
         position: absolute;
+    }
+     .statsImgfooter #bluebg {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 900px;
+        z-index: -2;
     }
 
 </style>
