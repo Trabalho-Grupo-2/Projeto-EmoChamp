@@ -14,11 +14,7 @@
     "chart.js": "^3.7.0",
     "chartkick": "^4.1.1",
     "core-js": "^3.6.5",
-<<<<<<< HEAD
     "face-api.js": "^0.22.2",
-=======
-    "hchs-vue-charts": "^1.2.8",
->>>>>>> d7a10349448dc4cec7f9d8738b45658268c58b3a
     "jquery": "^3.6.0",
     "mdb-ui-kit": "^3.10.2",
     "mdbvue": "^6.7.3",

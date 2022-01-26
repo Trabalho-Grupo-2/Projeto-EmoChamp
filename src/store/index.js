@@ -46,6 +46,7 @@ export default new Vuex.Store({
     UPDATE_PASSWORD: (state,payload) => state.loggedUser.password = payload,
     UPDATE_DESCRIPTION: (state,payload) => state.loggedUser.description = payload,
     UPDATE_AVATAR: (state,payload) => state.loggedUser.avatar = payload,
-    UPDATE_BADGE: (state,payload) => state.loggedUser.badges[payload].level++
+    UPDATE_BADGE: (state,payload) => state.loggedUser.badges[payload].lvl++,
+    SYNC_CURRENT_USER: (state,payload) => state.users[payload] = state.loggedUser
   },
 });

@@ -246,6 +246,7 @@ export default {
       "UPDATE_PASSWORD",
       "UPDATE_DESCRIPTION",
       "UPDATE_AVATAR",
+      "SYNC_CURRENT_USER"
     ]),
     updateUser() {
       console.log(this.form.name);
@@ -257,6 +258,7 @@ export default {
         this.UPDATE_EMAIL(this.form.email);
         this.UPDATE_PASSWORD(this.form.password);
         this.UPDATE_DESCRIPTION(this.form.description);
+        this.SYNC_CURRENT_USER(this.getLoggedUser.id)
         this.modalShow = false;
       } else {
         alert("As Passwords são diferentes");
@@ -266,6 +268,7 @@ export default {
       let choosedAvatar = event.target.src
       this.chosenAvatar = choosedAvatar;
       this.UPDATE_AVATAR(this.chosenAvatar);
+      this.SYNC_CURRENT_USER(this.getLoggedUser.id);
       this.showImagePanel = false;
     }
   },
