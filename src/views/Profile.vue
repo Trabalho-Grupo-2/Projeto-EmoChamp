@@ -89,22 +89,15 @@
               <p class="perfilCarouselTitle" tex>Badges</p>
             </b-col>
           </b-row>
-          <b-row class="perfilBadgeGroup" align-v="center" align-h="center">
-            <b-col sm align-self="center">
-              <img src="../assets/seta-left.svg" class="nextFoto" />
-            </b-col>
+          <b-row v-if="ownedBadges.length > 0" class="perfilBadgeGroup" align-v="center" align-h="center">
             <b-col sm>
-              <img class="gameFoto" src="../assets/Badges/Group179.svg" />
+              <img class="achievIcon" v-for="(badges, index) in ownedBadges" :key="index" :src="ownedBadges" />
+              <img class="achievBack" v-for="(badges, index) in ownedBadges" :key="index"
+                src="../assets/avatarcircle.png"
+                alt="perfilIcon"
+              />
             </b-col>
-            <b-col sm>
-              <img class="gameFoto" src="../assets/Badges/Group190.svg" />
-            </b-col>
-            <b-col sm>
-              <img class="gameFoto" src="../assets/Badges/Group198.svg" />
-            </b-col>
-            <b-col sm align-self="center">
-              <img src="../assets/seta-right.svg" class="nextFoto" />
-            </b-col>
+            
           </b-row>
         </div>
       </b-container>
@@ -198,6 +191,8 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
+      hasBadges: false,
+      ownedBadges: [],
       chosenAvatar: "",
       showImagePanel: false,
       modalShow: false,
@@ -270,7 +265,18 @@ export default {
       this.UPDATE_AVATAR(this.chosenAvatar);
       this.SYNC_CURRENT_USER(this.getLoggedUser.id);
       this.showImagePanel = false;
+    },
+    verifyBadges(){
+      for(let i=0;i< this.getLoggedUser.badges.length-1 ; i++){
+        if(this.getLoggedUser.badges[i].lvl > 0){
+          this.ownedBadges.push(this.getLoggedUser.badges[i]);
+          console.log(this.ownedBadges);
+        }
+      }
     }
+  },
+  beforeMount () {
+    this.verifyBadges();
   },
 };
 </script>
@@ -407,5 +413,11 @@ cursor: pointer;
   width: 80px;
   margin-left: 1.5%;
   margin-top: 1.5%
+}
+.achievIcon{
+  width:80px;
+}
+.achievBack{
+  width:80px;
 }
 </style>

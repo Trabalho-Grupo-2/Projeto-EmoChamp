@@ -13,7 +13,12 @@
       <h3>UTILIZADORES</h3>
       <div class="input-group">
         <div class="form-outline">
-          <input v-model="searchInput" type="search" id="form1" class="form-control" />
+          <input
+            v-model="searchInput"
+            type="search"
+            id="form1"
+            class="form-control"
+          />
         </div>
       </div>
     </div>
@@ -38,24 +43,86 @@
         </thead>
         <tbody>
           <tr :key="index" v-for="(user, index) in filterUsers">
-            <th scope="row">{{user.id}}</th>
-            <td>{{user.name}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.type}}</td>
-            <td><button
-          @click="removeUser(user.id)"
-        type="button"
-        class="btn btn-outline-primary"
-        style="color: #374785;
-        background-color: #ffffff; border-color: #374785;"
-      >
-      X
-      </button></td>
+            <th scope="row">{{ user.id }}</th>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.type }}</td>
+            <td>
+              <button
+                @click="removeUser(user.id)"
+                type="button"
+                class="btn btn-outline-primary"
+                style="
+                  color: #374785;
+                  background-color: #ffffff;
+                  border-color: #374785;
+                "
+              >
+                X
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="b-col" style="height: 100px"></div>
+    
+    <div
+      class="w-75 p-3 text-center"
+      style="
+        margin: auto;
+        height: 480px;
+        background-color: rgba(196, 196, 196, 0.1);
+        border-radius: 20px;
+      "
+    >
+     <h3>MEDALHAS</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">NOME</th>
+            <th scope="col">SRC</th>
+            <th scope="col">EDITAR</th>
+            <th scope="col">ELIMINAR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr :key="index" v-for="(badge, index) in getBadges">
+            <th scope="row">{{ badge.name }}</th>
+            <td>{{ badge.src }}</td>
+            <td>
+              <button
+                @click="removeUser(badge.name)"
+                type="button"
+                class="btn btn-outline-primary"
+                style="
+                  color: #374785;
+                  background-color: #ffffff;
+                  border-color: #374785;
+                "
+              >
+                X
+              </button>
+            </td>
+            <td>
+              <button
+                @click="removeUser(badge.name)"
+                type="button"
+                class="btn btn-outline-primary"
+                style="
+                  color: #374785;
+                  background-color: #ffffff;
+                  border-color: #374785;
+                "
+              >
+                X
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="b-col" style="height: 300px"></div>
     <FooterX />
   </div>
 </template>
@@ -63,8 +130,8 @@
 <script>
 import Navbar from "../components/Navbar.vue";
 import FooterX from "../components/FooterX.vue";
-import { mapGetters } from 'vuex';
-import { mapMutations } from 'vuex';
+import { mapGetters } from "vuex";
+import { mapMutations } from "vuex";
 
 export default {
   components: {
@@ -75,25 +142,26 @@ export default {
     return {
       searchInput: "",
       filteredUsers: [],
-    }
+    };
   },
   computed: {
-    ...mapGetters([
-      'getUsers',
-    ]),
+    ...mapGetters(["getUsers", "getBadges"]),
     filterUsers() {
-      return this.getUsers.filter((user) => user.name.startsWith(this.searchInput) || user.email.startsWith(this.searchInput) || this.searchInput == "")
-    }
+      return this.getUsers.filter(
+        (user) =>
+          user.name.startsWith(this.searchInput) ||
+          user.email.startsWith(this.searchInput) ||
+          this.searchInput == ""
+      );
+    },
   },
   methods: {
-    ...mapMutations([
-      'SET_USER_LOGOUT','REMOVE_USER'
-    ]),
+    ...mapMutations(["SET_USER_LOGOUT", "REMOVE_USER"]),
     removeUser(id) {
-      if(confirm("Tem a certeza que pretende remover este utilizador?")){
+      if (confirm("Tem a certeza que pretende remover este utilizador?")) {
         this.REMOVE_USER(id);
       }
-    }
+    },
   },
 };
 </script>
@@ -101,27 +169,29 @@ export default {
 <style scoped>
 .searchBar {
   display: flex;
-  width:35%;
+  width: 35%;
   justify-content: space-between !important;
-  margin:auto;
+  margin: auto;
 }
-.searchBar button{
-  height:38px;
+.searchBar button {
+  height: 38px;
   width: 50px;
 }
-.searchBar #form1{
+.searchBar #form1 {
   margin-left: 15px;
 }
-h3, th, td {
+h3,
+th,
+td {
   color: #374785;
 }
-button { 
+button {
   background-color: #374785;
 }
 #pagemarker3 {
   position: absolute;
   left: 730px;
-  top:0px;
+  top: 0px;
   z-index: -1;
 }
 </style>

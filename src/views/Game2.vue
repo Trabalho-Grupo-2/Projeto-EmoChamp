@@ -14,12 +14,12 @@
       </ol>
     </div>
     <div class="container_game1">
-      <div class='ui container'>
+      <div class="ui container">
         <video v-if="!imageData.image" ref="video" class="camera-stream" />
-        <div class='ui divider'></div>
-</div>
+        <div class="ui divider"></div>
+      </div>
     </div>
-    
+
     <FooterX />
   </div>
 </template>
@@ -43,14 +43,21 @@ export default {
     FooterX,
   },
   methods: {},
+  beforeUnmount() {
+    function vidOff() {
+      this.$refs.video.pause();
+      this.$refs.video.src = "";
+      this.mediaStream.stop()
+    }
+    vidOff();
+  },
   mounted() {
-        navigator.mediaDevices.getUserMedia({video: true})
-            .then(mediaStream => {
-                    this.$refs.video.srcObject = mediaStream;
-                    this.$refs.video.play()
-                    this.mediaStream = mediaStream                   
-            })   
-    },
+    navigator.mediaDevices.getUserMedia({ video: true }).then((mediaStream) => {
+      this.$refs.video.srcObject = mediaStream;
+      this.$refs.video.play();
+      this.mediaStream = mediaStream;
+    });
+  },
 };
 </script>
 
@@ -74,7 +81,7 @@ export default {
   width: 1090px;
   background-image: url("../assets/game_container.svg");
 }
-video{
+video {
   width: 60%;
   margin-left: 20%;
   margin-top: 7%;
