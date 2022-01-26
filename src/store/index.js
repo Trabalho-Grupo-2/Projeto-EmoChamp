@@ -17,7 +17,8 @@ export default new Vuex.Store({
     { name: "User2", email: "User2", password: "Esmad_2122", description: "", avatar: "", categories: [{ Angry: true, total:0, correct:0 }, { Disgusted: true, total:0, correct:0 }, { Fearful: true, total:0, correct:0 }, { Happy: true, total:0, correct:0 }, { Neutral: true, total:0, correct:0 }, { Sad: true, total:0, correct:0}, { Surprised: true, total:0, correct:0 }], badges: [], type: "tutor", id: 2 },
     { name: "User3", email: "User3", password: "Esmad_2122", description: "", avatar: "", badges: [], type: "psychologist", id: 3 }],
     id: 3,
-    categories: ["Angry", "Disgusted", "Fearful", "Happy", "Neutral", "Sad", "Surprised"]
+    categories: ["Angry", "Disgusted", "Fearful", "Happy", "Neutral", "Sad", "Surprised"],
+    badges: [{name: "Angry", src: "../assets/_badges/angry.png"},{name: "Disgusted", src: "../assets/_badges/disgusted.png"},{name: "Fearful", src: "../assets/_badges/fearful.png"},{name: "Happy", src:"../assets/_badges/happy.png"},{name:"Neutral",src:"../assets/_badges/monster (1).png"},{name: "Sad", src:"../assets/_badges/sad.png"},{name: "Surprised", src:"../assets/_badges/surprised.png"}],
   },
   getters: {
     getselectedUser: state => state.selectedUser,
@@ -26,7 +27,7 @@ export default new Vuex.Store({
     getLoggedUser: state => state.loggedUser,
     getId: state => state.id,
     getCategories: state => state.categories,
-
+    getBadges: state => state.badges
   },
   mutations: {
     SET_SELECTED_USER: (state, payload) => { state.selectedUser = payload },
@@ -46,6 +47,7 @@ export default new Vuex.Store({
     UPDATE_EMAIL: (state,payload) => state.loggedUser.email = payload,
     UPDATE_PASSWORD: (state,payload) => state.loggedUser.password = payload,
     UPDATE_DESCRIPTION: (state,payload) => state.loggedUser.description = payload,
-    UPDATE_AVATAR: (state,payload) => state.loggedUser.avatar = payload
+    UPDATE_AVATAR: (state,payload) => state.loggedUser.avatar = payload,
+    PUSH_BADGE: (state,payload) => state.loggedUser.badges.push(payload)
   },
 });

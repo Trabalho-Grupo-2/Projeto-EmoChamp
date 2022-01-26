@@ -85,12 +85,12 @@ export default {
   },
   computed: {
         ...mapGetters([
-            'getCategories','getLoggedUser',
+            'getCategories','getLoggedUser','getBadges',
         ])
     },
    methods: {
      ...mapMutations([
-            'INCREMENT_TOTAL_ANSWERS','INCREMENT_RIGHT_ANSWERS',
+            'INCREMENT_TOTAL_ANSWERS','INCREMENT_RIGHT_ANSWERS','PUSH_BADGE'
         ]),
        getQuestion() {
            this.img_src = "../assets/questions/";
