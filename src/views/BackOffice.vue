@@ -109,7 +109,7 @@
             </td>
             <td>
               <button
-                @click="removeUser(badge.name)"
+                @click="removeBadge(badge.name)"
                 type="button"
                 class="btn btn-outline-primary"
                 style="
@@ -251,11 +251,15 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(["SET_USER_LOGOUT", "REMOVE_USER"]),
+    ...mapMutations(["SET_USER_LOGOUT", "REMOVE_USER", "REMOVE_BADGE"]),
     removeUser(id) {
       if (confirm("Tem a certeza que pretende remover este utilizador?")) {
         this.REMOVE_USER(id);
       }
+    },
+    removeBadge(name){
+      if(confirm("Tem a certeza que pretende remover este Badge?"))
+      this.REMOVE_BADGE(name);
     },
     resetModal() {
       this.form.name = "";
