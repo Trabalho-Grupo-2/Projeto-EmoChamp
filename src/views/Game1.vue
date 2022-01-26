@@ -144,6 +144,8 @@ export default {
            if(this.roll == 3){
                this.question = this.images[3].category
            };
+           console.log(this.images)
+           console.log("pergunta: " + this.question)
        },
        verifyAnswer(event){
          let clickedLink = event.target.src

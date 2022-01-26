@@ -42,5 +42,9 @@ export default new Vuex.Store({
     REMOVE_USER: (state, payload) => { state.users.splice(payload, 1) },
     INCREMENT_TOTAL_ANSWERS: (state,payload) => state.loggedUser.categories[payload].total++,
     INCREMENT_RIGHT_ANSWERS: (state,payload) => state.loggedUser.categories[payload].correct++,
+    UPDATE_USERNAME: (state,payload) => state.loggedUser.name = payload,
+    UPDATE_EMAIL: (state,payload) => state.loggedUser.email = payload,
+    UPDATE_PASSWORD: (state,payload) => state.loggedUser.password = payload,
+    UPDATE_DESCRIPTION: (state,payload) => state.loggedUser.description = payload,
   },
 });
