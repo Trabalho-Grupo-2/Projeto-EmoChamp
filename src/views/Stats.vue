@@ -52,8 +52,8 @@
         data() {
             return {
                 options: {
-                    series: [44, 55, 67, 83, 90, 30, 40, 60, 80],
-                    colors: ['#F6B8C3', '#B8B8B8', '#E0B0FF', '#C8A2C8', '#CEC7C8', '#FF78A9', '#DDA0DD', '#D6A8B6','#CBC0DC'],
+                    series: [44],
+                    colors: ['#F8E9A1'],
                     chart: {
                         height: 500,
                         type: 'radialBar',
@@ -77,8 +77,7 @@
                             }
                         }
                     },
-                    labels: ['Yoga', 'Receitas', 'Jardinagem', 'Artes Plásticas', 'Quiz', 'Fitness', 'Jogos',
-                        'Meditação', 'DIY'
+                    labels: ['Yoga'
                     ],
                 },
             }
