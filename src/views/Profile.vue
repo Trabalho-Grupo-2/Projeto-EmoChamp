@@ -17,18 +17,19 @@
         <div class="perfilRowBadge">
           <b-row align-content="center">
             <b-col>
-              <div v-if="showImageUpload">
-                <input
-                  @change.prevent="imageGrab()"
-                  ref="myFile"
-                  type="file"
-                  id="uploadImage"
-                  name="img"
-                  accept="image/*"
-                />
+              <div id="avatarpick" v-if="showImagePanel">
+              <img @click="updateAvatar($event)" src="../assets/_badges/angry.png" alt="">
+              <img @click="updateAvatar($event)" src="../assets/_badges/disgusted.png" alt="">
+              <img @click="updateAvatar($event)" src="../assets/_badges/fearful.png" alt="">
+              <img @click="updateAvatar($event)" src="../assets/_badges/happy.png" alt="">
+              <img @click="updateAvatar($event)" src="../assets/_badges/monster (1).png" alt="">
+              <img @click="updateAvatar($event)" src="../assets/_badges/monster (3).png" alt="">
+              <img @click="updateAvatar($event)" src="../assets/_badges/sad.png" alt="">
+              <img @click="updateAvatar($event)" src="../assets/_badges/surprised.png" alt="">
               </div>
+              <img @click="choosemyImage()" id="profilePic" :src="getLoggedUser.avatar" alt="">
               <img
-                @click="uploadmyImage()"
+                @click="choosemyImage()"
                 class="perfilIcon"
                 src="../assets/avatarcircle.png"
                 alt="perfilIcon"
@@ -197,8 +198,8 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
-      loadedImage: "",
-      showImageUpload: false,
+      chosenAvatar: "",
+      showImagePanel: false,
       modalShow: false,
       form: {
         name: "",
@@ -217,13 +218,8 @@ export default {
     ...mapGetters(["getLoggedUser"]),
   },
   methods: {
-    uploadmyImage() {
-      this.showImageUpload = !this.showImageUpload;
-    },
-    imageGrab() {
-    this.loadedImage = this.$refs.myFile.files[0];
-    this.showImageUpload = false;
-    console.log(this.loadedImage);
+    choosemyImage() {
+      this.showImagePanel = !this.showImagePanel;
     },
     resetModal() {
       this.form.name = "";
@@ -249,6 +245,7 @@ export default {
       "UPDATE_EMAIL",
       "UPDATE_PASSWORD",
       "UPDATE_DESCRIPTION",
+      "UPDATE_AVATAR",
     ]),
     updateUser() {
       console.log(this.form.name);
@@ -265,6 +262,12 @@ export default {
         alert("As Passwords são diferentes");
       }
     },
+    updateAvatar(event){
+      let choosedAvatar = event.target.src
+      this.chosenAvatar = choosedAvatar;
+      this.UPDATE_AVATAR(this.chosenAvatar);
+      this.showImagePanel = false;
+    }
   },
 };
 </script>
@@ -388,5 +391,18 @@ export default {
   position: absolute;
   margin-top: -5%;
   margin-left: -10%;
+}
+#avatarpick img {
+  width: 80px;
+  padding: 5px;
+}
+#avatarpick img:hover {
+cursor: pointer;
+}
+#profilePic {
+  position: absolute;
+  width: 80px;
+  margin-left: 1.5%;
+  margin-top: 1.5%
 }
 </style>

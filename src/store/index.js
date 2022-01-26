@@ -46,5 +46,6 @@ export default new Vuex.Store({
     UPDATE_EMAIL: (state,payload) => state.loggedUser.email = payload,
     UPDATE_PASSWORD: (state,payload) => state.loggedUser.password = payload,
     UPDATE_DESCRIPTION: (state,payload) => state.loggedUser.description = payload,
+    UPDATE_AVATAR: (state,payload) => state.loggedUser.avatar = payload
   },
 });
