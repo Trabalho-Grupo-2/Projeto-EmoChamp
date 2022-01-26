@@ -92,7 +92,7 @@
         position: absolute;
         width: 100%;
         height: auto;
-        top: 900px;
+        top: 1200px;
         z-index: -2;
     }
 
