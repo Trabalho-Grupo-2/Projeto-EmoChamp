@@ -66,7 +66,10 @@
       </table>
     </div>
     <div class="b-col" style="height: 100px"></div>
-    
+    <div class="badgetcontainer">
+      <h3 id="badgeHeader">BADGES</h3>
+      
+    </div>
     <div
       class="w-75 p-3 text-center"
       style="
@@ -76,7 +79,6 @@
         border-radius: 20px;
       "
     >
-     <h3>MEDALHAS</h3>
       <table class="table">
         <thead>
           <tr>
@@ -122,6 +124,53 @@
         </tbody>
       </table>
     </div>
+    <b-button
+        type="button"
+        variant="outline-primary"
+        size="lg"
+        class="buttonaddbadge"
+        @click="modalShow = !modalShow"
+        
+      >
+        Adicionar Badges
+      </b-button>
+    <div class="modalEditarPerfil">
+        <b-modal
+          id="modal-center"
+          centered
+          title="Editar Perfil"
+          @show="resetModal"
+          @hidden="resetModal"
+          @ok="handleOk"
+        >
+          <form @submit.stop.prevent="handleSubmit" ref="form">
+            <b-form-group
+              label="Nome:"
+              label-for="name-input"
+              invalid-feedback="Name is required"
+            >
+              <b-form-input
+                id="name-input"
+                type="text"
+                v-model="form.name"
+                required
+              ></b-form-input>
+            </b-form-group>
+            <b-form-group
+              label="Email:"
+              label-for="email-input"
+              invalid-feedback="Email is required"
+            >
+              <b-form-input
+                id="email-input"
+                type="email"
+                v-model="form.src"
+                required
+              ></b-form-input>
+            </b-form-group>
+          </form>
+        </b-modal>
+      </div>
     <div class="b-col" style="height: 300px"></div>
     <FooterX />
   </div>
@@ -140,8 +189,14 @@ export default {
   },
   data() {
     return {
+      modal1show: false,
       searchInput: "",
       filteredUsers: [],
+      form: {
+        name: "",
+        src: "",
+        
+      }
     };
   },
   computed: {
@@ -162,6 +217,25 @@ export default {
         this.REMOVE_USER(id);
       }
     },
+    resetModal() {
+      this.form.name = "";
+      this.form.src = "";
+    },
+    handleOk(bvModalEvt) {
+      // Prevent modal from closing
+      bvModalEvt.preventDefault();
+      // Trigger submit handler
+      this.handleSubmit();
+    },
+    handleSubmit() {
+      this.handlemodal1();
+      this.$nextTick(() => {
+        this.$bvModal.hide("modal-prevent-closing");
+      });
+    },
+    handlemodal1(){
+    this.modalShow = false
+    }
   },
 };
 </script>
@@ -193,5 +267,17 @@ button {
   left: 730px;
   top: 0px;
   z-index: -1;
+}
+#badgeHeader {
+  margin-left: 33%;
+}
+.buttonaddbadge {
+  position: absolute;
+  background-color: #ffffff;
+  font-size: 12px;
+  color: #374785;
+  border-color: #374785;
+  margin-top: -3%;
+  margin-left: 41%;
 }
 </style>
