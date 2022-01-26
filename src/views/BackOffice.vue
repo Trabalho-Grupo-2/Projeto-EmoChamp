@@ -94,7 +94,8 @@
             <td>{{ badge.src }}</td>
             <td>
               <button
-                @click="removeUser(badge.name)"
+                v-b-modal.modal-center="'modal2'"
+                @click="modal2Show = !modal2Show"
                 type="button"
                 class="btn btn-outline-primary"
                 style="
@@ -124,8 +125,45 @@
         </tbody>
       </table>
     </div>
+    <div class="modalEditarPerfil">
+        <b-modal
+          id="modal2"
+          centered
+          title="Editar Perfil"
+          @show="resetModal"
+          @hidden="resetModal"
+          @ok="handleOk"
+        >
+          <form @submit.stop.prevent="handleSubmit" ref="form">
+            <b-form-group
+              label="Nome:"
+              label-for="name-input"
+              invalid-feedback="Name is required"
+            >
+              <b-form-input
+                id="name-input"
+                type="text"
+                v-model="form.name"
+                required
+              ></b-form-input>
+            </b-form-group>
+            <b-form-group
+              label="Src:"
+              label-for="src-input"
+              invalid-feedback="Src is required"
+            >
+              <b-form-input
+                id="src-input"
+                type="text"
+                v-model="form.src"
+                required
+              ></b-form-input>
+            </b-form-group>
+          </form>
+        </b-modal>
+      </div>
     <b-button
-        v-b-modal.modal-center
+        v-b-modal.modal-center="'modal'"
         @click="modalShow = !modalShow"
         type="button"
         variant="outline-primary"
@@ -137,7 +175,7 @@
       </b-button>
     <div class="modalEditarPerfil">
         <b-modal
-          id="modal-center"
+          id="modal"
           centered
           title="Editar Perfil"
           @show="resetModal"
@@ -191,6 +229,7 @@ export default {
   data() {
     return {
       modalShow: false,
+      modal2Show: false,
       searchInput: "",
       filteredUsers: [],
       form: {
@@ -229,7 +268,6 @@ export default {
       this.handleSubmit();
     },
     handleSubmit() {
-      this.handlemodal1();
       this.$nextTick(() => {
         this.$bvModal.hide("modal-prevent-closing");
       });
