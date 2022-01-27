@@ -171,7 +171,7 @@
         </form>
       </b-modal>
     </div>
-    <div class="modalEditBadge">
+    <div class="modalAddBadge">
       <b-modal
         id="modal"
         centered
@@ -248,11 +248,15 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(["SET_USER_LOGOUT", "REMOVE_USER", "REMOVE_BADGE"]),
+    ...mapMutations(["SET_USER_LOGOUT", "REMOVE_USER", "REMOVE_BADGE","ADD_BADGE"]),
     removeUser(id) {
       if (confirm("Tem a certeza que pretende remover este utilizador?")) {
         this.REMOVE_USER(id);
       }
+    },
+    addBadge(){
+      this.ADD_BADGE(this.form)
+      this.modalShow = false;
     },
     removeBadge(name){
       if(confirm("Tem a certeza que pretende remover este Badge?"))
@@ -269,6 +273,7 @@ export default {
       this.handleSubmit();
     },
     handleSubmit() {
+      this.addBadge();
       this.$nextTick(() => {
         this.$bvModal.hide("modal-prevent-closing");
       });
