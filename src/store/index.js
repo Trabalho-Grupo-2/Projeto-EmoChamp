@@ -41,6 +41,7 @@ export default new Vuex.Store({
     SET_LOGGED_USER: (state, payload) => { state.loggedUser = payload; },
     INCREMENT_ID: (state) => { state.id++ },
     REMOVE_USER: (state, payload) => { state.users.splice(payload, 1) },
+    REMOVE_BADGE: (state, payload) => {state.badges.splice(payload, 1) },
     INCREMENT_TOTAL_ANSWERS: (state,payload) => state.loggedUser.categories[payload].total++,
     INCREMENT_RIGHT_ANSWERS: (state,payload) => state.loggedUser.categories[payload].correct++,
     UPDATE_USERNAME: (state,payload) => state.loggedUser.name = payload,

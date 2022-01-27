@@ -149,7 +149,7 @@ export default {
           id: this.getId
         }
         if(this.getUsers.some(user => user.name==this.form.name)){
-          alert("Utilizador já resistado!")
+          alert("Utilizador já está registado!")
         }
         else{
           this.SET_USER(user);
