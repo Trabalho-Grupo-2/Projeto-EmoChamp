@@ -68,7 +68,16 @@
     <div class="b-col" style="height: 100px"></div>
     <div class="badgetcontainer">
       <h3 id="badgeHeader">BADGES</h3>
-      
+      <b-button
+        v-b-modal.modal-center="'modal'"
+        @click="modalShow = !modalShow"
+        type="button"
+        variant="outline-primary"
+        size="lg"
+        class="buttonaddbadge"
+      >
+        Adicionar Badges
+      </b-button>
     </div>
     <div
       class="w-75 p-3 text-center"
@@ -125,91 +134,80 @@
         </tbody>
       </table>
     </div>
-    <div class="modalEditarPerfil">
-        <b-modal
-          id="modal2"
-          centered
-          title="Editar Perfil"
-          @show="resetModal"
-          @hidden="resetModal"
-          @ok="handleOk"
-        >
-          <form @submit.stop.prevent="handleSubmit" ref="form">
-            <b-form-group
-              label="Nome:"
-              label-for="name-input"
-              invalid-feedback="Name is required"
-            >
-              <b-form-input
-                id="name-input"
-                type="text"
-                v-model="form.name"
-                required
-              ></b-form-input>
-            </b-form-group>
-            <b-form-group
-              label="Src:"
-              label-for="src-input"
-              invalid-feedback="Src is required"
-            >
-              <b-form-input
-                id="src-input"
-                type="text"
-                v-model="form.src"
-                required
-              ></b-form-input>
-            </b-form-group>
-          </form>
-        </b-modal>
-      </div>
-    <b-button
-        v-b-modal.modal-center="'modal'"
-        @click="modalShow = !modalShow"
-        type="button"
-        variant="outline-primary"
-        size="lg"
-        class="buttonaddbadge"
-        
+    <div class="modalAddBadge">
+      <b-modal
+        id="modal2"
+        centered
+        title="Editar Badge"
+        @show="resetModal"
+        @hidden="resetModal"
+        @ok="handleOk"
       >
-        Adicionar Badges
-      </b-button>
-    <div class="modalEditarPerfil">
-        <b-modal
-          id="modal"
-          centered
-          title="Editar Perfil"
-          @show="resetModal"
-          @hidden="resetModal"
-          @ok="handleOk"
-        >
-          <form @submit.stop.prevent="handleSubmit" ref="form">
-            <b-form-group
-              label="Nome:"
-              label-for="name-input"
-              invalid-feedback="Name is required"
-            >
-              <b-form-input
-                id="name-input"
-                type="text"
-                v-model="form.name"
-                required
-              ></b-form-input>
-            </b-form-group>
-            <b-form-group
-              label="Email:"
-              label-for="email-input"
-              invalid-feedback="Email is required"
-            >
-              <b-form-input
-                id="email-input"
-                type="email"
-                v-model="form.src"
-                required
-              ></b-form-input>
-            </b-form-group>
-          </form>
-        </b-modal>
-      </div>
+        <form @submit.stop.prevent="handleSubmit" ref="form">
+          <b-form-group
+            label="Nome:"
+            label-for="name-input"
+            invalid-feedback="Name is required"
+          >
+            <b-form-input
+              id="name-input"
+              type="text"
+              v-model="form.name"
+              required
+            ></b-form-input>
+          </b-form-group>
+          <b-form-group
+            label="Src:"
+            label-for="src-input"
+            invalid-feedback="Src is required"
+          >
+            <b-form-input
+              id="src-input"
+              type="text"
+              v-model="form.src"
+              required
+            ></b-form-input>
+          </b-form-group>
+        </form>
+      </b-modal>
+    </div>
+    <div class="modalEditBadge">
+      <b-modal
+        id="modal"
+        centered
+        title="Adicionar Badge"
+        @show="resetModal"
+        @hidden="resetModal"
+        @ok="handleOk"
+      >
+        <form @submit.stop.prevent="handleSubmit" ref="form">
+          <b-form-group
+            label="Nome:"
+            label-for="name-input"
+            invalid-feedback="Name is required"
+          >
+            <b-form-input
+              id="name-input"
+              type="text"
+              v-model="form.name"
+              required
+            ></b-form-input>
+          </b-form-group>
+          <b-form-group
+            label="src:"
+            label-for="email-input"
+            invalid-feedback="Email is required"
+          >
+            <b-form-input
+              id="email-input"
+              type="email"
+              v-model="form.src"
+              required
+            ></b-form-input>
+          </b-form-group>
+        </form>
+      </b-modal>
+    </div>
     <div class="b-col" style="height: 300px"></div>
     <FooterX />
   </div>
@@ -235,8 +233,7 @@ export default {
       form: {
         name: "",
         src: "",
-        
-      }
+      },
     };
   },
   computed: {
