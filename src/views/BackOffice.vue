@@ -27,7 +27,6 @@
       style="
         margin: auto;
         height: 300px;
-        background-color: rgba(196, 196, 196, 0.1);
         border-radius: 20px;
       "
     >
@@ -84,7 +83,6 @@
       style="
         margin: auto;
         height: 480px;
-        background-color: rgba(196, 196, 196, 0.1);
         border-radius: 20px;
       "
     >
@@ -321,5 +319,9 @@ button {
   border-color: #374785;
   margin-top: -3%;
   margin-left: 41%;
+}
+.table {
+  background-color: rgba(196, 196, 196, 0.1);
+  border-radius: 15px;
 }
 </style>
