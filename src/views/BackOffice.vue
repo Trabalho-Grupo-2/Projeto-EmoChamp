@@ -24,11 +24,7 @@
     </div>
     <div
       class="w-75 p-3 text-center"
-      style="
-        margin: auto;
-        height: 300px;
-        border-radius: 20px;
-      "
+      style="margin: auto; height: 300px; border-radius: 20px"
     >
       <table class="table">
         <thead>
@@ -80,15 +76,12 @@
     </div>
     <div
       class="w-75 p-3 text-center"
-      style="
-        margin: auto;
-        height: 480px;
-        border-radius: 20px;
-      "
+      style="margin: auto; height: 480px; border-radius: 20px"
     >
       <table class="table">
         <thead>
           <tr>
+            <th>#</th>
             <th scope="col">NOME</th>
             <th scope="col">SRC</th>
             <th scope="col">EDITAR</th>
@@ -97,12 +90,13 @@
         </thead>
         <tbody>
           <tr :key="index" v-for="(badge, index) in getBadges">
+            <th>{{ index }}</th>
             <th scope="row">{{ badge.name }}</th>
             <td>{{ badge.src }}</td>
             <td>
               <button
                 v-b-modal.modal-center="'modal2'"
-                @click="modal2Show = !modal2Show"
+                @click="editBadge(badge.name)"
                 type="button"
                 class="btn btn-outline-primary"
                 style="
@@ -137,11 +131,9 @@
         id="modal2"
         centered
         title="Editar Badge"
-        @show="resetModal"
-        @hidden="resetModal"
-        @ok="handleOk"
+        @ok="handleOk2"
       >
-        <form @submit.stop.prevent="handleSubmit" ref="form">
+        <form @submit.stop.prevent="handleSubmit2" ref="form">
           <b-form-group
             label="Nome:"
             label-for="name-input"
@@ -224,6 +216,7 @@ export default {
   },
   data() {
     return {
+      mybadge: "",
       modalShow: false,
       modal2Show: false,
       searchInput: "",
@@ -231,6 +224,7 @@ export default {
       form: {
         name: "",
         src: "",
+        id: "",
       },
     };
   },
@@ -246,19 +240,44 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(["SET_USER_LOGOUT", "REMOVE_USER", "REMOVE_BADGE","ADD_BADGE"]),
+    ...mapMutations([
+      "SET_USER_LOGOUT",
+      "REMOVE_USER",
+      "REMOVE_BADGE",
+      "ADD_BADGE",
+      "EDIT_BADGE",
+    ]),
     removeUser(id) {
       if (confirm("Tem a certeza que pretende remover este utilizador?")) {
         this.REMOVE_USER(id);
       }
     },
-    addBadge(){
-      this.ADD_BADGE(this.form)
+    addBadge() {
+      this.form.lvl = 0;
+      this.ADD_BADGE(this.form);
       this.modalShow = false;
     },
-    removeBadge(name){
-      if(confirm("Tem a certeza que pretende remover este Badge?"))
-      this.REMOVE_BADGE(name);
+    editBadge(name) {
+      this.myBadge = this.getBadges.filter( badge => badge.name == name);
+      this.form.name = this.myBadge[0].name;
+      this.form.src = this.myBadge[0].src;
+      this.form.id = this.myBadge[0].id;
+      this.modal2Show = true;
+    },
+    submitEdit(){
+      let myObj = {
+        name: this.form.name,
+        src: this.form.src,
+        id: this.form.id,
+
+      }
+      this.modal2Show = false;
+      this.EDIT_BADGE(myObj);
+      console.log(myObj);
+    },
+    removeBadge(index) {
+      if (confirm("Tem a certeza que pretende remover este Badge?"))
+        this.REMOVE_BADGE(index);
     },
     resetModal() {
       this.form.name = "";
@@ -276,6 +295,18 @@ export default {
         this.$bvModal.hide("modal-prevent-closing");
       });
     },
+    handleOk2(bvModalEvt) {
+      // Prevent modal from closing
+      bvModalEvt.preventDefault();
+      // Trigger submit handler
+      this.handleSubmit2();
+    },
+    handleSubmit2() {
+      this.submitEdit();
+      this.$nextTick(() => {
+        this.$bvModal.hide("modal-prevent-closing");
+      });
+    }
   },
 };
 </script>
@@ -323,5 +354,6 @@ button {
 .table {
   background-color: rgba(196, 196, 196, 0.1);
   border-radius: 15px;
+  margin-bottom: 300 !important;
 }
 </style>

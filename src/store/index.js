@@ -13,12 +13,13 @@ export default new Vuex.Store({
     isLogged: false,
     loggedUser: null,
     users: [{ name: "Admin", email: "Admin", password: "Esmad_2122", type: "admin", id: 0 },
-    { name: "User", email: "User", password: "Esmad_2122", description: "", avatar: "", categories: [{ Angry: true, total:0, correct:0 }, { Disgusted: true, total:0, correct:0 }, { Fearful: true, total:0, correct:0 }, { Happy: true, total:0, correct:0 }, { Neutral: true, total:0, correct:0 }, { Sad: true, total:0, correct:0}, { Surprised: true, total:0, correct:0 }], badges: [{name: "Angry", src: "../assets/_badges/angry.png", lvl: 0},{name: "Disgusted", src: "../assets/_badges/disgusted.png", lvl:0},{name: "Fearful", src: "../assets/_badges/fearful.png", lvl:0},{name: "Happy", src:"../assets/_badges/happy.png", lvl:0},{name:"Neutral",src:"../assets/_badges/monster (1).png", lvl:0},{name: "Sad", src:"../assets/_badges/sad.png", lvl:0},{name: "Surprised", src:"../assets/_badges/surprised.png",lvl:0}], type: "alone", id: 1 },
-    { name: "User2", email: "User2", password: "Esmad_2122", description: "", avatar: "", categories: [{ Angry: true, total:0, correct:0 }, { Disgusted: true, total:0, correct:0 }, { Fearful: true, total:0, correct:0 }, { Happy: true, total:0, correct:0 }, { Neutral: true, total:0, correct:0 }, { Sad: true, total:0, correct:0}, { Surprised: true, total:0, correct:0 }], badges: [{name: "Angry", src: "../assets/_badges/angry.png", lvl: 0},{name: "Disgusted", src: "../assets/_badges/disgusted.png", lvl:0},{name: "Fearful", src: "../assets/_badges/fearful.png", lvl:0},{name: "Happy", src:"../assets/_badges/happy.png", lvl:0},{name:"Neutral",src:"../assets/_badges/monster (1).png", lvl:0},{name: "Sad", src:"../assets/_badges/sad.png", lvl:0},{name: "Surprised", src:"../assets/_badges/surprised.png",lvl:0}], type: "tutor", id: 2 },
-    { name: "User3", email: "User3", password: "Esmad_2122", description: "", avatar: "", badges: [], type: "psychologist", id: 3 }],
+    { name: "User", email: "User", password: "Esmad_2122", description: "", avatar: "", categories: [{ Angry: true, total:0, correct:0 }, { Disgusted: true, total:0, correct:0 }, { Fearful: true, total:0, correct:0 }, { Happy: true, total:0, correct:0 }, { Neutral: true, total:0, correct:0 }, { Sad: true, total:0, correct:0}, { Surprised: true, total:0, correct:0 }], badges: [{name: "Angry", src: "../assets/_badges/angry.png", lvl: 0, id:0},{name: "Disgusted", src: "../assets/_badges/disgusted.png", lvl:0, id:1},{name: "Fearful", src: "../assets/_badges/fearful.png", lvl:0,id:2},{name: "Happy", src:"../assets/_badges/happy.png", lvl:0, id:3},{name:"Neutral",src:"../assets/_badges/monster (1).png", lvl:0, id:4},{name: "Sad", src:"../assets/_badges/sad.png", lvl:0, id:5},{name: "Surprised", src:"../assets/_badges/surprised.png",lvl:0, id:6}], type: "alone", id: 1 },
+    { name: "User2", email: "User2", password: "Esmad_2122", description: "", avatar: "", categories: [{ Angry: true, total:0, correct:0 }, { Disgusted: true, total:0, correct:0 }, { Fearful: true, total:0, correct:0 }, { Happy: true, total:0, correct:0 }, { Neutral: true, total:0, correct:0 }, { Sad: true, total:0, correct:0}, { Surprised: true, total:0, correct:0 }], badges: [[{name: "Angry", src: "../assets/_badges/angry.png", lvl: 0, id:0},{name: "Disgusted", src: "../assets/_badges/disgusted.png", lvl:0, id:1},{name: "Fearful", src: "../assets/_badges/fearful.png", lvl:0,id:2},{name: "Happy", src:"../assets/_badges/happy.png", lvl:0, id:3},{name:"Neutral",src:"../assets/_badges/monster (1).png", lvl:0, id:4},{name: "Sad", src:"../assets/_badges/sad.png", lvl:0, id:5},{name: "Surprised", src:"../assets/_badges/surprised.png",lvl:0, id:6}]], type: "tutor", id: 2 },
+    { name: "User3", email: "User3", password: "Esmad_2122", description: "", avatar: "", type: "psychologist", id: 3, patients: [] }],
     id: 3,
+    selectedPatient: null,
     categories: ["Angry", "Disgusted", "Fearful", "Happy", "Neutral", "Sad", "Surprised"],
-    badges: [{name: "Angry", src: "../assets/_badges/angry.png", lvl: 0},{name: "Disgusted", src: "../assets/_badges/disgusted.png", lvl:0},{name: "Fearful", src: "../assets/_badges/fearful.png", lvl:0},{name: "Happy", src:"../assets/_badges/happy.png", lvl:0},{name:"Neutral",src:"../assets/_badges/monster (1).png", lvl:0},{name: "Sad", src:"../assets/_badges/sad.png", lvl:0},{name: "Surprised", src:"../assets/_badges/surprised.png",lvl:0}]
+    badges: [{name: "Angry", src: "../assets/_badges/angry.png", lvl: 0, id:0},{name: "Disgusted", src: "../assets/_badges/disgusted.png", lvl:0, id:1},{name: "Fearful", src: "../assets/_badges/fearful.png", lvl:0,id:2},{name: "Happy", src:"../assets/_badges/happy.png", lvl:0, id:3},{name:"Neutral",src:"../assets/_badges/monster (1).png", lvl:0, id:4},{name: "Sad", src:"../assets/_badges/sad.png", lvl:0, id:5},{name: "Surprised", src:"../assets/_badges/surprised.png",lvl:0, id:6}]
   },
   getters: {
     getselectedUser: state => state.selectedUser,
@@ -27,7 +28,8 @@ export default new Vuex.Store({
     getLoggedUser: state => state.loggedUser,
     getId: state => state.id,
     getCategories: state => state.categories,
-    getBadges: state => state.badges
+    getBadges: state => state.badges,
+    getselectedPatient: state =>  state.selectedPatient,
   },
   mutations: {
     SET_SELECTED_USER: (state, payload) => { state.selectedUser = payload },
@@ -42,7 +44,8 @@ export default new Vuex.Store({
     INCREMENT_ID: (state) => { state.id++ },
     REMOVE_USER: (state, payload) => state.users.splice(payload, 1) ,
     ADD_BADGE: (state,payload) => state.badges.push(payload),
-    REMOVE_BADGE: (state, payload) => state.badges.splice(payload, 1),
+    REMOVE_BADGE: (state, payload) => state.badges.splice(state.badges.findIndex(badge => badge.name == payload), 1),
+    EDIT_BADGE: (state,payload) => state.badges[payload.id] = payload,
     INCREMENT_TOTAL_ANSWERS: (state,payload) => state.loggedUser.categories[payload].total++,
     INCREMENT_RIGHT_ANSWERS: (state,payload) => state.loggedUser.categories[payload].correct++,
     UPDATE_USERNAME: (state,payload) => state.loggedUser.name = payload,
@@ -51,6 +54,8 @@ export default new Vuex.Store({
     UPDATE_DESCRIPTION: (state,payload) => state.loggedUser.description = payload,
     UPDATE_AVATAR: (state,payload) => state.loggedUser.avatar = payload,
     UPDATE_BADGE: (state,payload) => state.loggedUser.badges[payload].lvl++,
-    SYNC_CURRENT_USER: (state,payload) => state.users[payload] = state.loggedUser
+    SYNC_CURRENT_USER: (state,payload) => state.users[payload] = state.loggedUser,
+    ADD_PATIENT: (state,payload) => state.loggedUser.patients.push(payload),
+    SET_SELECTED_PATIENT: (state,payload) => state.selectedPatient = payload
   },
 });
