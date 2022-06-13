@@ -105,7 +105,7 @@
                   border-color: #374785;
                 "
               >
-                X
+                O
               </button>
             </td>
             <td>

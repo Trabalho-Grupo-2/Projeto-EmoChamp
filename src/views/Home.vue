@@ -48,8 +48,8 @@
             <b-container class="homeContent">
                 <b-row class="keywordsgroup">
                     <div>
-                        <img class="yellowelipse" src="../assets/keywordssphere.svg" alt="yellow elipse" />
-                        <img id="elearningsvg" class="yellowSVG" src="../assets/Landing Page Balloons/eLearning.svg"
+                        <img defer class="yellowelipse" src="../assets/keywordssphere.svg" alt="yellow elipse" />
+                        <img defer id="elearningsvg" class="yellowSVG" src="../assets/Landing Page Balloons/eLearning.svg"
                             alt="eLearning icon" />
                          <p class="textElipse">
                             eLearning
@@ -57,8 +57,8 @@
                     </div>
 
                     <div>
-                        <img class="yellowelipse" src="../assets/keywordssphere.svg" alt="yellow elipse" />
-                        <img class="yellowSVG" src="../assets/Landing Page Balloons/Child Safe.svg"
+                        <img defer class="yellowelipse" src="../assets/keywordssphere.svg" alt="yellow elipse" />
+                        <img defer class="yellowSVG" src="../assets/Landing Page Balloons/Child Safe.svg"
                             alt="child safe icon" />
                         <p class="textElipse">
                             Seguro para <br />
@@ -67,8 +67,8 @@
                     </div>
 
                     <div>
-                        <img class="yellowelipse" src="../assets/keywordssphere.svg" alt="yellow elipse" />
-                        <img class="yellowSVG" src="../assets/Landing Page Balloons/gamification.svg"
+                        <img defer class="yellowelipse" src="../assets/keywordssphere.svg" alt="yellow elipse" />
+                        <img defer class="yellowSVG" src="../assets/Landing Page Balloons/gamification.svg"
                             alt="controller icon" />
                         <p class="textElipse">
                             Elementos de <br />
@@ -77,8 +77,8 @@
                     </div>
 
                     <div>
-                        <img class="yellowelipse" src="../assets/keywordssphere.svg" alt="yellow elipse" />
-                        <img class="yellowSVG" src="../assets/Landing Page Balloons/supervisedLearning.svg"
+                        <img defer class="yellowelipse" src="../assets/keywordssphere.svg" alt="yellow elipse" />
+                        <img defer class="yellowSVG" src="../assets/Landing Page Balloons/supervisedLearning.svg"
                             alt="supervised icon" />
                         <p class="textElipse">
                             Aprendizagem <br />
@@ -116,7 +116,7 @@
         </div>
 
         <div class="homeImg">
-            <img id="redBaloonBottom" src="../assets/redelipse.svg" alt="Red Baloon" />
+            <img defer id="redBaloonBottom" src="../assets/redelipse.svg" alt="Red Baloon" />
         </div>
 
 
