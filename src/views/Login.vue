@@ -43,22 +43,44 @@ export default {
   },
   methods: {
       ...mapMutations([
-            "SET_USER_LOGIN","SET_LOGGED_USER"
+            "SET_USER_LOGIN","SET_LOGGED_USER","SET_SELECTED_USER"
         ]),
-      pushLogin() {
-          if(this.getUsers.some(user => 
-              user.email == this.form.email && user.password == this.form.password
-          )) {
-              this.user = this.getUsers.find( user => user.email == this.form.email);
-              this.control = true;
-              this.SET_LOGGED_USER(this.user);
-              this.SET_USER_LOGIN(this.control);
-              this.$router.push("/play")
-          }
-          else{
-              alert("Credenciais Inválidas")
-          }
+      async pushLogin() {
+      this.message = "";
+      this.loading = true;
+      this.successful = false;
+      this.errors = [];
+      const user = {
+          name: this.form.email,
+          password: this.form.password,
+        }
+      if (this.form.name && this.form.password) {
+        //makes request by dispatching an action
+        try {
+          await this.$store.dispatch("login", user /*formData*/);
+          this.message = this.$store.getters.getMessage;
+          this.successful = true;
+        } catch (error) {
+          this.message =
+            (error.response && error.response.data) ||
+            error.message || error.toString();
+        } finally {
+          this.loading = false;
+        }
+      } else {
+        this.loading = false;
+        if (!this.user.username) {
+          this.errors.push("Username required.");
+        }
+        if (!this.user.password) {
+          this.errors.push("Password required.");
+        }
       }
+      this.SET_SELECTED_USER(user);
+      this.SET_LOGGED_USER(user);
+      this.SET_USER_LOGIN(user);
+      // this.$router.push("/login")
+    }
   },
   computed: {
     ...mapGetters(["getLoggedState","getUsers"]),

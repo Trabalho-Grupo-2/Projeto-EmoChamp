@@ -83,6 +83,22 @@ export default new Vuex.Store({
         commit('SET_MESSAGE', '');
         throw error;
     }
+},
+logout({ commit }) {
+  AuthService.logout();
+  // commit mutation logout
+  commit('logout');
+},
+async login({ commit }, user) {
+  try{
+      const response = await AuthService.login(user);
+      commit('SET_MESSAGE', response.msg);
+  }
+  catch(error)
+  {
+      commit('SET_MESSAGE', '');
+      throw error;
+  }
 }
   }
 });

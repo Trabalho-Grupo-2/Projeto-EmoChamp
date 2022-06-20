@@ -42,6 +42,29 @@ export const AuthService = {
             throw Error(handleResponses(response.status));
         }
     },
+    async logout() {
+        localStorage.removeItem('selectedUser');
+        localStorage.removeItem('loggedUser');
+    },
+    async login(user) {
+        const response = await fetch(`${API_URL}/login`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body:
+                JSON.stringify({
+                    name: user.name,
+                    password: user.password
+                })
+        });
+        if (response.ok) {
+            const data = await response.json();
+            return data;
+        } else {
+            throw Error(handleResponses(response.status));
+        }
+    }
 }
 
 function handleResponses(code) {
