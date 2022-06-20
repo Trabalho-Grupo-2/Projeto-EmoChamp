@@ -127,40 +127,60 @@ export default {
         password1: "",
         password2: "",
       },
+      successful: false,
+      message: "",
+      loading: false,
+      errors: []
     };
   },
   computed: {
     ...mapGetters(["getselectedUser","getUsers","getId"]),
   },
   methods: {
-    ...mapMutations(["SET_SELECTED_USER", "SET_USER","INCREMENT_ID"]),
-    pushForm() {
-      if (this.form.password1 == this.form.password2) {
-        this.INCREMENT_ID();
-         const user = {
+    ...mapMutations(["SET_SELECTED_USER"]),
+    async pushForm() {
+      this.message = "";
+      this.loading = true;
+      this.successful = false;
+      this.errors = [];
+      const user = {
           name: this.form.name,
           email: this.form.email,
           password: this.form.password1,
-          type: this.getselectedUser,
-          description: "", 
-          avatar: "",
-          categories: [{ Angry: true, total:0, correct:0 }, { Disgusted: true, total:0, correct:0 }, { Fearful: true, total:0, correct:0 }, { Happy: true, total:0, correct:0 }, { Neutral: true, total:0, correct:0 }, { Sad: true, total:0, correct:0}, { Surprised: true, total:0, correct:0 }], 
-          badges: [{name: "Angry", src: "../assets/_badges/angry.png", lvl: 0, id:0},{name: "Disgusted", src: "../assets/_badges/disgusted.png", lvl:0, id:1},{name: "Fearful", src: "../assets/_badges/fearful.png", lvl:0,id:2},{name: "Happy", src:"../assets/_badges/happy.png", lvl:0, id:3},{name:"Neutral",src:"../assets/_badges/monster (1).png", lvl:0, id:4},{name: "Sad", src:"../assets/_badges/sad.png", lvl:0, id:5},{name: "Surprised", src:"../assets/_badges/surprised.png",lvl:0, id:6}],
-          id: this.getId
+          type: this.getselectedUser
         }
-        if(this.getselectedUser == "psychologist"){
-          user.patients = [];
+      if (this.form.name && this.form.password1 && this.form.password2 && this.form.email) {
+          if(this.form.password1 == this.form.password2){
+        //makes request by dispatching an action
+        try {
+          if(user.type == "alone" || user.type == "tutor" ){
+          await this.$store.dispatch("registerPatient", user /*formData*/);
+          }
+          else if(user.type == "psychologist"){
+            await this.$store.dispatch("registerPsychologist", user /*formData*/);
+          }
+          this.message = this.$store.getters.getMessage;
+          this.successful = true;
+        } catch (error) {
+          this.message =
+            (error.response && error.response.data) ||
+            error.message || error.toString();
+        } finally {
+          this.loading = false;
         }
-        if(this.getUsers.some(user => user.name==this.form.name)){
-          alert("Utilizador já está registado!")
         }
-        else{
-          this.SET_USER(user);
-          this.SET_SELECTED_USER(null);
-          this.$router.push("/login")
-        } 
+      } else {
+        this.loading = false;
+        if (!this.user.username) {
+          this.errors.push("Username required.");
+        }
+        if (!this.user.password) {
+          this.errors.push("Password required.");
+        }
       }
-    },
+      this.SET_SELECTED_USER(null);
+      // this.$router.push("/login")
+    }
   },
 };
 </script>

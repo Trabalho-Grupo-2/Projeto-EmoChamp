@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import createPersistedState from 'vuex-persistedstate';
+import { AuthService } from '../services/auth.service';
 
 Vue.use(Vuex);
 
@@ -12,6 +13,7 @@ export default new Vuex.Store({
     selectedUser: null,
     isLogged: false,
     loggedUser: null,
+    user: [],
     users: [{ name: "Admin", email: "Admin", password: "Esmad_2122", type: "admin", id: 0 },
     { name: "User", email: "User", password: "Esmad_2122", description: "", avatar: "", categories: [{ Angry: true, total:0, correct:0 }, { Disgusted: true, total:0, correct:0 }, { Fearful: true, total:0, correct:0 }, { Happy: true, total:0, correct:0 }, { Neutral: true, total:0, correct:0 }, { Sad: true, total:0, correct:0}, { Surprised: true, total:0, correct:0 }], badges: [{name: "Angry", src: "../assets/_badges/angry.png", lvl: 0, id:0},{name: "Disgusted", src: "../assets/_badges/disgusted.png", lvl:0, id:1},{name: "Fearful", src: "../assets/_badges/fearful.png", lvl:0,id:2},{name: "Happy", src:"../assets/_badges/happy.png", lvl:0, id:3},{name:"Neutral",src:"../assets/_badges/monster (1).png", lvl:0, id:4},{name: "Sad", src:"../assets/_badges/sad.png", lvl:0, id:5},{name: "Surprised", src:"../assets/_badges/surprised.png",lvl:0, id:6}], type: "alone", id: 1 },
     { name: "User2", email: "User2", password: "Esmad_2122", description: "", avatar: "", categories: [{ Angry: true, total:0, correct:0 }, { Disgusted: true, total:0, correct:0 }, { Fearful: true, total:0, correct:0 }, { Happy: true, total:0, correct:0 }, { Neutral: true, total:0, correct:0 }, { Sad: true, total:0, correct:0}, { Surprised: true, total:0, correct:0 }], badges: [[{name: "Angry", src: "../assets/_badges/angry.png", lvl: 0, id:0},{name: "Disgusted", src: "../assets/_badges/disgusted.png", lvl:0, id:1},{name: "Fearful", src: "../assets/_badges/fearful.png", lvl:0,id:2},{name: "Happy", src:"../assets/_badges/happy.png", lvl:0, id:3},{name:"Neutral",src:"../assets/_badges/monster (1).png", lvl:0, id:4},{name: "Sad", src:"../assets/_badges/sad.png", lvl:0, id:5},{name: "Surprised", src:"../assets/_badges/surprised.png",lvl:0, id:6}]], type: "tutor", id: 2 },
@@ -19,7 +21,8 @@ export default new Vuex.Store({
     id: 3,
     selectedPatient: null,
     categories: ["Angry", "Disgusted", "Fearful", "Happy", "Neutral", "Sad", "Surprised"],
-    badges: [{name: "Angry", src: "../assets/_badges/angry.png", lvl: 0, id:0},{name: "Disgusted", src: "../assets/_badges/disgusted.png", lvl:0, id:1},{name: "Fearful", src: "../assets/_badges/fearful.png", lvl:0,id:2},{name: "Happy", src:"../assets/_badges/happy.png", lvl:0, id:3},{name:"Neutral",src:"../assets/_badges/monster (1).png", lvl:0, id:4},{name: "Sad", src:"../assets/_badges/sad.png", lvl:0, id:5},{name: "Surprised", src:"../assets/_badges/surprised.png",lvl:0, id:6}]
+    badges: [{name: "Angry", src: "../assets/_badges/angry.png", lvl: 0, id:0},{name: "Disgusted", src: "../assets/_badges/disgusted.png", lvl:0, id:1},{name: "Fearful", src: "../assets/_badges/fearful.png", lvl:0,id:2},{name: "Happy", src:"../assets/_badges/happy.png", lvl:0, id:3},{name:"Neutral",src:"../assets/_badges/monster (1).png", lvl:0, id:4},{name: "Sad", src:"../assets/_badges/sad.png", lvl:0, id:5},{name: "Surprised", src:"../assets/_badges/surprised.png",lvl:0, id:6}],
+    message: ""
   },
   getters: {
     getselectedUser: state => state.selectedUser,
@@ -32,6 +35,7 @@ export default new Vuex.Store({
     getselectedPatient: state =>  state.selectedPatient,
   },
   mutations: {
+    SET_MESSAGE: (state, payload) => {state.message = payload},
     SET_SELECTED_USER: (state, payload) => { state.selectedUser = payload },
     SET_USER: (state, payload) => {
       state.users.push(payload);
@@ -41,7 +45,6 @@ export default new Vuex.Store({
     },
     SET_USER_LOGOUT: (state, payload) => { state.isLogged = payload; state.loggedUser = null },
     SET_LOGGED_USER: (state, payload) =>  state.loggedUser = payload,
-    INCREMENT_ID: (state) => { state.id++ },
     REMOVE_USER: (state, payload) => state.users.splice(payload, 1) ,
     ADD_BADGE: (state,payload) => state.badges.push(payload),
     REMOVE_BADGE: (state, payload) => state.badges.splice(state.badges.findIndex(badge => badge.name == payload), 1),
@@ -58,4 +61,28 @@ export default new Vuex.Store({
     ADD_PATIENT: (state,payload) => state.loggedUser.patients.push(payload),
     SET_SELECTED_PATIENT: (state,payload) => state.selectedPatient = payload
   },
+  actions: {
+    async registerPatient({ commit }, user) {
+      try{
+          const response = await AuthService.registerPatient(user);
+          commit('SET_MESSAGE', response.msg);
+      }
+      catch(error)
+      {
+          commit('SET_MESSAGE', '');
+          throw error;
+      }
+  },
+  async registerPsychologist({ commit }, user) {
+    try{
+        const response = await AuthService.registerPsychologist(user);
+        commit('SET_MESSAGE', response.msg);
+    }
+    catch(error)
+    {
+        commit('SET_MESSAGE', '');
+        throw error;
+    }
+}
+  }
 });

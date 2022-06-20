@@ -198,7 +198,26 @@
         </form>
       </b-modal>
     </div>
-    <div class="b-col" style="height: 300px"></div>
+    <form @submit.prevent="addPhoto()" id="imgUpload" style="margin-top: 50px">
+      <h3 id="badgeHeader">ADICIONAR IMAGEM PARA EMOÇÃO</h3>
+  <div class="mb-3">
+  <label for="formFile" class="form-label">Escolher Ficheiro de Imagem</label>
+  <input class="form-control" type="file" id="formFile" accept="image/*">
+</div>
+<div>
+  <label for="catSelect" class="form-label">Selecione a Categoria:</label>
+  <br>
+    <b-form-select id="catSelect" v-model="selectedCat" :options="getCategories"></b-form-select>
+    <div class="mt-3">Selecionado: <strong>{{ selectedCat }}</strong></div>
+  </div>
+  <br>
+  <div class="mb-3 form-check">
+    <input type="checkbox" v-model="checkboxChecked" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Tenho a certeza que escolhi a categoria correta.</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<div class="b-col" style="height: 300px"></div>
     <FooterX />
   </div>
 </template>
@@ -216,6 +235,8 @@ export default {
   },
   data() {
     return {
+      checkboxChecked: false,
+      selectedCat: "",
       mybadge: "",
       modalShow: false,
       modal2Show: false,
@@ -229,7 +250,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getUsers", "getBadges"]),
+    ...mapGetters(["getUsers", "getBadges","getCategories"]),
     filterUsers() {
       return this.getUsers.filter(
         (user) =>
@@ -306,6 +327,13 @@ export default {
       this.$nextTick(() => {
         this.$bvModal.hide("modal-prevent-closing");
       });
+    },
+    addPhoto() {
+      console.log(this.selectedCat);
+      console.log(this.checkboxChecked);
+      if (this.selectedCat!= "" && this.checkboxChecked != false ){
+        console.log("sucess");
+      }
     }
   },
 };
@@ -356,4 +384,5 @@ button {
   border-radius: 15px;
   margin-bottom: 300 !important;
 }
+
 </style>
