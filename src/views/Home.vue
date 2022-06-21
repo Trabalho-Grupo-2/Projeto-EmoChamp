@@ -105,7 +105,7 @@
                     </b-col>
                 
                     <b-col cols="5" align-self="start" class="video">
-                        <video controls>
+                        <video difer controls>
                         <source src="../assets/videodemo.mp4" type="video/mp4">
                         </video>
                     </b-col>

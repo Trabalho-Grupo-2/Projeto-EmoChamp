@@ -37,7 +37,11 @@
           />
           <br />
           <p style="color: #374785; font-size: 20px">Jogo 1</p>
-          <img src="../assets/jogo1.jpg" alt="game1preview" />
+          <picture>
+            <source type="image/webp" srcset="../assets/jogo1.webp">
+            <source type="image/jpg" srcset="../assets/jogo1.jpg">
+          <img src="../assets/jogo1.webp" alt="game1preview" />
+          </picture>
           <br /><br />
           <p style="color: #374785; font-size: 20px">
             Reconhecimento de Emoções
@@ -74,7 +78,11 @@
           />
           <br />
           <p style="color: #374785; font-size: 20px">Jogo 2</p>
-          <img src="../assets/jogo2.jpg" alt="game2preview" />
+          <picture>
+            <source type="image/webp" srcset="../assets/jogo2.webp">
+            <source type="image/jpg" srcset="../assets/jogo2.jpg">
+          <img src="../assets/jogo2.webp" alt="game2preview" />
+          </picture>
           <br /><br />
           <p style="color: #374785; font-size: 20px">
             Reprodução de Expressões
